@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::get('/', [PagesController::class, 'index']);
 Route::post('/create-account', [PagesController::class, 'createaccount']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('administrator');
+Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user');
 
 Auth::routes();
 
