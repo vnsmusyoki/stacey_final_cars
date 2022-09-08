@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminDashboardController extends Controller
+class UserDashboardController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
     public function index(){
-        return view('admin.dashboard');
+        return view('user.dashboard');
     }
 }
