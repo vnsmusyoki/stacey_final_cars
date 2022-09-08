@@ -1752,10 +1752,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="sign-up.html" class="">
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();" class="">
                             <span data-feather="user-plus" class="nav-icon"></span>
-                            <span class="menu-text">Sign Up</span>
+                            <span class="menu-text">Sign Out</span>
                         </a>
+                       
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                         @csrf
+                     </form>
                     </li>
                 </ul>
             </div>
@@ -1773,7 +1780,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer-copyright">
-                            <p>2020 @<a href="#">Aazztech</a>
+                            <p>2022 @<a href="#">Online Cars Auctioning System</a>
                             </p>
                         </div>
                     </div>

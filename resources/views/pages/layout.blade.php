@@ -3,14 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarLeader - Responsive HTML5 Template</title>
-    <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="CarLeader - Responsive HTML5 Template">
+    <title>CarLeader - Online cars Auctoning System</title>
+    <meta name="keywords" content="">
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-ffit=no">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -25,38 +26,43 @@
             <a href="#" class="colorswatch6 js-swatch-color" data-color="5"></a>
         </div>
         <div class="tt-colorswatch-btn js-colorswatch">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="347.523px" height="347.523px" viewBox="0 0 347.523 347.523" style="enable-background:new 0 0 347.523 347.523;" xml:space="preserve">
-			<g>
-				<g>
-					<path d="M108.674,196.125c-2.857-0.402-5.777-0.592-8.746-0.534c-14.267,0.278-36.342,6.092-60.493,32.207
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="347.523px"
+                height="347.523px" viewBox="0 0 347.523 347.523" style="enable-background:new 0 0 347.523 347.523;"
+                xml:space="preserve">
+                <g>
+                    <g>
+                        <path
+                            d="M108.674,196.125c-2.857-0.402-5.777-0.592-8.746-0.534c-14.267,0.278-36.342,6.092-60.493,32.207
 						c-19.171,20.729-19.954,42.635-20.644,61.961c-0.66,18.474-1.181,33.065-16.507,43.727c-1.506,1.049-2.318,2.837-2.113,4.661
 						c0.128,1.147,0.645,2.191,1.434,2.98c0.466,0.466,1.026,0.843,1.658,1.099c28.523,11.553,77.316,5.895,117.044-33.833
 						c18.043-18.044,28.812-37.145,31.14-55.233c0.607-4.719,0.618-9.323,0.091-13.763L108.674,196.125z M100.915,229.382
 						c-1.553,2.174-3.859,3.612-6.494,4.052c-19.209,3.202-25.884,15.953-26.159,16.494c-1.627,3.387-5.167,5.611-8.989,5.611
 						c-0.337,0-0.676-0.017-1.015-0.052c-1.149-0.117-2.264-0.432-3.313-0.936c-4.97-2.391-7.069-8.376-4.681-13.347
 						c0.442-0.918,11.153-22.546,40.869-27.5c0.546-0.09,1.1-0.136,1.647-0.136c4.908,0,9.055,3.516,9.861,8.357
-						C103.08,224.559,102.467,227.207,100.915,229.382z"/>
-					<path d="M340.587,6.796c-8.615-8.614-22.425-9.1-31.624-1.112c-5.782,5.021-141.818,123.166-160.166,141.513
+						C103.08,224.559,102.467,227.207,100.915,229.382z" />
+                        <path
+                            d="M340.587,6.796c-8.615-8.614-22.425-9.1-31.624-1.112c-5.782,5.021-141.818,123.166-160.166,141.513
 						c-9.175,9.175-20.946,24.898-31.124,39.428l42.864,43.271c14.546-10.18,30.345-22.003,39.65-31.308
-						C218.749,180.024,336.69,44.193,341.703,38.42C349.688,29.22,349.201,15.41,340.587,6.796z"/>
-				</g>
-			</g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			<g></g>
-			</svg>
+						C218.749,180.024,336.69,44.193,341.703,38.42C349.688,29.22,349.201,15.41,340.587,6.796z" />
+                    </g>
+                </g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+            </svg>
         </div>
     </div>
     <!-- tt-mobile menu -->
@@ -82,8 +88,8 @@
                         <div class="quickLinks-layout">
                             <div class="quickLinks-map">
                                 <address>
-								<i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NY 11230
-							</address>
+                                    <i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NY 11230
+                                </address>
                                 <div id="googleMapHeader" class="google-map"></div>
                             </div>
                         </div>
@@ -95,47 +101,49 @@
                                 <h6 class="tt-title">Call Us:</h6>
                                 <ul>
                                     <li>
-                                        <a href="#"><i class="icon-15874"></i> +01 123 456 78</a>
+                                        <a href="#"><i class="icon-15874"></i> +254794107848</a>
                                     </li>
                                     <li>
                                         <i class="icon-icon"></i> 9:00 AM – 8:00 PM
                                     </li>
                                     <li>
-                                        <a href="mailto:info@youremal.com"><i class="icon-mail"></i> info@youremal.com</a>
+                                        <a href="mailto:info@youremal.com"><i class="icon-mail"></i>
+                                            stacycars@youremail.com</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <a data-toggle="modal" data-target="#modalAddYourItem" class="btn-toggle no-popup" href="#"><i class="icon-addcar"></i></a>
+                        <a data-toggle="modal" data-target="#modalAddYourItem" class="btn-toggle no-popup"
+                            href="#"><i class="icon-addcar"></i></a>
                     </div>
                     <div class="col tt-account">
                         <a class="btn-toggle is-popup tt-account" href="#">
-						<i class="icon-user"></i>
-					</a>
+                            <i class="icon-user"></i>
+                        </a>
                         <div class="tt-dropdown-menu">
                             <div class="tt-row-close">
                                 <a href="#" class="tt-btn-close icon-close"></a>
                             </div>
                             <ul>
-                                <li><a href="#">Account</a></li>
-                                <li><a href="#">Check Out</a></li>
-                                <li><a href="#">Sign In</a></li>
-                                <li><a href="#">Sign Out</a></li>
-                                <li><a href="#">Register</a></li>
+                                <li><a href="{{ url('user/dashboard') }}">Account</a></li>
+
+                                <li><a href="{{ route('login') }}">Sign In</a></li>
+                                <li><a href="{{ route('register') }}">Register</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col tt-searcher">
                         <a class="btn-toggle is-popup tt-searcher" href="#">
-						<i class="icon-musica-searcher"></i>
-					</a>
+                            <i class="icon-musica-searcher"></i>
+                        </a>
                         <div class="tt-dropdown-menu">
                             <div class="container">
                                 <form>
                                     <div class="tt-row-search">
-                                        <input type="text" class="tt-search-input" placeholder="Type your search request...">
+                                        <input type="text" class="tt-search-input"
+                                            placeholder="Type your search request...">
                                         <button class="tt-btn-search" type="submit"></button>
                                         <button class="tt-btn-close icon-g-80"></button>
                                     </div>
@@ -143,51 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col tt-cart">
-                        <a class="btn-toggle is-popup" href="#">
-						<i class="icon-cart tt-cart"></i>
-					</a>
-                        <div class="tt-dropdown-menu">
-                            <h6 class="tt-dropdown-title">
-                                <a href="#" class="tt-btn-close icon-close"></a> Products in Cart
-                            </h6>
-                            <div class="tt-search-results">
-                                <ul>
-                                    <li>
-                                        <a href="inventory-item.html">
-                                            <div class="thumbnail"><img src="images/product/product_img_05.jpg" alt=""></div>
-                                            <div class="tt-description">
-                                                <div class="tt-title">Bosch 3330 Premium FILTECH Oil </div>
-                                                <div class="tt-price">
-                                                    $5.23
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <span class="tt-close-item icon-close"></span>
-                                    </li>
-                                    <li>
-                                        <a href="inventory-item.html">
-                                            <div class="thumbnail"><img src="images/product/product_img_08.jpg" alt=""></div>
-                                            <div class="tt-description">
-                                                <div class="tt-title">Autolite XP5325 Iridium XP Spark Plug, Pack of 4</div>
-                                                <div class="tt-price">
-                                                    $24.61
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <span class="tt-close-item icon-close"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tt-search-bottom">
-                                <div class="price-total">
-                                    <label>Total:</label>
-                                    <div class="tt-price">$29.84</div>
-                                </div>
-                                <a href="#" class="btn">CHECKOUT</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -197,8 +161,9 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-auto mr-auto">
                         <ul class="tt-box-info">
-                            <li><i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NY 11230</li>
-                            <li><a href="#"><i class="icon-15874"></i><strong>Call Us:</strong> +01 123 456 78</a></li>
+                            <li><i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NRB 11230</li>
+                            <li><a href="#"><i class="icon-15874"></i><strong>Call Us:</strong>
+                                    +254794107848</a></li>
                             <li><i class="icon-icon"></i>9:00 AM – 8:00 PM</li>
                         </ul>
                     </div>
@@ -206,20 +171,20 @@
                         <div class="tt-language">
                             <div class="tt-skinSelect-02">
                                 <select class="tt-select">
-								<option value="ENG">ENG</option>
-								<option value="RUS">RUS</option>
-							</select>
+                                    <option value="ENG">ENG</option>
+                                </select>
                             </div>
                         </div>
                         <div class="tt-dropdown-obj tt-searcher">
                             <a href="#" class="tt-dropdown-toggle">
-							<i class="icon-musica-searcher"></i>
-						</a>
+                                <i class="icon-musica-searcher"></i>
+                            </a>
                             <div class="tt-dropdown-menu">
                                 <div class="container">
                                     <form>
                                         <div class="tt-row-search">
-                                            <input type="text" class="tt-search-input" placeholder="Type your search request...">
+                                            <input type="text" class="tt-search-input"
+                                                placeholder="Type your search request...">
                                             <button class="tt-btn-search" type="submit"></button>
                                             <button class="tt-btn-close icon-g-80"></button>
                                         </div>
@@ -229,71 +194,26 @@
                         </div>
                         <div class="tt-dropdown-obj tt-account">
                             <a href="#" class="tt-dropdown-toggle">
-							<i class="icon-user"></i>
-						</a>
+                                <i class="icon-user"></i>
+                            </a>
                             <div class="tt-dropdown-menu">
                                 <div class="tt-row-close">
                                     <a href="#" class="tt-btn-close icon-close"></a>
                                 </div>
                                 <ul>
-                                    <li><a href="#">Account</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Sign In</a></li>
-                                    <li><a href="#">Sign Out</a></li>
-                                    <li><a href="#">Register</a></li>
+                                    <li><a href="{{ url('user/dashboard') }}">Account</a></li>
+
+                                    <li><a href="{{ route('login') }}">Sign In</a></li>
+                                    <li><a href="{{ route('register') }}">Register</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="tt-dropdown-obj tt-compare compare-toggle">
                             <a href="#" class="tt-dropdown-toggle">
-							<i class="icon-compare"></i>
-						</a>
+                                <i class="icon-compare"></i>
+                            </a>
                         </div>
-                        <div class="tt-dropdown-obj tt-cart">
-                            <a href="#" class="tt-dropdown-toggle">
-							<i class="icon-cart"></i>
-						</a>
-                            <div class="tt-dropdown-menu">
-                                <h6 class="tt-dropdown-title">
-                                    <a href="#" class="tt-btn-close icon-close"></a> Products in Cart
-                                </h6>
-                                <div class="tt-search-results">
-                                    <ul>
-                                        <li>
-                                            <a href="inventory-item.html">
-                                                <div class="thumbnail"><img src="images/product/product_img_05.jpg" alt=""></div>
-                                                <div class="tt-description">
-                                                    <div class="tt-title">Bosch 3330 Premium FILTECH Oil </div>
-                                                    <div class="tt-price">
-                                                        $5.23
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <span class="tt-close-item icon-close"></span>
-                                        </li>
-                                        <li>
-                                            <a href="inventory-item.html">
-                                                <div class="thumbnail"><img src="images/product/product_img_08.jpg" alt=""></div>
-                                                <div class="tt-description">
-                                                    <div class="tt-title">Autolite XP5325 Iridium XP Spark Plug, Pack of 4</div>
-                                                    <div class="tt-price">
-                                                        $24.61
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <span class="tt-close-item icon-close"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tt-search-bottom">
-                                    <div class="price-total">
-                                        <label>Total:</label>
-                                        <div class="tt-price">$29.84</div>
-                                    </div>
-                                    <a href="#" class="btn">CHECKOUT</a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -304,10 +224,10 @@
                 <div class="row">
                     <!--logo-->
                     <div class="col-logo">
-                        <a class="tt-logo" href="index.html">
-						<img class="tt-logo-light svg-img" src="images/logo.svg" alt="">
-						<img class="tt-logo-dark svg-img" src="images/logo-dark.svg" alt="">
-					</a>
+                        <a class="tt-logo" href="{{ url('/') }}">
+                            <img class="tt-logo-light svg-img" src="images/logo.svg" alt="">
+                            <img class="tt-logo-dark svg-img" src="images/logo-dark.svg" alt="">
+                        </a>
                     </div>
                     <!--desctope-menu-->
                     <div class="col-menu col-auto mr-auto ">
@@ -315,52 +235,31 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="index.html">HOME</a>
-                                        <ul>
-                                            <li><a href="index-moto.html">Moto Leader</a></li>
-                                            <li><a href="index-yacht.html">Yacht Leader</a></li>
-                                        </ul>
+                                        <a href="{{ url('/') }}">HOME</a>
+
                                     </li>
                                     <li class="is-subMenu">
-                                        <a href="about-us.html">ABOUT US</a>
-                                        <ul>
-                                            <li><a href="about-us-testimonials.html">TESTIMONIALS</a></li>
-                                        </ul>
+                                        <a href="#">ABOUT US</a>
+
                                     </li>
                                     <li>
-                                        <a href="services.html">SERVICES</a>
-                                        <ul>
-                                            <li><a href="services-item.html">Pre-Sale Preparation</a></li>
-                                        </ul>
+                                        <a href="#">SERVICES</a>
+
                                     </li>
-                                    <li class="is-subMenu">
-                                        <a href="inventory.html">INVENTORY</a>
-                                        <ul>
-                                            <li><a href="inventory.html">With Left Sidebar</a></li>
-                                            <li><a href="inventory-no-sidebar.html">No sidebar</a></li>
-                                            <li><a href="inventory-item.html">Single product</a></li>
-                                            <li><a href="inventory-item02.html">Single product 02</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="is-subMenu">
-                                        <a href="blog-right-column.html">BLOG</a>
-                                        <ul>
-                                            <li><a href="blog-right-column.html">With Right Sidebar</a></li>
-                                            <li><a href="blog-masonry-col-3.html">Three Colums</a></li>
-                                            <li><a href="blog-single-post.html">Single Post</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="shop.html">SHOP</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">CONTACTS</a></li>
+
+
+                                    <li><a href="#">CARS</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">CONTACTS</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <!--btn toggle modal-->
                     <div class="col-btn-toggle-modal col-auto">
-                        <a class="btn btn-toggle-modal" href="{{ route('login') }}" ><i class="icon-addcar"></i><span class="	tt-text">My Account</span>
-					</a>
+                        <a class="btn btn-toggle-modal" href="{{ route('login') }}"><i class="icon-addcar"></i><span
+                                class="	tt-text">My Account</span>
+                        </a>
                     </div>
                     <!--btn toggle mobile menu-->
                     <div class="col-menu-toggle col-auto">
@@ -409,7 +308,8 @@
                         <div class="slide-content">
                             <div class="container" data-animation="fadeInUpSm" data-animation-delay="0s">
                                 <div class="tp-caption-01-01">Shop Cars for Sale</div>
-                                <div class="tp-caption-01-02">HUGE DISCOUNTS<br>up to <span class="tt-default-color">25%</span></div>
+                                <div class="tp-caption-01-02">HUGE DISCOUNTS<br>up to <span
+                                        class="tt-default-color">25%</span></div>
                                 <div class="tp-caption-01-03">COMPLETE HAPPINESS</div>
                             </div>
                         </div>
@@ -426,111 +326,113 @@
                     </div>
                     <div class="tt-col-select visible-desctope tt-skinSelect-01">
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">NEW</option>
-						 <!--placeholder-->
-						<option value="Old">OLD</option>
-					</select>
+                            <option disabled="disabled" selected="selected">NEW</option>
+                            <!--placeholder-->
+                            <option value="Old">OLD</option>
+                        </select>
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">YEAR</option>
-						 <!--placeholder-->
-						<option value="1">2014</option>
-						<option value="2">2015</option>
-						<option value="3">2016</option>
-						<option value="4">2017</option>
-						<option value="5">2018</option>
-					</select>
+                            <option disabled="disabled" selected="selected">YEAR</option>
+                            <!--placeholder-->
+                            <option value="1">2014</option>
+                            <option value="2">2015</option>
+                            <option value="3">2016</option>
+                            <option value="4">2017</option>
+                            <option value="5">2018</option>
+                        </select>
                         <!-- one select -->
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">SELECT A MAKE</option>
-						 <!--placeholder-->
-						<option value="KIA">KIA</option>
-						<option value="CHEVROLET">CHEVROLET</option>
-						<option value="VOLKSWAGEN">VOLKSWAGEN</option>
-						<option value="AUDI">AUDI</option>
-						<option value="NISSAN">NISSAN</option>
-						<option value="LEXUS">LEXUS</option>
-						<option value="SUBARU">SUBARU</option>
-						<option value="SUZUKI">SUZUKI</option>
-					</select>
+                            <option disabled="disabled" selected="selected">SELECT A MAKE</option>
+                            <!--placeholder-->
+                            <option value="KIA">KIA</option>
+                            <option value="CHEVROLET">CHEVROLET</option>
+                            <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                            <option value="AUDI">AUDI</option>
+                            <option value="NISSAN">NISSAN</option>
+                            <option value="LEXUS">LEXUS</option>
+                            <option value="SUBARU">SUBARU</option>
+                            <option value="SUZUKI">SUZUKI</option>
+                        </select>
                         <!-- /one select -->
                         <!-- one select -->
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">SELECT A MODEL</option>
-						 <!--placeholder-->
-						<option value="SEDAN">SEDAN</option>
-						<option value="HATCHBACK">HATCHBACK</option>
-						<option value="SPORT CARS">SPORT CARS</option>
-						<option value="SUV">SUV</option>
-						<option value="Pickups">PICKUPS</option>
-						<option value="CONVERTIBLE">CONVERTIBLE</option>
-						<option value="COUPE">COUPE</option>
-						<option value="MINIVAN">MINIVAN</option>
-					</select>
+                            <option disabled="disabled" selected="selected">SELECT A MODEL</option>
+                            <!--placeholder-->
+                            <option value="SEDAN">SEDAN</option>
+                            <option value="HATCHBACK">HATCHBACK</option>
+                            <option value="SPORT CARS">SPORT CARS</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Pickups">PICKUPS</option>
+                            <option value="CONVERTIBLE">CONVERTIBLE</option>
+                            <option value="COUPE">COUPE</option>
+                            <option value="MINIVAN">MINIVAN</option>
+                        </select>
                         <!-- /one select -->
                         <select class="tt-select">
-				        <option disabled="disabled" selected="selected">PRICE</option>
-				        <!--placeholder-->
-				       	<option value="1000$">1000$</option>
-						<option value="5000$">5000$</option>
-						<option value="10000$">10000$</option>
-				    </select>
+                            <option disabled="disabled" selected="selected">PRICE</option>
+                            <!--placeholder-->
+                            <option value="1000$">1000$</option>
+                            <option value="5000$">5000$</option>
+                            <option value="10000$">10000$</option>
+                        </select>
                     </div>
                     <div class="tt-col-select visible-device tt-skinSelect-01">
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">NEW</option>
-						 <!--placeholder-->
-						<option value="Old">OLD</option>
-					</select>
+                            <option disabled="disabled" selected="selected">NEW</option>
+                            <!--placeholder-->
+                            <option value="Old">OLD</option>
+                        </select>
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">YEAR</option>
-						 <!--placeholder-->
-						<option value="1">2014</option>
-						<option value="2">2015</option>
-						<option value="3">2016</option>
-						<option value="4">2017</option>
-						<option value="5">2018</option>
-					</select>
+                            <option disabled="disabled" selected="selected">YEAR</option>
+                            <!--placeholder-->
+                            <option value="1">2014</option>
+                            <option value="2">2015</option>
+                            <option value="3">2016</option>
+                            <option value="4">2017</option>
+                            <option value="5">2018</option>
+                        </select>
                         <!-- one select -->
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">MAKE</option>
-						 <!--placeholder-->
-						<option value="KIA">KIA</option>
-						<option value="CHEVROLET">CHEVROLET</option>
-						<option value="VOLKSWAGEN">VOLKSWAGEN</option>
-						<option value="AUDI">AUDI</option>
-						<option value="NISSAN">NISSAN</option>
-						<option value="LEXUS">LEXUS</option>
-						<option value="SUBARU">SUBARU</option>
-						<option value="SUZUKI">SUZUKI</option>
-					</select>
+                            <option disabled="disabled" selected="selected">MAKE</option>
+                            <!--placeholder-->
+                            <option value="KIA">KIA</option>
+                            <option value="CHEVROLET">CHEVROLET</option>
+                            <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+                            <option value="AUDI">AUDI</option>
+                            <option value="NISSAN">NISSAN</option>
+                            <option value="LEXUS">LEXUS</option>
+                            <option value="SUBARU">SUBARU</option>
+                            <option value="SUZUKI">SUZUKI</option>
+                        </select>
                         <!-- /one select -->
                         <!-- one select -->
                         <select class="tt-select">
-						<option disabled="disabled" selected="selected">MODEL</option>
-						 <!--placeholder-->
-						<option value="SEDAN">SEDAN</option>
-						<option value="HATCHBACK">HATCHBACK</option>
-						<option value="SPORT CARS">SPORT CARS</option>
-						<option value="SUV">SUV</option>
-						<option value="Pickups">PICKUPS</option>
-						<option value="CONVERTIBLE">CONVERTIBLE</option>
-						<option value="COUPE">COUPE</option>
-						<option value="MINIVAN">MINIVAN</option>
-					</select>
+                            <option disabled="disabled" selected="selected">MODEL</option>
+                            <!--placeholder-->
+                            <option value="SEDAN">SEDAN</option>
+                            <option value="HATCHBACK">HATCHBACK</option>
+                            <option value="SPORT CARS">SPORT CARS</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Pickups">PICKUPS</option>
+                            <option value="CONVERTIBLE">CONVERTIBLE</option>
+                            <option value="COUPE">COUPE</option>
+                            <option value="MINIVAN">MINIVAN</option>
+                        </select>
                         <!-- /one select -->
                         <select class="tt-select">
-				        <option disabled="disabled" selected="selected">PRICE</option>
-				        <!--placeholder-->
-				       	<option value="1000$">1000$</option>
-						<option value="5000$">5000$</option>
-						<option value="10000$">10000$</option>
-				    </select>
+                            <option disabled="disabled" selected="selected">PRICE</option>
+                            <!--placeholder-->
+                            <option value="1000$">1000$</option>
+                            <option value="5000$">5000$</option>
+                            <option value="10000$">10000$</option>
+                        </select>
                         <div class="tt-btn">
-                            <a href="#" class="btn tt-icon-left"><i class="icon-musica-searcher"></i><span>294&nbsp;</span>CARS</a>
+                            <a href="#" class="btn tt-icon-left"><i
+                                    class="icon-musica-searcher"></i><span>294&nbsp;</span>CARS</a>
                         </div>
                     </div>
                     <div class="tt-col-btn">
-                        <a href="#" class="btn tt-icon-left"><i class="icon-musica-searcher"></i><span class="tt-mobile-hide">294&nbsp;</span>CARS</a>
+                        <a href="#" class="btn tt-icon-left"><i class="icon-musica-searcher"></i><span
+                                class="tt-mobile-hide">294&nbsp;</span>CARS</a>
                     </div>
                 </div>
             </div>
@@ -542,11 +444,15 @@
                     <div class="tt-description">The Easiest Way to Find Your Next Car</div>
                 </div>
                 <div class="tt-text-center ws-short-structure">
-                    For 25 years, Car Leader has been raising the standard of used car retailing with one of the most innovative and reliable used vehicle programmes ever created. A comprehensive range of benefits as standard has evolved over time and, today, drivers can
+                    For 25 years, Car Leader has been raising the standard of used car retailing with one of the most
+                    innovative and reliable used vehicle programmes ever created. A comprehensive range of benefits as
+                    standard has evolved over time and, today, drivers can
                     leave the forecourt with total reassurance and peace of mind.
                     <span class="tt-hide-block">
-					For used vehicles, we calculate a fair retail price based on a detailed analysis of comparable current and previous car listings in a given market. We call this estimate the Car Leader Instant Market Value.
-				</span>
+                        For used vehicles, we calculate a fair retail price based on a detailed analysis of comparable
+                        current and previous car listings in a given market. We call this estimate the Car Leader
+                        Instant Market Value.
+                    </span>
                 </div>
                 <div class="ws-short-btn">
                     <a href="#" target="_blank" class="ws-btn-more">READ MORE</a>
@@ -560,63 +466,64 @@
                     <div class="tt-description">NEW &amp; USED CARS FOR SALE</div>
                 </div>
                 <!--carusel-->
-                <div class="js-carousel tt-arrow-center-fluid tt-arrow-color02 slick-alignment-arrows" data-item="5" data-dots="true">
+                <div class="js-carousel tt-arrow-center-fluid tt-arrow-color02 slick-alignment-arrows" data-item="5"
+                    data-dots="true">
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-01.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Sedan <span class="tt-total">12 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-01.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Sedan <span class="tt-total">12 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-02.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Hatchback <span class="tt-total">7 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-02.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Hatchback <span class="tt-total">7 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-03.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Sport Cars <span class="tt-total">9 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-03.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Sport Cars <span class="tt-total">9 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-04.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">SUV <span class="tt-total">25 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-04.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">SUV <span class="tt-total">25 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-05.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Pickups <span class="tt-total">9 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-05.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Pickups <span class="tt-total">9 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-06.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Convertible <span class="tt-total">9 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-06.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Convertible <span class="tt-total">9 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-07.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Coupe <span class="tt-total">11 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-07.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Coupe <span class="tt-total">11 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                     <a href="inventory.html" class="tt-media-02">
-					<img src="images/custom/media02-img-08.jpg" alt="">
-					<div class="tt-description">
-						<h5 class="tt-title">Minivan <span class="tt-total">9 <span>Offers</span></span></h5>
-						<span class="tt-link-marker">view cars</span>
-					</div>
-				</a>
+                        <img src="images/custom/media02-img-08.jpg" alt="">
+                        <div class="tt-description">
+                            <h5 class="tt-title">Minivan <span class="tt-total">9 <span>Offers</span></span></h5>
+                            <span class="tt-link-marker">view cars</span>
+                        </div>
+                    </a>
                 </div>
                 <!--/carusel-->
             </div>
@@ -896,7 +803,9 @@
                                         <div class="tt-item-content">
                                             <h6 class="tt-title">Pre-Sale Preparation</h6>
                                             <p>
-                                                Before you sell your car, or trade it in to get something bigger or better, we can help you make your car look as good as possible before anyone comes to see it.
+                                                Before you sell your car, or trade it in to get something bigger or
+                                                better, we can help you make your car look as good as possible before
+                                                anyone comes to see it.
 
                                             </p>
                                         </div>
@@ -910,7 +819,9 @@
                                         <div class="tt-item-content">
                                             <h6 class="tt-title">Financing</h6>
                                             <p>
-                                                Car Leader has formed close relationships with several local and national lenders, so we're able to offer financing rates that many other car dealers can't offer.
+                                                Car Leader has formed close relationships with several local and
+                                                national lenders, so we're able to offer financing rates that many other
+                                                car dealers can't offer.
 
                                             </p>
                                         </div>
@@ -926,7 +837,9 @@
                                         <div class="tt-item-content">
                                             <h6 class="tt-title">Trade-In Service</h6>
                                             <p>
-                                                Make the most of our simple and hassle-free trade-in program! Our service allows you to purchase a new car at an attractive price, while saving you all the trouble of handling your old car.
+                                                Make the most of our simple and hassle-free trade-in program! Our
+                                                service allows you to purchase a new car at an attractive price, while
+                                                saving you all the trouble of handling your old car.
                                             </p>
                                         </div>
                                     </div>
@@ -939,7 +852,9 @@
                                         <div class="tt-item-content">
                                             <h6 class="tt-title">Test Drive Any Car </h6>
                                             <p>
-                                                We welcome you to stop by and take a look at the pristine inventory we offer. Most importantly, if you have any questions or concerns, speak to the seller immediately.<br>
+                                                We welcome you to stop by and take a look at the pristine inventory we
+                                                offer. Most importantly, if you have any questions or concerns, speak to
+                                                the seller immediately.<br>
                                                 <a class="link-tel" href="#">+01 123 456 78</a>
                                             </p>
                                         </div>
@@ -957,7 +872,9 @@
                                 <div class="tt-item-content">
                                     <h6 class="tt-title">Pre-Sale Preparation</h6>
                                     <p>
-                                        Before you sell your car, or trade it in to get something bigger or better, we can help you make your car look as good as possible before anyone comes to see it.
+                                        Before you sell your car, or trade it in to get something bigger or better, we
+                                        can help you make your car look as good as possible before anyone comes to see
+                                        it.
 
                                     </p>
                                 </div>
@@ -969,7 +886,9 @@
                                 <div class="tt-item-content">
                                     <h6 class="tt-title">Trade-In Service</h6>
                                     <p>
-                                        Make the most of our simple and hassle-free trade-in program! Our service allows you to purchase a new car at an attractive price, while saving you all the trouble of handling your old car.
+                                        Make the most of our simple and hassle-free trade-in program! Our service allows
+                                        you to purchase a new car at an attractive price, while saving you all the
+                                        trouble of handling your old car.
 
                                     </p>
                                 </div>
@@ -981,7 +900,9 @@
                                 <div class="tt-item-content">
                                     <h6 class="tt-title">Financing</h6>
                                     <p>
-                                        Car Leader has formed close relationships with several local and national lenders, so we're able to offer financing rates that many other car dealers can't offer.
+                                        Car Leader has formed close relationships with several local and national
+                                        lenders, so we're able to offer financing rates that many other car dealers
+                                        can't offer.
                                     </p>
                                 </div>
                             </div>
@@ -992,7 +913,9 @@
                                 <div class="tt-item-content">
                                     <h6 class="tt-title">Test Drive Any Car</h6>
                                     <p>
-                                        We welcome you to stop by and take a look at the pristine inventory we offer. Most importantly, if you have any questions or concerns, speak to the seller immediately.
+                                        We welcome you to stop by and take a look at the pristine inventory we offer.
+                                        Most importantly, if you have any questions or concerns, speak to the seller
+                                        immediately.
                                         <br>
                                         <a class="link-tel" href="#">+01 123 456 78</a>
                                     </p>
@@ -1049,7 +972,8 @@
                     <h3 class="tt-title">What's New</h3>
                     <div class="tt-description">Read our latest blog posts</div>
                 </div>
-                <div class="js-carousel-news tt-media-carousel tt-arrow-center slick-alignment-arrows dots-error content-error">
+                <div
+                    class="js-carousel-news tt-media-carousel tt-arrow-center slick-alignment-arrows dots-error content-error">
                     <div>
                         <a href="blog-right-column.html" class="tt-media">
                             <div class="tt-img">
@@ -1128,7 +1052,8 @@
                         <h3 class="tt-title">Our Testimonials</h3>
                         <div class="tt-description">What our happy clients say about us</div>
                     </div>
-                    <div class="tt-reviews-carousel js-reviews-carousel tt-arrow-center slick-alignment-arrows" data-dots="true">
+                    <div class="tt-reviews-carousel js-reviews-carousel tt-arrow-center slick-alignment-arrows"
+                        data-dots="true">
                         <div class="tt-reviews-content">
                             <div class="box-show-rating">
                                 <div class="tt-rating">
@@ -1139,7 +1064,9 @@
                                     <i class="icon-star"></i>
                                 </div>
                             </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot so it wasn't immediately available for a test drive and didn't have a price yet, but my salesman, kept me fully apprised of the situation. Offered a refundable
+                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
+                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
+                            salesman, kept me fully apprised of the situation. Offered a refundable
                             deposit until I could test drive it and make a decision. Great car, great sales team.
                             <p class="tt-title">
                                 Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
@@ -1155,7 +1082,9 @@
                                     <i class="icon-star"></i>
                                 </div>
                             </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot so it wasn't immediately available for a test drive and didn't have a price yet, but my salesman, kept me fully apprised of the situation. Offered a refundable
+                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
+                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
+                            salesman, kept me fully apprised of the situation. Offered a refundable
                             deposit until I could test drive it and make a decision. Great car, great sales team.
                             <p class="tt-title">
                                 Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
@@ -1171,7 +1100,9 @@
                                     <i class="icon-star"></i>
                                 </div>
                             </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot so it wasn't immediately available for a test drive and didn't have a price yet, but my salesman, kept me fully apprised of the situation. Offered a refundable
+                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
+                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
+                            salesman, kept me fully apprised of the situation. Offered a refundable
                             deposit until I could test drive it and make a decision. Great car, great sales team.
                             <p class="tt-title">
                                 Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
@@ -1180,7 +1111,8 @@
                     </div>
                 </div>
                 <div class="box-reviews-img">
-                    <div class="slide-img01 tt-show"><img src="images/custom/parallax01-img01.png" alt=""></div>
+                    <div class="slide-img01 tt-show"><img src="images/custom/parallax01-img01.png" alt="">
+                    </div>
                     <div class="slide-img02"><img src="images/custom/parallax01-img02.png" alt=""></div>
                     <div class="slide-img03"><img src="images/custom/parallax01-img03.png" alt=""></div>
                 </div>
@@ -1193,7 +1125,8 @@
                     <div class="tt-description">It was really easy to sell your car!</div>
                 </div>
                 <div class="text-center tt-indent-btn">
-                    <a href="#" class="btn" data-toggle="modal" data-target="#modalAddYourItem">SUBMIT YOUR VEHICLE NOW</a>
+                    <a href="#" class="btn" data-toggle="modal" data-target="#modalAddYourItem">SUBMIT YOUR
+                        VEHICLE NOW</a>
                 </div>
             </div>
         </div>
@@ -1217,8 +1150,8 @@
                 <div class="row justify-content-center">
                     <div class="col col-auto">
                         <a class="tt-logo" href="index.html">
-						<img class="tt-logo-dark svg-img" src="images/logo.svg" alt="">
-					</a>
+                            <img class="tt-logo-dark svg-img" src="images/logo.svg" alt="">
+                        </a>
                     </div>
                 </div>
                 <div class="tt-row-custom">
@@ -1229,15 +1162,15 @@
                             </li>
                             <li>
                                 <a href="#">
-								<i class="icon-15874"></i>
-								+01 123 456 78
-							</a>
+                                    <i class="icon-15874"></i>
+                                    +01 123 456 78
+                                </a>
                             </li>
                             <li>
                                 <a href="mailto:info@youremal.com">
-								<i class="icon-mail"></i>
-								info@youremal.com
-							</a>
+                                    <i class="icon-mail"></i>
+                                    info@youremal.com
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -1269,7 +1202,8 @@
                                 <h6 class="tt-ttile"><i class="icon-mail1"></i>NEWSLETTER</h6>
                                 <form id="newsletterform" method="post" novalidate="novalidate" action="#">
                                     <div class="form-group">
-                                        <input type="text" name="email" class="form-control" placeholder="enter your email to subscribe">
+                                        <input type="text" name="email" class="form-control"
+                                            placeholder="enter your email to subscribe">
                                     </div>
                                     <button type="submit" class="tt-btn">SUBSCRIBE</button>
                                     <div class="tt-modal-message">Form sent successfully</div>
@@ -1340,7 +1274,9 @@
                         <li class="value-item">V6 EcoBoost TT</li>
                         <li class="value-item">252832</li>
                         <li class="value-item value-multy">
-                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning, Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna Type: Diversity, Anti-Theft System:2-Stage Unlocking Doors, ABS: 4-Wheel,Active
+                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning,
+                            Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna
+                            Type: Diversity, Anti-Theft System:2-Stage Unlocking Doors, ABS: 4-Wheel,Active
                             Head 2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head
                         </li>
                     </ul>
@@ -1363,7 +1299,9 @@
                         <li class="value-item">V6 EcoBoost TT</li>
                         <li class="value-item">215838</li>
                         <li class="value-item value-multy">
-                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning, Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna Type: Diversity, Anti-Theft System:
+                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning,
+                            Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna
+                            Type: Diversity, Anti-Theft System:
                         </li>
                     </ul>
                 </div>
@@ -1385,7 +1323,9 @@
                         <li class="value-item">V6 EcoBoost TT</li>
                         <li class="value-item">112532</li>
                         <li class="value-item value-multy">
-                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning, Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna Type: Diversity, Anti-Theft System:
+                            2-Stage Unlocking Doors, ABS: 4-Wheel,Active Head Restraints: Dual Front, Air Conditioning,
+                            Air Filtration, Airbag Deactivation: Occupant Sensing Passenger, Ambient Lighting, Antenna
+                            Type: Diversity, Anti-Theft System:
                         </li>
                     </ul>
                 </div>
