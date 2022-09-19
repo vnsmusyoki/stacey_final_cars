@@ -7,22 +7,25 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('pages.layout');
     }
 
-    public function createaccount(Request $request){
+    public function createaccount(Request $request)
+    {
 
         $this->validate($request, [
-            'name'=>'required',
-            'username'=>'required|string|min:4|unique:users',
-            'phone_number'=>'required|digits:10|unique:users',
+            'first_name' => 'required|string|min:3',
+            'other_names' => 'required|string|min:3',
+            'username' => 'required|string|min:4|unique:users',
+            'phone_number' => 'required|digits:10|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6',
             'password_confirmation' => 'required|min:6',
         ]);
-
-        $name= $request->first_name.' '.$request->other_names;
+        // $fullname = $request->input('first_name')." ".$request->input('other_names');
+        $name = $request->first_name . ' ' . $request->other_names;
         $user = new User;
         $user->name = $name;
         $user->email = $request->email;

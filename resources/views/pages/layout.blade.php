@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarLeader - Online cars Auctoning System</title>
+    <title>SmartMart Motors - Online cars Auctoning System</title>
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-ffit=no">
@@ -168,13 +168,7 @@
                         </ul>
                     </div>
                     <div class="col-auto">
-                        <div class="tt-language">
-                            <div class="tt-skinSelect-02">
-                                <select class="tt-select">
-                                    <option value="ENG">ENG</option>
-                                </select>
-                            </div>
-                        </div>
+
                         <div class="tt-dropdown-obj tt-searcher">
                             <a href="#" class="tt-dropdown-toggle">
                                 <i class="icon-musica-searcher"></i>
@@ -290,12 +284,12 @@
                 </div>
                 <div class="mainSlider">
                     <div class="slide">
-                        <div class="img--holder" data-bg="images/slider/slide-01.jpg"></div>
+                        <div class="img--holder" data-bg="images/slider/slide5.jpg"></div>
                         <div class="slide-content">
                             <div class="container" data-animation="fadeInUpSm" data-animation-delay="0s">
-                                <a href="#" class="tt-caption-custom">
-                                    <div class="tt-title">
-                                        <div class="text-small">We Don't Sell Cars</div>
+                                <a href="inventory.html" class="tt-caption-custom">
+                                    <div class="tt-title"> -->
+                                        <div class="text-small">We Don't Sell Cars</div> -->
                                         <div class="text-large">We Sell<br>a DREAM</div>
                                     </div>
                                     <span><i class="icon-handsshake"></i>Get Approved</span>
@@ -304,15 +298,8 @@
                         </div>
                     </div>
                     <div class="slide">
-                        <div class="img--holder" data-bg="images/slider/slide-02.jpg"></div>
-                        <div class="slide-content">
-                            <div class="container" data-animation="fadeInUpSm" data-animation-delay="0s">
-                                <div class="tp-caption-01-01">Shop Cars for Sale</div>
-                                <div class="tp-caption-01-02">HUGE DISCOUNTS<br>up to <span
-                                        class="tt-default-color">25%</span></div>
-                                <div class="tp-caption-01-03">COMPLETE HAPPINESS</div>
-                            </div>
-                        </div>
+                        <div class="img--holder" data-bg="images/slider/slide5.jpg"></div>
+
                     </div>
                 </div>
             </div>
@@ -440,17 +427,16 @@
         <div class="container-indent">
             <div class="container">
                 <div class="tt-block-title">
-                    <h1 class="tt-title">Welcome to <span class="tt-defaul-color">Car</span> Leader</h1>
+                    <h1 class="tt-title">Welcome to <span class="tt-defaul-color">Car</span> Auctioning System</h1>
                     <div class="tt-description">The Easiest Way to Find Your Next Car</div>
                 </div>
                 <div class="tt-text-center ws-short-structure">
-                    For 25 years, Car Leader has been raising the standard of used car retailing with one of the most
+                    For 25 years, SmartMart Motors has been raising the standard of used car retailing with one of the most
                     innovative and reliable used vehicle programmes ever created. A comprehensive range of benefits as
                     standard has evolved over time and, today, drivers can
                     leave the forecourt with total reassurance and peace of mind.
                     <span class="tt-hide-block">
-                        For used vehicles, we calculate a fair retail price based on a detailed analysis of comparable
-                        current and previous car listings in a given market. We call this estimate the Car Leader
+                        We call this estimate the SmartMart Motors
                         Instant Market Value.
                     </span>
                 </div>
@@ -528,79 +514,7 @@
                 <!--/carusel-->
             </div>
         </div>
-        <div class="container-indent">
-            <div class="container">
-                <div class="tt-block-title">
-                    <h3 class="tt-title">Browse By Type</h3>
-                    <div class="tt-description">We work with brands</div>
-                    <a href="inventory.html" class="tt-link-redirect">SHOW ALL TYPES</a>
-                </div>
-                <!--carusel-->
-                <div class="js-carousel-brand tt-arrow-center slick-alignment-arrows">
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img01.png' alt="">
-                        </div>
-                        <h6 class="tt-title">KOA (7)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img02.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Levro (10)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img03.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Porserg (25)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img04.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Seretta (13)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img05.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Dossan (21)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img06.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Noex (5)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img07.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Winger (17)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img08.png' alt="">
-                        </div>
-                        <h6 class="tt-title">WMB (6)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img09.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Jeex (6)</h6>
-                    </a>
-                    <a class="tt-brand" href="inventory.html" target="_blank">
-                        <div class="tt-img">
-                            <img src='images/custom/brand_img10.png' alt="">
-                        </div>
-                        <h6 class="tt-title">Auster (6)</h6>
-                    </a>
-                </div>
-                <!--/carusel-->
-            </div>
-        </div>
+
         <div class="container-indent">
             <div class="tt-promo-02" data-bg="images/custom/box-parallax02.jpg">
                 <div class="container">
@@ -614,7 +528,7 @@
                                 <div class="tt-line-dotted tt-right"></div>
                                 <i class="icon-carsearch2"></i>
                             </div>
-                            <h6 class="tt-title">View Our Inventory</h6>
+                            <h6 class="tt-title">Create an account</h6>
                         </a>
                         <div class="tt-item-smal">
                             <div class="box-icon">
@@ -627,7 +541,7 @@
                                 <div class="tt-line-dotted tt-right"></div>
                                 <i class="icon-tradein"></i>
                             </div>
-                            <h6 class="tt-title">Value Your Trade-In</h6>
+                            <h6 class="tt-title">Upload your car</h6>
                         </a>
                         <div class="tt-item-smal">
                             <div class="box-icon">
@@ -640,7 +554,7 @@
                                 <div class="tt-line-dotted tt-right"></div>
                                 <i class="icon-financing"></i>
                             </div>
-                            <h6 class="tt-title">Get Easy Financing</h6>
+                            <h6 class="tt-title">Other users to place bids</h6>
                         </a>
                         <div class="tt-item-smal">
                             <div class="box-icon">
@@ -652,476 +566,20 @@
                                 <div class="tt-line-dotted tt-left"></div>
                                 <i class="icon-payment"></i>
                             </div>
-                            <h6 class="tt-title">Make A Payment</h6>
+                            <h6 class="tt-title">Pick the highest bidder and close the bid</h6>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-indent">
-            <div class="container">
-                <div class="tt-block-title">
-                    <h3 class="tt-title">Weekly Specials</h3>
-                    <div class="tt-description">Find your perfect car</div>
-                </div>
-            </div>
-            <div class="portfolio-masonry-layout">
-                <div class="container hidden-mobile">
-                    <a href="inventory.html" class="extra-link">View more cars</a>
-                </div>
-                <div class="tt-portfolio-masonry">
-                    <div class="tt-filter-nav">
-                        <div class="button active" data-filter="*">ALL (294)</div>
-                        <div class="button" data-filter=".sort-value-01">New (112)</div>
-                        <div class="button" data-filter=".sort-value-02">Used (136)</div>
-                        <div class="button" data-filter=".sort-value-03">Certified (46)</div>
-                    </div>
-                    <div class="tt-portfolio-content layout-default">
-                        <div class="element-item sort-value-02">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img01.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title"><span>NEW</span> 2017 Toytoa Cilica</h5>
-                                        <span class="tt-price">$24.850</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-02">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img02.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title"><span>NEW</span> 2018 Lehus CP200h</h5>
-                                        <span class="tt-price">$30.250</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-01">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img03.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title"><span>NEW</span> 2019 Chrevolet Cruse</h5>
-                                        <span class="tt-price">$24.850</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-03">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img04.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title">2019 Toytoa Carella Hatchback</h5>
-                                        <span class="tt-price">$37.150</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item element-item-2x sort-value-01">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img09.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title"><span>NEW</span> 2018 Chawy Traverse Specs</h5>
-                                        <span class="tt-price">$44.550</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-02">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img05.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title">2017 Heundu Genesis G90</h5>
-                                        <span class="tt-price">$24.000</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-02">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img06.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title">2019 Codallac CT6</h5>
-                                        <span class="tt-price">$17.850</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-03">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img07.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title"><span>NEW</span> 2018 Shroda Kopiaq L&K</h5>
-                                        <span class="tt-price">$19.250</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="element-item sort-value-01">
-                            <a class="tt-portfolio-item" href="inventory-item02.html">
-                                <figure>
-                                    <img src="images/gallery/gallery_img08.jpg" alt="">
-                                    <figcaption>
-                                        <h5 class="tt-title">2018 Chrevolet Equinex</h5>
-                                        <span class="tt-price">$33.850</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container visible-mobile">
-                    <a href="inventory-no-sidebar.html" class="extra-link">View more cars</a>
-                </div>
-            </div>
-        </div>
-        <div class="container-indent no-margin">
-            <div class="tt-layout01-bg">
-                <div class="container">
-                    <div class="tt-block-title">
-                        <h3 class="tt-title">What We Offer</h3>
-                        <div class="tt-description">our featured services</div>
-                    </div>
-                </div>
-                <div class="tt-layout01">
-                    <div class="layout01-desctope">
-                        <div class="container">
-                            <div class="row no-gutters">
-                                <div class="col-6 col-lg-4">
-                                    <div class="tt-item tt-icon-right">
-                                        <div class="tt-item-icon">
-                                            <i class="icon-car-washing-machine"></i>
-                                        </div>
-                                        <div class="tt-item-content">
-                                            <h6 class="tt-title">Pre-Sale Preparation</h6>
-                                            <p>
-                                                Before you sell your car, or trade it in to get something bigger or
-                                                better, we can help you make your car look as good as possible before
-                                                anyone comes to see it.
 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-4  ml-auto">
-                                    <div class="tt-item">
-                                        <div class="tt-item-icon">
-                                            <i class="icon-financing"></i>
-                                        </div>
-                                        <div class="tt-item-content">
-                                            <h6 class="tt-title">Financing</h6>
-                                            <p>
-                                                Car Leader has formed close relationships with several local and
-                                                national lenders, so we're able to offer financing rates that many other
-                                                car dealers can't offer.
 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row no-gutters">
-                                <div class="col-6 col-lg-4">
-                                    <div class="tt-item tt-icon-right tt-icon-bottom">
-                                        <div class="tt-item-icon">
-                                            <i class="icon-tradein2"></i>
-                                        </div>
-                                        <div class="tt-item-content">
-                                            <h6 class="tt-title">Trade-In Service</h6>
-                                            <p>
-                                                Make the most of our simple and hassle-free trade-in program! Our
-                                                service allows you to purchase a new car at an attractive price, while
-                                                saving you all the trouble of handling your old car.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-4  ml-auto">
-                                    <div class="tt-item  tt-icon-bottom">
-                                        <div class="tt-item-icon">
-                                            <i class="icon-testdrive"></i>
-                                        </div>
-                                        <div class="tt-item-content">
-                                            <h6 class="tt-title">Test Drive Any Car </h6>
-                                            <p>
-                                                We welcome you to stop by and take a look at the pristine inventory we
-                                                offer. Most importantly, if you have any questions or concerns, speak to
-                                                the seller immediately.<br>
-                                                <a class="link-tel" href="#">+01 123 456 78</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layout01-mobile">
-                        <div class="slider-layout">
-                            <div class="tt-item">
-                                <div class="tt-item-icon">
-                                    <i class="icon-car-washing-machine"></i>
-                                </div>
-                                <div class="tt-item-content">
-                                    <h6 class="tt-title">Pre-Sale Preparation</h6>
-                                    <p>
-                                        Before you sell your car, or trade it in to get something bigger or better, we
-                                        can help you make your car look as good as possible before anyone comes to see
-                                        it.
 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="tt-item">
-                                <div class="tt-item-icon">
-                                    <i class="icon-tradein2"></i>
-                                </div>
-                                <div class="tt-item-content">
-                                    <h6 class="tt-title">Trade-In Service</h6>
-                                    <p>
-                                        Make the most of our simple and hassle-free trade-in program! Our service allows
-                                        you to purchase a new car at an attractive price, while saving you all the
-                                        trouble of handling your old car.
 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="tt-item">
-                                <div class="tt-item-icon">
-                                    <i class="icon-financing"></i>
-                                </div>
-                                <div class="tt-item-content">
-                                    <h6 class="tt-title">Financing</h6>
-                                    <p>
-                                        Car Leader has formed close relationships with several local and national
-                                        lenders, so we're able to offer financing rates that many other car dealers
-                                        can't offer.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="tt-item">
-                                <div class="tt-item-icon">
-                                    <i class="icon-testdrive"></i>
-                                </div>
-                                <div class="tt-item-content">
-                                    <h6 class="tt-title">Test Drive Any Car</h6>
-                                    <p>
-                                        We welcome you to stop by and take a look at the pristine inventory we offer.
-                                        Most importantly, if you have any questions or concerns, speak to the seller
-                                        immediately.
-                                        <br>
-                                        <a class="link-tel" href="#">+01 123 456 78</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-indent no-margin">
-            <div class="tt-promo-01" data-bg="images/custom/box-promo01.jpg">
-                <div class="container">
-                    <div class="tt-block-title">
-                        <h3 class="tt-title">What Have We Achieved</h3>
-                        <div class="tt-description">Real Figures</div>
-                    </div>
-                    <div class="tt-promo-layout counter-js slider-layout">
-                        <div class="tt-item">
-                            <div class="box-value">
-                                <i class="icon-vehicles"></i>
-                                <span><span class="tt-counter" data-from="0" data-to="4567">0</span></span>
-                            </div>
-                            <h6 class="tt-title">Vehicles In Stock</h6>
-                        </div>
-                        <div class="tt-item">
-                            <div class="box-value">
-                                <i class="icon-awards"></i>
-                                <span><span class="tt-counter" data-from="0" data-to="254">0</span></span>
-                            </div>
-                            <h6 class="tt-title">Awards</h6>
-                        </div>
-                        <div class="tt-item">
-                            <div class="box-value">
-                                <i class="icon-customers"></i>
-                                <span><span class="tt-counter" data-from="0" data-to="100">0</span>%</span>
-                            </div>
-                            <h6 class="tt-title">Happy Customers</h6>
-                        </div>
-                        <div class="tt-item">
-                            <div class="box-value">
-                                <i class="icon-staff"></i>
-                                <span><span class="tt-counter" data-from="0" data-to="50">0</span>+</span>
-                            </div>
-                            <h6 class="tt-title">Qualified Staff</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-indent">
-            <div class="container">
-                <div class="tt-block-title">
-                    <h3 class="tt-title">What's New</h3>
-                    <div class="tt-description">Read our latest blog posts</div>
-                </div>
-                <div
-                    class="js-carousel-news tt-media-carousel tt-arrow-center slick-alignment-arrows dots-error content-error">
-                    <div>
-                        <a href="blog-right-column.html" class="tt-media">
-                            <div class="tt-img">
-                                <img src="images/custom/img_01.jpg" alt="">
-                            </div>
-                            <div class="tt-layot">
-                                <div class="tt-time">
-                                    <span>16</span> Apr
-                                </div>
-                                <h3 class="title">5 of the Most Useful Auto Industry Trends for an Efficient</h3>
-                                <p>
-                                    Auto industry trends are fleeting. Unless they can enhance the efficiency...
-                                </p>
-                                <span class="tt-link">read more</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blog-right-column.html" class="tt-media">
-                            <div class="tt-img">
-                                <img src="images/custom/img_02.jpg" alt="">
-                            </div>
-                            <div class="tt-layot">
-                                <div class="tt-time">
-                                    <span>18</span> Apr
-                                </div>
-                                <h3 class="title">7 of the Best Car Salesman Tips for New Hires</h3>
-                                <p>
-                                    These car salesman tips are just what you need to help train new hires...
-                                </p>
-                                <span class="tt-link">read more</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blog-right-column.html" class="tt-media">
-                            <div class="tt-img">
-                                <img src="images/custom/img_03.jpg" alt="">
-                            </div>
-                            <div class="tt-layot">
-                                <div class="tt-time">
-                                    <span>25</span> Apr
-                                </div>
-                                <h3 class="title">How to use a Dealer Swap to Increase Sales</h3>
-                                <p>
-                                    Are you taking advantage of all that a dealer swap has to offer?
-                                </p>
-                                <span class="tt-link">read more</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blog-right-column.html" class="tt-media">
-                            <div class="tt-img">
-                                <img src="images/custom/img_06.jpg" alt="">
-                            </div>
-                            <div class="tt-layot">
-                                <div class="tt-time">
-                                    <span>16</span> Apr
-                                </div>
-                                <h3 class="title">5 of the Most Useful Auto Industry Trends for an Efficient</h3>
-                                <p>
-                                    Auto industry trends are fleeting. Unless they can enhance the efficiency...
-                                </p>
-                                <span class="tt-link">read more</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-indent">
-            <div class="box-reviews">
-                <div class="container">
-                    <div class="tt-block-title">
-                        <h3 class="tt-title">Our Testimonials</h3>
-                        <div class="tt-description">What our happy clients say about us</div>
-                    </div>
-                    <div class="tt-reviews-carousel js-reviews-carousel tt-arrow-center slick-alignment-arrows"
-                        data-dots="true">
-                        <div class="tt-reviews-content">
-                            <div class="box-show-rating">
-                                <div class="tt-rating">
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                </div>
-                            </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
-                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
-                            salesman, kept me fully apprised of the situation. Offered a refundable
-                            deposit until I could test drive it and make a decision. Great car, great sales team.
-                            <p class="tt-title">
-                                Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
-                            </p>
-                        </div>
-                        <div class="tt-reviews-content">
-                            <div class="box-show-rating">
-                                <div class="tt-rating">
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                </div>
-                            </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
-                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
-                            salesman, kept me fully apprised of the situation. Offered a refundable
-                            deposit until I could test drive it and make a decision. Great car, great sales team.
-                            <p class="tt-title">
-                                Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
-                            </p>
-                        </div>
-                        <div class="tt-reviews-content">
-                            <div class="box-show-rating">
-                                <div class="tt-rating">
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                    <i class="icon-star"></i>
-                                </div>
-                            </div>
-                            Great treatment right form the get go. Was looking at a car that had just arrived on the lot
-                            so it wasn't immediately available for a test drive and didn't have a price yet, but my
-                            salesman, kept me fully apprised of the situation. Offered a refundable
-                            deposit until I could test drive it and make a decision. Great car, great sales team.
-                            <p class="tt-title">
-                                Charles M. Worsham, <span>Toyota C-HR Eclipse</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-reviews-img">
-                    <div class="slide-img01 tt-show"><img src="images/custom/parallax01-img01.png" alt="">
-                    </div>
-                    <div class="slide-img02"><img src="images/custom/parallax01-img02.png" alt=""></div>
-                    <div class="slide-img03"><img src="images/custom/parallax01-img03.png" alt=""></div>
-                </div>
-            </div>
-        </div>
         <div class="container-indent">
             <div class="container">
                 <div class="tt-block-title tt-title-custom">
-                    <h3 class="tt-title">Sell Your Car Quickly and Easily with Us</h3>
+                    <h3 class="tt-title">Sell Your Car to the highest bidder</h3>
                     <div class="tt-description">It was really easy to sell your car!</div>
                 </div>
                 <div class="text-center tt-indent-btn">
@@ -1139,96 +597,7 @@
             </div>
         </div>
     </div>
-    <footer id="tt-footer">
-        <div class="tt-footer-layout">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div id="tt-footer-menu">
 
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col col-auto">
-                        <a class="tt-logo" href="index.html">
-                            <img class="tt-logo-dark svg-img" src="images/logo.svg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="tt-row-custom">
-                    <div class="tt-col">
-                        <ul class="tt-list-info">
-                            <li>
-                                <i class="icon-149984"></i> 3261 Anmoore Road, Brooklyn, NY 11230
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-15874"></i>
-                                    +01 123 456 78
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@youremal.com">
-                                    <i class="icon-mail"></i>
-                                    info@youremal.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tt-col">
-                        <div class="tt-box-info">
-                            <div class="tt-item">
-                                <h6 class="tt-ttile"><i class="icon-icon"></i>Sales Department</h6>
-                                <ul>
-                                    <li>Mon-Sat : 8:00am - 5:00pm</li>
-                                    <li>Sunday is closed</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tt-col">
-                        <div class="tt-box-info">
-                            <div class="tt-item">
-                                <h6 class="tt-ttile"><i class="icon-icon"></i>Service Department</h6>
-                                <ul>
-                                    <li>Mon-Sat : 8:00am - 5:00pm</li>
-                                    <li>Sunday is closed</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tt-col">
-                        <div class="tt-box-info">
-                            <div class="tt-item">
-                                <h6 class="tt-ttile"><i class="icon-mail1"></i>NEWSLETTER</h6>
-                                <form id="newsletterform" method="post" novalidate="novalidate" action="#">
-                                    <div class="form-group">
-                                        <input type="text" name="email" class="form-control"
-                                            placeholder="enter your email to subscribe">
-                                    </div>
-                                    <button type="submit" class="tt-btn">SUBSCRIBE</button>
-                                    <div class="tt-modal-message">Form sent successfully</div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col col-auto">
-                        <ul class="tt-social-icon">
-                            <li><a href="https://www.facebook.com/" target="_blank" class="icon-226234"></a></li>
-                            <li><a href="https://twitter.com" target="_blank" class="icon-8800"></a></li>
-                            <li><a href="https://www.google.com/" target="_blank" class="icon-733613"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tt-footer-copyright">
-            <div class="container">
-                <span>&copy; Copyright 2022 Car Leader</span> <a href="#">PRIVACY POLICY</a>
-            </div>
-        </div>
-    </footer>
     <a href="#" id="ttBackToTop" class="tt-back-to-top">BACK TO TOP</a>
 
     <div id="compareSlide" class="layout-slide">

@@ -29,8 +29,7 @@
                     <div class="col-xl-4 col-lg-5 col-md-5 p-0">
                         <div class="signUP-admin-left position-relative">
                             <div class="signUP-overlay">
-                                {{-- <img class="svg signupTop" src="img/svg/signuptop.svg" alt="img" />
-                                <img class="svg signupBottom" src="img/svg/signupbottom.svg" alt="img" /> --}}
+                           
                             </div>
                             <div class="signUP-admin-left__content">
                                 <div
@@ -72,17 +71,25 @@
                                                     action="{{ url('create-account') }}"class="edit-profile__body">
                                                     @csrf
                                                     <div class="form-group mb-20">
-                                                        <label for="name">name</label>
+                                                        <label for="name">First Name</label>
                                                         <input type="text" class="form-control" id="name"
-                                                            name="name" placeholder="Full Name">
-                                                        @error('name')
+                                                            name="name" placeholder="John" value="{{ old('first_name') }}">
+                                                        @error('first_name')
+                                                            <small class="text-danger">{{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group mb-20">
+                                                        <label for="name">Other Name(s)</label>
+                                                        <input type="text" class="form-control" id="name"
+                                                            name="other_names" placeholder="Doe" value="{{  old('other_names') }}">
+                                                        @error('other_names')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror
                                                     </div>
                                                     <div class="form-group mb-20">
                                                         <label for="username">username</label>
                                                         <input type="text" class="form-control" id="username"
-                                                            name="username" placeholder="Username">
+                                                            name="username" placeholder="Username" value="{{  old('username') }}">
                                                         @error('username')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror
@@ -90,15 +97,15 @@
                                                     <div class="form-group mb-20">
                                                         <label for="username">Phone Number</label>
                                                         <input type="text" class="form-control" id="username"
-                                                            name="phone_number" placeholder="Username">
+                                                            name="phone_number" placeholder="Username" value="{{ old('phone_number') }}">
                                                         @error('phone_number')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror
                                                     </div>
                                                     <div class="form-group mb-20">
                                                         <label for="email">Email Adress</label>
-                                                        <input type="text" class="form-control" id="email"
-                                                            name="email" placeholder="name@example.com">
+                                                        <input type="email" class="form-control" id="email"
+                                                            name="email" placeholder="name@example.com" value="{{  old('email') }}">
                                                         @error('email')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror
@@ -107,7 +114,7 @@
                                                         <label for="password-field">password</label>
                                                         <div class="position-relative">
                                                             <input id="password-field" type="password"
-                                                                class="form-control" name="password">
+                                                                class="form-control" name="password" >
                                                             <span
                                                                 class="fa fa-fw fa-eye-slash text-light fs-16 field-icon toggle-password2"></span>
                                                         </div>
