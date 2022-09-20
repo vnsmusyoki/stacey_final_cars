@@ -29,7 +29,7 @@
                     <div class="col-xl-4 col-lg-5 col-md-5 p-0">
                         <div class="signUP-admin-left position-relative">
                             <div class="signUP-overlay">
-                           
+
                             </div>
                             <div class="signUP-admin-left__content">
                                 <div
@@ -73,7 +73,7 @@
                                                     <div class="form-group mb-20">
                                                         <label for="name">First Name</label>
                                                         <input type="text" class="form-control" id="name"
-                                                            name="name" placeholder="John" value="{{ old('first_name') }}">
+                                                            name="first_name" placeholder="John" value="{{ old('first_name') }}">
                                                         @error('first_name')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror

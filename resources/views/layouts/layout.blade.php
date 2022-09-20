@@ -665,7 +665,7 @@
                         <div class="dropdown-custom">
                             <a href="javascript:;" class="nav-item-toggle">
                                 <span data-feather="help-circle"></span></a>
-                             
+
                         </div>
                     </li>
                     <!-- ends: .nav-support -->
@@ -880,7 +880,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a class="" href="">Upload Car</a>
+                                <a class="" href="{{ route('user.uploadcar') }}">Upload Car</a>
                             </li>
                             <li>
                                 <a class="" href="">All cars</a>

@@ -2710,7 +2710,7 @@ table.table-rounded tbody tr td {
 .fc-view .fc-col-header tr th,
 .payment-method-card,
 .slider-wrapper.disabled .ui-slider-handle:after {
-    border: 1px solid #f1f2f6
+    border: 1px solid #f1f2f6;
 }
 
 .atbd-select.disabled .form-control,
