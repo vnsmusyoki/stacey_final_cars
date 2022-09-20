@@ -19,6 +19,9 @@
     <!-- endinject -->
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('dashboard/img/favicon.png')}}">
+
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    @livewireStyles
 </head>
 
 <body class="layout-light side-menu overlayScroll">
@@ -1002,7 +1005,11 @@
     <!-- inject:js-->
     <script src="{{  asset('dashboard/js/plugins.min.js') }}"></script>
     <script src="{{  asset('dashboard/js/script.min.js') }}"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
     <!-- endinject-->
+    @livewireScripts
+
 </body>
 
 </html>

@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Livewire\Users;
+
+use App\Models\Car;
+use App\Models\CarMake;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+
+class UploadCar extends Component
+{
+    use WithFileUploads;
+    public $car_make;
+    public $car_engine;
+    public $transmission;
+    public $car_photo;
+    public $car_description;
+    public $car_year;
+    // public $car_engine;
+    public $registration_number;
+    public $car_model;
+
+    public function render()
+    {
+        $makes = CarMake::all();
+        return view('livewire.users.upload-car', compact('makes'));
+    }
+    public function uploadcar()
+    {
+        $this->validate([
+            'car_make' => 'required',
+            'car_model' => 'required',
+            'transmission' => 'required',
+            'car_year' => 'required',
+            'car_engine' => 'required',
+            'registration_number' => 'required',
+            'car_description' => 'required|string|max:10000000',
+            'car_photo' => 'required|image|mimes:img, jpeg,jpg,png|max:2048',
+        ]);
+        $timenows = time();
+        $checknums = "1234567898746351937463790";
+        $checkstrings = "QWERTYUIOPLKJHGFDSAZXCVBNMmanskqpwolesurte191827273jkskalqKNJAHSGETWIOWKSNXJNEUDNEKDKSMKIDNUENDNXKSKEJNEJHCBRFGEWVJHBKWJEBFRNKWJENFECKWLERKJFNRKEHBJWEiwjWSIWMSWISWQOQOAWSAMJENEJEEDEWSSRFRFTHUJOKMNZBXVCX";
+        $checktimelengths = 6;
+        $checksnumlengths = 6;
+        $checkstringlength = 90;
+        $randnums = substr(str_shuffle($timenows), 0, $checktimelengths);
+        $randstrings = substr(str_shuffle($checknums), 0, $checksnumlengths);
+        $randcheckstrings = substr(str_shuffle($checkstrings), 0, $checkstringlength);
+        $totalstrings = str_shuffle($randcheckstrings . "" . $randnums . "" . $randstrings);
+
+
+        $new = new Car;
+        $new->car_make_id = $this->car_make;
+        $new->car_make_model_id = $this->car_model;
+        $new->car_owner_id = auth()->user()->id;
+        $new->car_year = $this->car_year;
+        $new->engine_cc = $this->car_engine;
+        $new->reg_number = $this->registration_number;
+        $new->car_description = $this->registration_number;
+        $fileNameWithExt = $this->car_photo->getClientOriginalName();
+        $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        $Extension = $this->car_photo->getClientOriginalExtension();
+        $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+        $path = $this->car_photo->storeAs('cars', $filenameToStore, 'public');
+        $new->car_image = $filenameToStore;
+        $new->slug = $totalstrings;
+        $new->save();
+
+        return redirect()->route('user.verifycarprofile', $totalstrings);
+    }
+
+  
+}

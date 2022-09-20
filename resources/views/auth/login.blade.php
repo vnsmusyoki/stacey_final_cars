@@ -83,7 +83,7 @@
                                                     <div class="form-group mb-20">
                                                         <label for="username">Email Address</label>
                                                         <input type="text" class="form-control " id="username"
-                                                            placeholder="Your registered email address" name="email">
+                                                            placeholder="Your registered email address" name="email" value="{{ old('email') }}">
                                                         @error('email')
                                                             <small class="text-danger">{{ $message }}</small>
                                                         @enderror
