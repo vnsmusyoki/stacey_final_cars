@@ -16,7 +16,7 @@ class UploadCar extends Component
     public $car_photo;
     public $car_description;
     public $car_year;
-    // public $car_engine;
+    public $min_price;
     public $registration_number;
     public $car_model;
 
@@ -31,8 +31,9 @@ class UploadCar extends Component
             'car_make' => 'required',
             'car_model' => 'required',
             'transmission' => 'required',
-            'car_year' => 'required',
+            'car_year' => 'required|numeric|min:2010|max:2022',
             'car_engine' => 'required',
+            'min_price' => 'required|numeric',
             'registration_number' => 'required',
             'car_description' => 'required|string|max:10000000',
             'car_photo' => 'required|image|mimes:img, jpeg,jpg,png|max:2048',
@@ -54,6 +55,7 @@ class UploadCar extends Component
         $new->car_make_model_id = $this->car_model;
         $new->car_owner_id = auth()->user()->id;
         $new->car_year = $this->car_year;
+        $new->min_price = $this->min_price;
         $new->engine_cc = $this->car_engine;
         $new->reg_number = $this->registration_number;
         $new->car_description = $this->registration_number;
@@ -69,5 +71,5 @@ class UploadCar extends Component
         return redirect()->route('user.verifycarprofile', $totalstrings);
     }
 
-  
+
 }

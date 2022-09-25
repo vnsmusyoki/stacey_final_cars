@@ -79,12 +79,22 @@
                         @enderror
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
                     <div class="form-group mb-25">
                         <label>Car Photo</label>
                         <input class="form-control form-control-lg" type="file" wire:model="car_photo" placeholder=""
                             value="{{ old('car_photo') }}">
                         @error('car_photo')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Min Price</label>
+                        <input class="form-control form-control-lg" type="number" min="10000" wire:model="min_price" placeholder=""
+                            value="{{ old('min_price') }}">
+                        @error('min_price')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
