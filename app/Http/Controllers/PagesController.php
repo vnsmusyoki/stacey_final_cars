@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarBid;
 use App\Models\CarPhoto;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -66,7 +67,35 @@ class PagesController extends Controller
             'bid_amount' => 'required|numeric',
             'user_email' => 'required|email',
         ]);
-
-        // $new = /
+        $timenows = time();
+        $checknums = "1234567898746351937463790";
+        $checkstrings = "QWERTYUIOPLKJHGFDSAZXCVBNMmanskqpwolesurte191827273jkskalqKNJAHSGETWIOWKSNXJNEUDNEKDKSMKIDNUENDNXKSKEJNEJHCBRFGEWVJHBKWJEBFRNKWJENFECKWLERKJFNRKEHBJWEiwjWSIWMSWISWQOQOAWSAMJENEJEEDEWSSRFRFTHUJOKMNZBXVCX";
+        $checktimelengths = 6;
+        $checksnumlengths = 6;
+        $checkstringlength = 90;
+        $randnums = substr(str_shuffle($timenows), 0, $checktimelengths);
+        $randstrings = substr(str_shuffle($checknums), 0, $checksnumlengths);
+        $randcheckstrings = substr(str_shuffle($checkstrings), 0, $checkstringlength);
+        $totalstrings = str_shuffle($randcheckstrings . "" . $randnums . "" . $randstrings);
+        $car = Car::where('slug', $request->car_name)->first();
+        if ($car) {
+            $customer = User::where('email', $request->user_email)->first();
+            if ($customer) {
+                $new = new  CarBid;
+                $new->car_id  = $car->id;
+                $new->bid_user_id = $customer->id;
+                $new->car_min_price = $car->min_price;
+                $car->bidding_price = $request->bid_amount;
+                $new->slug = $totalstrings;
+                $new->bid_status = "placed";
+                $new->save();
+            } else {
+                Toastr::success('Email address provided does not exist', 'Welcome', ["positionClass" => "toast-top-right"]);
+                return redirect()->route('login');
+            }
+        } else {
+            Toastr::success('No car details found', 'Welcome', ["positionClass" => "toast-top-right"]);
+            return redirect()->route('login');
+        }
     }
 }
