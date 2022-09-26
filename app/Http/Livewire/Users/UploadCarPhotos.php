@@ -7,6 +7,7 @@ use App\Models\CarPhoto;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+
 class UploadCarPhotos extends Component
 {
 
@@ -19,7 +20,7 @@ class UploadCarPhotos extends Component
     {
         $car = Car::where('slug', $this->carprofileslug)->first();
         $attachments = CarPhoto::where('car_owner_id', auth()->user()->id)->where('car_id', $car->id)->get();
-        return view('livewire.users.upload-car-photos', compact('attachments'));
+        return view('livewire.users.upload-car-photos', compact('attachments', 'car'));
     }
     public function mount($carslug)
     {
@@ -56,11 +57,17 @@ class UploadCarPhotos extends Component
             $attachment->image_name = $filenameToStore;
             // $attachment->attachment_type = $Extension;
             $attachment->slug = $totalstrings;
-            $attachment->car_owner_id =auth()->user()->id;
+            $attachment->car_owner_id = auth()->user()->id;
             $attachment->file_size = number_format($this->file_attachment->getSize() / 1048576, 2);
             $attachment->save();
             $this->file_attachment = null;
             session()->flash('message', 'File Attachment successfully uploaded.');
         }
+    }
+    public function removepic($id)
+    {
+        $image = CarPhoto::findOrFail($id);
+        $image->delete();
+        session()->flash('message', 'File Attachment successfully deleted.');
     }
 }

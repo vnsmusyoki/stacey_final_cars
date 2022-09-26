@@ -1,5 +1,6 @@
 <div>
-    <form action="" wire:submit.prevent="submitattachment" method="POST" enctype="multipart/form-data">
+    @if ($car->status=="pending")
+  <form action="" wire:submit.prevent="submitattachment" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
@@ -18,6 +19,9 @@
                 </div>
             </div>
         </div>
+    </form>
+    @endif
+
         <div class="row">
             <div class="col-12">
                 @if ($message = Session::get('errormessage'))
@@ -35,19 +39,24 @@
                         <thead>
                             <tr>
                                 <th></th>
+                                <th>Image</th>
                                 <th>FIle Name</th>
                                 <th class="text-nowrap">Date Uploaded</th>
-
                                 <th>File Size</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($attachments as $key=>$item)
                                 <tr class="text-sm">
                                     <td>{{ ++$key }}</td>
+                                    <td><img src="{{ asset('storage/cars/'.$item->image_name) }}" alt="" style="height:60px;width:120px;"></td>
                                     <td>{{ $item->image_name }}</td>
                                     <td>{{ $item->created_at->format('d M Y') }}</td>
                                     <td>{{ $item->file_size }} MB</td>
+                                    <td>
+                                        <button class="btn btn-danger" wire:click="removepic({{ $item->id }})">Remove</button>
+                                    </td>
 
                                 </tr>
 
@@ -65,5 +74,5 @@
                 </div>
             </div>
         </div>
-    </form>
+
 </div>

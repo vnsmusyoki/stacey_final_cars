@@ -889,10 +889,13 @@
                                 <a class="" href="">All cars</a>
                             </li>
                             <li>
-                                <a class="" href="">Uploaded Today</a>
+                                <a class="" href="{{ route('user.underreview') }}">Under Review</a>
                             </li>
                             <li>
-                                <a class="" href="">Declined Cars</a>
+                                <a class="" href="{{ route('user.publishedcars') }}">Published Cars</a>
+                            </li>
+                            <li>
+                                <a class="" href="{{ route('user.declinedcars') }}">Declined Cars</a>
                             </li>
                         </ul>
                     </li>

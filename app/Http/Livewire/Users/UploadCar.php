@@ -58,7 +58,7 @@ class UploadCar extends Component
         $new->min_price = $this->min_price;
         $new->engine_cc = $this->car_engine;
         $new->reg_number = $this->registration_number;
-        $new->car_description = $this->registration_number;
+        $new->car_description = $this->car_description;
         $fileNameWithExt = $this->car_photo->getClientOriginalName();
         $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
         $Extension = $this->car_photo->getClientOriginalExtension();

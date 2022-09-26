@@ -31,7 +31,10 @@ Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user/publish-car/{slug}', [UserDashboardController::class, 'publishcar'])->name('user.publishcars');
 Route::get('/user/upload-car', [UserDashboardController::class, 'uploadcar'])->name('user.uploadcar');
 Route::get('/user/my-cars', [UserDashboardController::class, 'mycars'])->name('user.mycars');
 Route::get('/user/car-profile/{slug}', [UserDashboardController::class, 'uploadedcarprofile'])->name('user.verifycarprofile');
+Route::get('user/all-under-review', [UserDashboardController::class, 'carsunderreview'])->name('user.underreview');
+Route::get('user/all-declined-cars', [UserDashboardController::class, 'declinedcars'])->name('user.declinedcars');
+Route::get('user/all-published-cars', [UserDashboardController::class, 'publishedcars'])->name('user.publishedcars');

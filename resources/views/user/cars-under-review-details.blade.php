@@ -9,11 +9,9 @@
                 <h4 class="text-capitalize breadcrumb-title">Car Details</h4>
                 <div class="breadcrumb-action justify-content-center flex-wrap">
                     <div class="action-btn">
-                        @if ($car->status=="pending")
-  <a href="{{ route('user.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
+
+                        <a href="{{ route('user.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
                             <i class="la la-plus"></i> PUBLISH CAR</a>
-                        @endif
-                      
                     </div>
 
                     <div class="action-btn">
@@ -32,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                        <img src="{{ asset('storage/cars/'.$car->car_image) }}" class="img-fluid" alt="">
+                        <img src="{{ asset('storage/cars/' . $car->car_image) }}" class="img-fluid" alt="">
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-stripped">
@@ -81,7 +79,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                                @livewire('users.upload-car-photos', ['carslug' => $slug])
+                        @livewire('users.upload-car-photos', ['carslug' => $slug])
                     </div>
                 </div>
             </div>
