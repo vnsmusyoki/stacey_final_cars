@@ -5,6 +5,16 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
                     <div class="form-group mb-25">
+                        <label>Car Name</label>
+                        <input class="form-control form-control-lg" type="text" wire:model="car_name"
+                            placeholder="Mazda" value="{{ old('car_name') }}" min="1">
+                        @error('car_name')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
                         <label>Car Make</label>
                         <select wire:model="car_make" id="" class="form-control">
                             <option value="">click to select</option>
@@ -45,6 +55,42 @@
                             <option value="Automatic">Automatic</option>
                         </select>
                         @error('transmission')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Color</label>
+                        <select wire:model="car_color" id="" class="form-control">
+                            <option value="">click to select</option>
+                            <option value="Red">Red</option>
+                            <option value="Black">Black</option>
+                        </select>
+                        @error('car_color')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Fuel Type</label>
+                        <select wire:model="fuel_type" id="" class="form-control">
+                            <option value="">click to select</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Gas">Gas</option>
+                        </select>
+                        @error('fuel_type')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Car Milleage</label>
+                        <input class="form-control form-control-lg" type="number" wire:model="car_milleage"
+                            placeholder="2022" value="{{ old('car_milleage') }}" min="1">
+                        @error('car_milleage')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -95,6 +141,16 @@
                         <input class="form-control form-control-lg" type="number" min="10000" wire:model="min_price" placeholder=""
                             value="{{ old('min_price') }}">
                         @error('min_price')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Car Features</label>
+                        <textarea class="form-control form-control-lg" rows="5" cols="10" wire:model="car_features"
+                            placeholder="Describe your vehicle features">{{ old('car_features') }}</textarea>
+                        @error('car_features')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

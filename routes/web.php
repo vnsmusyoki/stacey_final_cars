@@ -26,6 +26,7 @@ Auth::routes();
 Route::get('/', [PagesController::class, 'index']);
 Route::post('/create-account', [PagesController::class, 'createaccount']);
 Route::get('/car/{slug}', [PagesController::class, 'cardetails']);
+Route::get('place-car-bid', [PagesController::class, 'placemybid']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('administrator');
 Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user');

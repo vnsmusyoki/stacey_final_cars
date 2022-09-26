@@ -382,7 +382,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Cars</a></li>
-                <li>{{ $car->car_year }} - {{ $car->car_model }}</li>
+                <li>{{ $car->car_name }} - {{ $car->car_year }}</li>
             </ul>
         </div>
     </div>
@@ -393,7 +393,7 @@
                     <div class="col-12 col-md-8">
                         <a href="inventory.html" class="tt-link-back">RETURN TO CARS</a>
                         <div class="tt-title-single">
-                            <h1 class="tt-title">{{ $car->car_year }} - {{ $car->engine_cc }}</h1>
+                            <h1 class="tt-title">{{ $car->car_name }} - {{ $car->engine_cc }}</h1>
                             {{-- <div class="tt-description"></div> --}}
                         </div>
                         <div class="tt-aside-btn visible-xs">
@@ -489,17 +489,12 @@
                             <h6 class="tt-title-single-sub">
                                 Place Your Bid
                             </h6>
-                       
+
                         </div>
                     </div>
                     <div class="col-12 col-md-4 js-sticky-sidebar">
                         <div class="tt-aside03-layout">
-                            <div class="tt-aside-btn hidden-xs">
-                                <a href="#" class="btn btn-color02" data-toggle="modal"
-                                    data-target="#modalAddTestDrive"><i class="icon-testdrive"></i>TEST DRIVE</a>
-                                <a href="#" class="compare-toggle btn btn-color02"><i
-                                        class="icon-compare"></i>COMPARE</a>
-                            </div>
+
                             <div class="tt-aside-promo">
                                 <div class="tt-wrapper">
                                     <div class="tt-value">KES {{ $car->min_price }}</div>
@@ -554,24 +549,26 @@
                             </div>
 
                             <div class="tt-aside-calculator">
-                                <form class="tt-form-default">
+                                <form class="tt-form-default" method="POST" action="{{url('place-car-bid/') }}">
+                                    @csrf
                                     <div class="tt-wrapper-top">
                                         <h6 class="tt-calculator-title">
                                             <span class="icon-calculator"></span>
                                             Place Your Bid
                                         </h6>
+                                        <input type="hidden" name="car_name" value="{{ $car->slug }}">
                                         <div class="tt-calculator-content">
                                             <div class="tt-form-aside">
                                                 <div class="form-group">
                                                     <label>Your Bidding price ($)</label>
                                                     <input type="number" class="form-control"
                                                         placeholder="{{ $car->min_price }}"
-                                                        min="{{ $car->min_price }}" name="bid_amount">
+                                                        min="{{ $car->min_price }}" name="bid_amount" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Your Email Address</label>
                                                     <input type="email" class="form-control"
-                                                        placeholder="example@gmail.com" name="user_email">
+                                                        placeholder="example@gmail.com" name="user_email" required>
                                                 </div>
                                             </div>
                                             <a href="#" class="btn btn-fullwidth">PLACE BID</a>
@@ -599,8 +596,8 @@
                         <div>
                             <div class="tt-product-02">
                                 <div class="tt-image-box">
-                                    <a href="inventory-item.html" class="tt-img">
-                                        <img src="images/product_02/product_02_img_01.jpg" alt="">
+                                    <a href="{{ url('car/'.$othercar->slug) }}" class="tt-img">
+                                        <img src="{{asset('storage/cars/'. $othercar->car_image) }}" alt="">
                                         <span class="tt-label-location">
                                             <span class="tt-label-promo">
                                                 Great Deal!
@@ -620,27 +617,27 @@
                                 </div>
                                 <div class="tt-wrapper-description">
                                     <div class="tt-box-title">
-                                        <h2 class="tt-title"><a href="{{ url('car/'.$car->slug) }}">2016 Hunday Elentra </a>
+                                        <h2 class="tt-title"><a href="{{ url('car/'.$othercar->slug) }}">{{ $othercar->car_year }} </a>
                                         </h2>
                                         <div class="tt-description">
                                             {{ $car->car_name }}
                                         </div>
                                     </div>
                                     <div class="tt-box-price">
-                                        <span class="tt-text">List:</span>
-                                        <span class="tt-price">KES {{ $car->min_price }}</span>
+                                        {{-- <span class="tt-text">List:</span> --}}
+                                        <span class="tt-price">KES {{ $othercar->min_price }}</span>
                                     </div>
                                     <ul class="tt-icon">
                                         <li><a href="#" data-toggle="modal" data-target="#modalAddTestDrive"
                                                 title="TEST-DRIVE" class="tooltip"><i class="icon-testdrive"></i></a>
                                         </li>
-                                        <li><a href="{{ asset('storage/cars/'.$car->car_image) }}" title="GALLERY"
+                                        <li><a href="{{ asset('storage/cars/'.$othercar->car_image) }}" title="GALLERY"
                                                 class="tooltip tt-btn-zomm"><i class="icon-photo-camera"></i></a></li>
                                         <li><a href="#" title="COMPARE" class="tooltip compare-toggle"><i
                                                     class="icon-compare"></i></a></li>
                                     </ul>
                                     <div class="tt-btn">
-                                        <a href="#" class="tt-btn-moreinfo">more info</a>
+                                        <a href="{{ url('car/'.$othercar->slug) }}" class="tt-btn-moreinfo">more info</a>
                                     </div>
                                 </div>
                             </div>

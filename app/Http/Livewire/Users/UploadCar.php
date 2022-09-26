@@ -19,7 +19,11 @@ class UploadCar extends Component
     public $min_price;
     public $registration_number;
     public $car_model;
-
+public $car_name;
+public $car_milleage;
+public $car_color;
+public $car_features;
+public $fuel_type;
     public function render()
     {
         $makes = CarMake::all();
@@ -37,6 +41,12 @@ class UploadCar extends Component
             'registration_number' => 'required',
             'car_description' => 'required|string|max:10000000',
             'car_photo' => 'required|image|mimes:img, jpeg,jpg,png|max:2048',
+            'car_features' => 'required|string',
+            'car_color' => 'required',
+            'car_milleage' => 'required',
+            'car_name' => 'required',
+            'fuel_type' => 'required'
+
         ]);
         $timenows = time();
         $checknums = "1234567898746351937463790";
@@ -57,6 +67,12 @@ class UploadCar extends Component
         $new->car_year = $this->car_year;
         $new->min_price = $this->min_price;
         $new->engine_cc = $this->car_engine;
+        $new->milleage = $this->car_milleage;
+        $new->car_color = $this->car_color;
+        $new->transmission = $this->transmission;
+        $new->fuel_type = $this->fuel_type;
+        $new->features = $this->car_features;
+        $new->car_name = $this->car_name;
         $new->reg_number = $this->registration_number;
         $new->car_description = $this->car_description;
         $fileNameWithExt = $this->car_photo->getClientOriginalName();
