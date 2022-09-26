@@ -2,16 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
+use App\Models\CarPhoto;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use Brian2694\Toastr\Facades\Toastr;
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('pages.layout');
+        $cars = Car::where('status', 'published')->get();
+        return view('pages.homepage', compact('cars'));
     }
+public function cardetails($slug){
+    // Toastr::success('Working on the details', 'Title', ["positionClass" => "toast-top-center"]);
+    // return back();
 
+    $car = Car::where('slug', $slug)->first();
+
+    if ($car) {
+        $photos = CarPhoto::where('car_id', $car->id)->get();
+        $othercars = Car::where('status', 'published')->get();
+        return view('pages.car-details', compact('car', 'slug', 'photos', 'othercars'));
+    } else {
+
+        return back();
+    }
+}
     public function createaccount(Request $request)
     {
 

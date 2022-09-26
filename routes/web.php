@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::get('/', [PagesController::class, 'index']);
 Route::post('/create-account', [PagesController::class, 'createaccount']);
+Route::get('/car/{slug}', [PagesController::class, 'cardetails']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('administrator');
 Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user');
@@ -38,3 +39,7 @@ Route::get('/user/car-profile/{slug}', [UserDashboardController::class, 'uploade
 Route::get('user/all-under-review', [UserDashboardController::class, 'carsunderreview'])->name('user.underreview');
 Route::get('user/all-declined-cars', [UserDashboardController::class, 'declinedcars'])->name('user.declinedcars');
 Route::get('user/all-published-cars', [UserDashboardController::class, 'publishedcars'])->name('user.publishedcars');
+Route::get('admin/all-uploaded-cars', [AdminDashboardController::class, 'uploadedcars'])->name('admin.uploadedcars');
+Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approvedcars'])->name('admin.approvedcars');
+Route::get('admin/car-profile/{slug}', [AdminDashboardController::class, 'carprofiledetails'])->name('admin.verifycarprofile');
+Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapproved'])->name('admin.publishcars');

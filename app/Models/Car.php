@@ -13,5 +13,8 @@ class Car extends Model
     public function carrmakemodelfetch(){
         return $this->belongsTo(CarMakeModele::class, 'car_make_model_id');
     }
+    public function carowner(){
+        return $this->belongsTo(User::class, 'car_owner_id');
+    }
     use HasFactory;
 }

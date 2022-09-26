@@ -776,10 +776,10 @@
                         </a>
                         <ul>
                             <li>
-                                <a class="" href="">Upload Car</a>
+                                <a class="" href="{{ route('admin.uploadedcars') }}">Uploaded Car</a>
                             </li>
                             <li>
-                                <a class="" href="">All cars</a>
+                                <a class="" href="{{  route('admin.approvedcars') }}">All Approved</a>
                             </li>
                             <li>
                                 <a class="" href="">Uploaded Today</a>
