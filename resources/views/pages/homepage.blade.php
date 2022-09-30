@@ -1,130 +1,11 @@
 @extends('pages.layout')
 @section('title', 'View Car details')
 @section('content')
-<div class="container-indent no-margin">
-    <div class="container tt-container-fluid-mobile">
-        <div class="tt-search-filter">
-            <i class="tt-icon-filter icon-carsearch"></i>
-            <div class="tt-col-title">
-                Find Your<br> Perfect Car
-            </div>
-            <div class="tt-col-select visible-desctope tt-skinSelect-01">
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">NEW</option>
-                    <!--placeholder-->
-                    <option value="Old">OLD</option>
-                </select>
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">YEAR</option>
-                    <!--placeholder-->
-                    <option value="1">2014</option>
-                    <option value="2">2015</option>
-                    <option value="3">2016</option>
-                    <option value="4">2017</option>
-                    <option value="5">2018</option>
-                </select>
-                <!-- one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">SELECT A MAKE</option>
-                    <!--placeholder-->
-                    <option value="KIA">KIA</option>
-                    <option value="CHEVROLET">CHEVROLET</option>
-                    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
-                    <option value="AUDI">AUDI</option>
-                    <option value="NISSAN">NISSAN</option>
-                    <option value="LEXUS">LEXUS</option>
-                    <option value="SUBARU">SUBARU</option>
-                    <option value="SUZUKI">SUZUKI</option>
-                </select>
-                <!-- /one select -->
-                <!-- one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">SELECT A MODEL</option>
-                    <!--placeholder-->
-                    <option value="SEDAN">SEDAN</option>
-                    <option value="HATCHBACK">HATCHBACK</option>
-                    <option value="SPORT CARS">SPORT CARS</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Pickups">PICKUPS</option>
-                    <option value="CONVERTIBLE">CONVERTIBLE</option>
-                    <option value="COUPE">COUPE</option>
-                    <option value="MINIVAN">MINIVAN</option>
-                </select>
-                <!-- /one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">PRICE</option>
-                    <!--placeholder-->
-                    <option value="1000$">1000$</option>
-                    <option value="5000$">5000$</option>
-                    <option value="10000$">10000$</option>
-                </select>
-            </div>
-            <div class="tt-col-select visible-device tt-skinSelect-01">
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">NEW</option>
-                    <!--placeholder-->
-                    <option value="Old">OLD</option>
-                </select>
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">YEAR</option>
-                    <!--placeholder-->
-                    <option value="1">2014</option>
-                    <option value="2">2015</option>
-                    <option value="3">2016</option>
-                    <option value="4">2017</option>
-                    <option value="5">2018</option>
-                </select>
-                <!-- one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">MAKE</option>
-                    <!--placeholder-->
-                    <option value="KIA">KIA</option>
-                    <option value="CHEVROLET">CHEVROLET</option>
-                    <option value="VOLKSWAGEN">VOLKSWAGEN</option>
-                    <option value="AUDI">AUDI</option>
-                    <option value="NISSAN">NISSAN</option>
-                    <option value="LEXUS">LEXUS</option>
-                    <option value="SUBARU">SUBARU</option>
-                    <option value="SUZUKI">SUZUKI</option>
-                </select>
-                <!-- /one select -->
-                <!-- one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">MODEL</option>
-                    <!--placeholder-->
-                    <option value="SEDAN">SEDAN</option>
-                    <option value="HATCHBACK">HATCHBACK</option>
-                    <option value="SPORT CARS">SPORT CARS</option>
-                    <option value="SUV">SUV</option>
-                    <option value="Pickups">PICKUPS</option>
-                    <option value="CONVERTIBLE">CONVERTIBLE</option>
-                    <option value="COUPE">COUPE</option>
-                    <option value="MINIVAN">MINIVAN</option>
-                </select>
-                <!-- /one select -->
-                <select class="tt-select">
-                    <option disabled="disabled" selected="selected">PRICE</option>
-                    <!--placeholder-->
-                    <option value="1000$">1000$</option>
-                    <option value="5000$">5000$</option>
-                    <option value="10000$">10000$</option>
-                </select>
-                <div class="tt-btn">
-                    <a href="#" class="btn tt-icon-left"><i
-                            class="icon-musica-searcher"></i><span>294&nbsp;</span>CARS</a>
-                </div>
-            </div>
-            <div class="tt-col-btn">
-                <a href="#" class="btn tt-icon-left"><i class="icon-musica-searcher"></i><span
-                        class="tt-mobile-hide">{{ $cars->count() }}&nbsp;</span>CARS</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="container-indent">
     <div class="container">
         <div class="tt-block-title">
-            <h1 class="tt-title">Welcome to <span class="tt-defaul-color">Car</span> Auctioning System</h1>
+            <h1 class="tt-title">Welcome to <span class="tt-defaul-color">SmartMartCars</span> Auctioning System</h1>
             <div class="tt-description">The Easiest Way to Find Your Next Car</div>
         </div>
         <div class="tt-text-center ws-short-structure">
@@ -176,7 +57,7 @@
                 <div class="tt-description">How It Works</div>
             </div>
             <div class="tt-promo-02-layout">
-                <a href="inventory.html" class="tt-item">
+                <a href="{{ url('register') }}" class="tt-item">
                     <div class="box-icon">
                         <div class="tt-line-dotted tt-right"></div>
                         <i class="icon-carsearch2"></i>
@@ -188,7 +69,7 @@
                         <i class="icon-right-arrow"></i>
                     </div>
                 </div>
-                <a href="faq.html" class="tt-item">
+                <a href="{{ url('login') }}" class="tt-item">
                     <div class="box-icon">
                         <div class="tt-line-dotted tt-left"></div>
                         <div class="tt-line-dotted tt-right"></div>
@@ -201,7 +82,7 @@
                         <i class="icon-right-arrow"></i>
                     </div>
                 </div>
-                <a href="faq.html" class="tt-item">
+                <a href="{{ url('login') }}" class="tt-item">
                     <div class="box-icon">
                         <div class="tt-line-dotted tt-left"></div>
                         <div class="tt-line-dotted tt-right"></div>
@@ -214,7 +95,7 @@
                         <i class="icon-right-arrow"></i>
                     </div>
                 </div>
-                <a href="faq.html" class="tt-item">
+                <a href="{{ url('login') }}" class="tt-item">
                     <div class="box-icon">
                         <div class="tt-line-dotted tt-left"></div>
                         <i class="icon-payment"></i>
@@ -236,17 +117,10 @@
             <div class="tt-description">It was really easy to sell your car!</div>
         </div>
         <div class="text-center tt-indent-btn">
-            <a href="#" class="btn" data-toggle="modal" data-target="#modalAddYourItem">SUBMIT YOUR
+            <a href="{{ url('login') }}" class="btn" data-toggle="modal" data-target="#modalAddYourItem">SUBMIT YOUR
                 VEHICLE NOW</a>
         </div>
     </div>
 </div>
-<div class="container-indent container-indent-03 tt-mobile-hidden">
-    <div class="tt-map">
-        <a href="#" class="tt-btn-toggle"></a>
-        <div class="tt-box-map">
-            <div id="googleMapFooter" class="google-map"></div>
-        </div>
-    </div>
-</div>
+
 @endsection

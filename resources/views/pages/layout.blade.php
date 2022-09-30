@@ -155,64 +155,7 @@
                 </div>
             </div>
         </div>
-        <!-- panel-info -->
-        <div class="tt-panel-info">
-            <div class="container">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-auto mr-auto">
-                        <ul class="tt-box-info">
-                            <li><i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NRB 11230</li>
-                            <li><a href="#"><i class="icon-15874"></i><strong>Call Us:</strong>
-                                    +254794107848</a></li>
-                            <li><i class="icon-icon"></i>9:00 AM – 8:00 PM</li>
-                        </ul>
-                    </div>
-                    <div class="col-auto">
 
-                        <div class="tt-dropdown-obj tt-searcher">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-musica-searcher"></i>
-                            </a>
-                            <div class="tt-dropdown-menu">
-                                <div class="container">
-                                    <form>
-                                        <div class="tt-row-search">
-                                            <input type="text" class="tt-search-input"
-                                                placeholder="Type your search request...">
-                                            <button class="tt-btn-search" type="submit"></button>
-                                            <button class="tt-btn-close icon-g-80"></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tt-dropdown-obj tt-account">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-user"></i>
-                            </a>
-                            <div class="tt-dropdown-menu">
-                                <div class="tt-row-close">
-                                    <a href="#" class="tt-btn-close icon-close"></a>
-                                </div>
-                                <ul>
-                                    <li><a href="{{ url('user/dashboard') }}">Account</a></li>
-
-                                    <li><a href="{{ route('login') }}">Sign In</a></li>
-                                    <li><a href="{{ route('register') }}">Register</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tt-dropdown-obj tt-compare compare-toggle">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-compare"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- header-holder -->
         <div class="header-holder">
             <div class="container">
                 <div class="row">
@@ -232,19 +175,14 @@
                                         <a href="{{ url('/') }}">HOME</a>
 
                                     </li>
-                                    <li class="is-subMenu">
-                                        <a href="#">ABOUT US</a>
 
-                                    </li>
                                     <li>
-                                        <a href="#">SERVICES</a>
+                                        <a href="{{ url('all-cars') }}">ALL CARS</a>
 
                                     </li>
 
 
-                                    <li><a href="#">CARS</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">CONTACTS</a></li>
+                                    <li><a href="{{ url('contact-us') }}">CONTACT US</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -288,8 +226,8 @@
                         <div class="slide-content">
                             <div class="container" data-animation="fadeInUpSm" data-animation-delay="0s">
                                 <a href="inventory.html" class="tt-caption-custom">
-                                    <div class="tt-title"> -->
-                                        <div class="text-small">We Don't Sell Cars</div> 
+                                    <div class="tt-title"> 
+                                        <div class="text-small">We Don't Sell Cars</div>
                                         <div class="text-large">We Sell<br>a DREAM</div>
                                     </div>
                                     <span><i class="icon-handsshake"></i>Get Approved</span>
