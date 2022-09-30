@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 
@@ -12,13 +11,13 @@
 
     <!-- inject:css-->
 
-    <link rel="stylesheet" href="{{  asset('dashboard/css/plugin.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/css/plugin.min.css') }}">
 
-    <link rel="stylesheet" href="{{  asset('dashboard/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/style.css') }}">
 
     <!-- endinject -->
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('dashboard/img/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('dashboard/img/favicon.png') }}">
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
@@ -40,7 +39,7 @@
         <nav class="navbar navbar-light">
             <div class="navbar-left">
                 <a href="" class="sidebar-toggle">
-                    <img class="svg" src="{{asset('dashboard/img/svg/bars.svg')}}" alt="img"></a>
+                    <img class="svg" src="{{ asset('dashboard/img/svg/bars.svg') }}" alt="img"></a>
                 <a class="navbar-brand" href="#">SmartMartCars</a>
                 <form action="/" class="search-form">
                     <span data-feather="search"></span>
@@ -52,10 +51,10 @@
                         <ul>
                             <li class="has-subMenu">
                                 @role('administrator')
-                                <a href="{{ route('administrator')}}" class="active">Dashboard</a>
+                                    <a href="{{ route('administrator') }}" class="active">Dashboard</a>
                                 @endrole
                                 @role('user')
-                                <a href="{{route('user')}}" class="active">Dashboard</a>
+                                    <a href="{{ route('user') }}" class="active">Dashboard</a>
                                 @endrole
                             </li>
 
@@ -640,7 +639,8 @@
                         </a>
                         <form action="/" class="search-form-topMenu">
                             <span class="search-icon" data-feather="search"></span>
-                            <input class="form-control mr-sm-2 box-shadow-none" type="text" placeholder="Search...">
+                            <input class="form-control mr-sm-2 box-shadow-none" type="text"
+                                placeholder="Search...">
                         </form>
                     </li>
                     <li class="nav-message">
@@ -677,7 +677,8 @@
                     <!-- ends: .nav-support -->
                     <li class="nav-flag-select">
                         <div class="dropdown-custom">
-                            <a href="javascript:;" class="nav-item-toggle"><img src="img/flag.png" alt="" class="rounded-circle"></a>
+                            <a href="javascript:;" class="nav-item-toggle"><img src="img/flag.png" alt=""
+                                    class="rounded-circle"></a>
                             <div class="dropdown-wrapper dropdown-wrapper--small">
                                 <a href=""><img src="img/eng.png" alt=""> English</a>
 
@@ -687,7 +688,8 @@
                     <!-- ends: .nav-flag-select -->
                     <li class="nav-author">
                         <div class="dropdown-custom">
-                            <a href="javascript:;" class="nav-item-toggle"><img src="img/author-nav.jpg" alt="" class="rounded-circle"></a>
+                            <a href="javascript:;" class="nav-item-toggle"><img src="img/author-nav.jpg"
+                                    alt="" class="rounded-circle"></a>
                             <div class="dropdown-wrapper">
                                 <div class="nav-author__info">
                                     <div class="author-img">
@@ -752,219 +754,220 @@
                     </li>
                     <li class="has-child open">
                         @role('administrator')
-                        <a  href="{{ route('administrator')}}" class="active">
-                            <span data-feather="home" class="nav-icon"></span>
-                            <span class="menu-text">Dashboard</span>
-                            <span class="toggle-icon"></span>
-                        </a>
+                            <a href="{{ route('administrator') }}" class="active">
+                                <span data-feather="home" class="nav-icon"></span>
+                                <span class="menu-text">Dashboard</span>
+                                <span class="toggle-icon"></span>
+                            </a>
                         @endrole
 
 
                     </li>
                     @role('user')
-
-                    <li>
-                        <a href="{{ route('user') }}"  class="">
-                            <span data-feather="home" class="nav-icon"></span>
-                            <span class="menu-text">Dashboard</span>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="{{ route('user') }}" class="">
+                                <span data-feather="home" class="nav-icon"></span>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
                     @endrole
 
                     @role('administrator')
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="mail" class="nav-icon"></span>
-                            <span class="menu-text">Cars</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a class="" href="{{ route('admin.uploadedcars') }}">Uploaded Car</a>
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="mail" class="nav-icon"></span>
+                                <span class="menu-text">Cars</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="" href="{{ route('admin.uploadedcars') }}">Uploaded Car</a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ route('admin.approvedcars') }}">All Approved</a>
+                                </li>
+                                <li>
+                                    <a class="" href="">Uploaded Today</a>
+                                </li>
+                                <li>
+                                    <a class="" href="">Declined Cars</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @role('user')
+                            <li class="has-child">
+                                <a href="#" class="">
+                                    <span data-feather="shopping-cart" class="nav-icon"></span>
+                                    <span class="menu-text">Bids</span>
+                                    <span class="toggle-icon"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('user.placebid') }}">Place New Bid</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="">All Bids</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="">Winning Bids</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                                <a class="" href="{{  route('admin.approvedcars') }}">All Approved</a>
-                            </li>
-                            <li>
-                                <a class="" href="">Uploaded Today</a>
-                            </li>
-                            <li>
-                                <a class="" href="">Declined Cars</a>
-                            </li>
-                        </ul>
-                    </li>
+                        @endrole
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="folder" class="nav-icon"></span>
+                                <span class="menu-text">Users</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="" class="">Add User</a>
+                                </li>
+                                <li>
+                                    <a href="" class="">Users Grid</a>
+                                </li>
+                                <li>
+                                    <a href="" class="">Users List</a>
+                                </li>
+                                <li>
+                                    <a href="" class="">Blocked Users</a>
+                                </li>
 
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="shopping-cart" class="nav-icon"></span>
-                            <span class="menu-text">Bids</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="" class="">Place New Bid</a>
-                            </li>
-                            <li>
-                                <a href="" class="">All Bids</a>
-                            </li>
-                            <li>
-                                <a href="" class="">Winning Bids</a>
-                            </li>
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="user-check" class="nav-icon"></span>
+                                <span class="menu-text">Contact</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="" href="">Car Sellers</a>
+                                </li>
+                                <li>
+                                    <a class="" href="">Winning Bidders</a>
+                                </li>
 
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="folder" class="nav-icon"></span>
-                            <span class="menu-text">Users</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="" class="">Add User</a>
-                            </li>
-                            <li>
-                                <a href="" class="">Users Grid</a>
-                            </li>
-                            <li>
-                                <a href="" class="">Users List</a>
-                            </li>
-                            <li>
-                                <a href="" class="">Blocked Users</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="user-check" class="nav-icon"></span>
-                            <span class="menu-text">Contact</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a class="" href="">Car Sellers</a>
-                            </li>
-                            <li>
-                                <a class="" href="">Winning Bidders</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="" class="">
-                            <span data-feather="clock" class="nav-icon"></span>
-                            <span class="menu-text">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="">
-                            <span data-feather="user" class="nav-icon"></span>
-                            <span class="menu-text">Secure Account</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();" class="">
-                            <span data-feather="user-plus" class="nav-icon"></span>
-                            <span class="menu-text">Sign Out</span>
-                        </a>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="">
+                                <span data-feather="clock" class="nav-icon"></span>
+                                <span class="menu-text">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="">
+                                <span data-feather="user" class="nav-icon"></span>
+                                <span class="menu-text">Secure Account</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();"
+                                class="">
+                                <span data-feather="user-plus" class="nav-icon"></span>
+                                <span class="menu-text">Sign Out</span>
+                            </a>
 
 
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                         @csrf
-                     </form>
-                    </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     @endrole
 
                     @role('user')
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="mail" class="nav-icon"></span>
-                            <span class="menu-text">Cars</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a class="" href="{{ route('user.uploadcar') }}">Upload Car</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('user.mycars') }}">All cars</a>
-                            </li>
-                            <li>
-                                <a class="" href="{{ route('user.underreview') }}">Under Review</a>
-                            </li>
-                            <li>
-                                <a class="" href="{{ route('user.publishedcars') }}">Published Cars</a>
-                            </li>
-                            <li>
-                                <a class="" href="{{ route('user.declinedcars') }}">Declined Cars</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="mail" class="nav-icon"></span>
+                                <span class="menu-text">Cars</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="" href="{{ route('user.uploadcar') }}">Upload Car</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('user.mycars') }}">All cars</a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ route('user.underreview') }}">Under Review</a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ route('user.publishedcars') }}">Published Cars</a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ route('user.declinedcars') }}">Declined Cars</a>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="shopping-cart" class="nav-icon"></span>
-                            <span class="menu-text">Bids</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="" class="">Place New Bid</a>
-                            </li>
-                            <li>
-                                <a href="" class="">All My  Bids</a>
-                            </li>
-                            <li>
-                                <a href="" class="">Winning Bids</a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                    <li class="has-child">
-                        <a href="#" class="">
-                            <span data-feather="user-check" class="nav-icon"></span>
-                            <span class="menu-text">Contact</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a class="" href="">Car Sellers</a>
-                            </li>
-                            <li>
-                                <a class="" href="">Winning Bid Car Sellers</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="" class="">
-                            <span data-feather="clock" class="nav-icon"></span>
-                            <span class="menu-text">My Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="">
-                            <span data-feather="user" class="nav-icon"></span>
-                            <span class="menu-text">Secure Account</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();" class="">
-                            <span data-feather="user-plus" class="nav-icon"></span>
-                            <span class="menu-text">Sign Out</span>
-                        </a>
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="shopping-cart" class="nav-icon"></span>
+                                <span class="menu-text">Bids</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="{{ route('user.placebid') }}" class="">Place New Bid</a>
+                                </li>
+                                <li>
+                                    <a href="" class="">All My Bids</a>
+                                </li>
+                                <li>
+                                    <a href="" class="">Winning Bids</a>
+                                </li>
+                            </ul>
+                        </li>
 
 
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                         @csrf
-                     </form>
-                    </li>
+                        <li class="has-child">
+                            <a href="#" class="">
+                                <span data-feather="user-check" class="nav-icon"></span>
+                                <span class="menu-text">Contact</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a class="" href="">Car Sellers</a>
+                                </li>
+                                <li>
+                                    <a class="" href="">Winning Bid Car Sellers</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="">
+                                <span data-feather="clock" class="nav-icon"></span>
+                                <span class="menu-text">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="">
+                                <span data-feather="user" class="nav-icon"></span>
+                                <span class="menu-text">Secure Account</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();"
+                                class="">
+                                <span data-feather="user-plus" class="nav-icon"></span>
+                                <span class="menu-text">Sign Out</span>
+                            </a>
+
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     @endrole
                 </ul>
             </div>
@@ -972,8 +975,8 @@
 
         <div class="contents">
 
-            <div class="container-fluid">
-            @yield('content')
+            <div class="container-fluid" style="min-height: 200vh;overflow-y:scroll;">
+                @yield('content')
             </div>
 
         </div>
@@ -1009,8 +1012,8 @@
 
 
     <!-- inject:js-->
-    <script src="{{  asset('dashboard/js/plugins.min.js') }}"></script>
-    <script src="{{  asset('dashboard/js/script.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/plugins.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/script.min.js') }}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
     <!-- endinject-->
