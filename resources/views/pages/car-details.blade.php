@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarLeader - Responsive HTML5 Template</title>
+    <title>SmartMart Motors - Online cars Auctoning System</title>
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="CarLeader - Responsive HTML5 Template">
     <link rel="shortcut icon" href="favicon.ico">
@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/main-style.css') }}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body>
@@ -205,120 +206,9 @@
             </div>
         </div>
         <!-- panel-info -->
-        <div class="tt-panel-info">
-            <div class="container">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-auto mr-auto">
-                        <ul class="tt-box-info">
-                            <li><i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NY 11230</li>
-                            <li><a href="#"><i class="icon-15874"></i><strong>Call Us:</strong> +01 123 456
-                                    78</a></li>
-                            <li><i class="icon-icon"></i>9:00 AM – 8:00 PM</li>
-                        </ul>
-                    </div>
-                    <div class="col-auto">
-                        <div class="tt-language">
-                            <div class="tt-skinSelect-02">
-                                <select class="tt-select">
-                                    <option value="ENG">ENG</option>
-                                    <option value="RUS">RUS</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="tt-dropdown-obj tt-searcher">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-musica-searcher"></i>
-                            </a>
-                            <div class="tt-dropdown-menu">
-                                <div class="container">
-                                    <form>
-                                        <div class="tt-row-search">
-                                            <input type="text" class="tt-search-input"
-                                                placeholder="Type your search request...">
-                                            <button class="tt-btn-search" type="submit"></button>
-                                            <button class="tt-btn-close icon-g-80"></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tt-dropdown-obj tt-account">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-user"></i>
-                            </a>
-                            <div class="tt-dropdown-menu">
-                                <div class="tt-row-close">
-                                    <a href="#" class="tt-btn-close icon-close"></a>
-                                </div>
-                                <ul>
-                                    <li><a href="#">Account</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Sign In</a></li>
-                                    <li><a href="#">Sign Out</a></li>
-                                    <li><a href="#">Register</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tt-dropdown-obj tt-compare compare-toggle">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-compare"></i>
-                            </a>
-                        </div>
-                        <div class="tt-dropdown-obj tt-cart">
-                            <a href="#" class="tt-dropdown-toggle">
-                                <i class="icon-cart"></i>
-                            </a>
-                            <div class="tt-dropdown-menu">
-                                <h6 class="tt-dropdown-title">
-                                    <a href="#" class="tt-btn-close icon-close"></a>
-                                    Products in Cart
-                                </h6>
-                                <div class="tt-search-results">
-                                    <ul>
-                                        <li>
-                                            <a href="inventory-item.html">
-                                                <div class="thumbnail"><img src="images/product/product_img_05.jpg"
-                                                        alt=""></div>
-                                                <div class="tt-description">
-                                                    <div class="tt-title">Bosch 3330 Premium FILTECH Oil </div>
-                                                    <div class="tt-price">
-                                                        $5.23
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <span class="tt-close-item icon-close"></span>
-                                        </li>
-                                        <li>
-                                            <a href="inventory-item.html">
-                                                <div class="thumbnail"><img src="images/product/product_img_08.jpg"
-                                                        alt=""></div>
-                                                <div class="tt-description">
-                                                    <div class="tt-title">Autolite XP5325 Iridium XP Spark Plug, Pack
-                                                        of 4</div>
-                                                    <div class="tt-price">
-                                                        $24.61
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <span class="tt-close-item icon-close"></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="tt-search-bottom">
-                                    <div class="price-total">
-                                        <label>Total:</label>
-                                        <div class="tt-price">$29.84</div>
-                                    </div>
-                                    <a href="#" class="btn">CHECKOUT</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- header-holder -->
-        <div class="header-holder">
+        <div class="header-holder bg-dark"  >
             <div class="container">
                 <div class="row">
                     <!--logo-->
@@ -342,15 +232,8 @@
 
                                     </li>
 
-                                    <li class="is-subMenu">
-                                        <a href="">INVENTORY</a>
 
-                                    </li>
-                                    <li class="is-subMenu">
-                                        <a href="blog-right-column.html">BLOG</a>
-
-                                    </li>
-                                    <li><a href="contact.html">CONTACTS</a></li>
+                                    <li><a href="{{  url('contact-us') }}">CONTACTS</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -372,7 +255,20 @@
         <div id="tt-stuck">
             <div class="container">
                 <div class="tt-stuck-row">
-
+                    @if (Session::has('error'))
+                        <div class="alert alert-error">
+                            <ul>
+                                <li>{{ Session::get('error') }}</li>
+                            </ul>
+                        </div>
+                    @endif
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            <ul>
+                                <li>{{ Session::get('success') }}</li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -380,7 +276,7 @@
     <div class="tt-breadcrumb">
         <div class="container">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">Cars</a></li>
                 <li>{{ $car->car_name }} - {{ $car->car_year }}</li>
             </ul>
@@ -391,9 +287,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8">
-                        <a href="inventory.html" class="tt-link-back">RETURN TO CARS</a>
+                        <a href="{{  url('all-cars') }}" class="tt-link-back">RETURN TO CARS</a>
                         <div class="tt-title-single">
-                            <h1 class="tt-title">{{ $car->car_name }} - {{ $car->engine_cc }}</h1>
+                            <h1 class="tt-title">{{ $car->car_name }} - {{ $car->engine_cc }} cc</h1>
                             {{-- <div class="tt-description"></div> --}}
                         </div>
                         <div class="tt-aside-btn visible-xs">
@@ -549,7 +445,7 @@
                             </div>
 
                             <div class="tt-aside-calculator">
-                                <form class="tt-form-default" method="POST" action="{{url('place-car-bid/') }}">
+                                <form class="tt-form-default" method="POST" action="{{ url('place-car-bid/') }}">
                                     @csrf
                                     <div class="tt-wrapper-top">
                                         <h6 class="tt-calculator-title">
@@ -560,7 +456,7 @@
                                         <div class="tt-calculator-content">
                                             <div class="tt-form-aside">
                                                 <div class="form-group">
-                                                    <label>Your Bidding price ($)</label>
+                                                    <label>Your Bidding price (KES)</label>
                                                     <input type="number" class="form-control"
                                                         placeholder="{{ $car->min_price }}"
                                                         min="{{ $car->min_price }}" name="bid_amount" required>
@@ -571,7 +467,7 @@
                                                         placeholder="example@gmail.com" name="user_email" required>
                                                 </div>
                                             </div>
-                                            <a href="#" class="btn btn-fullwidth">PLACE BID</a>
+                                            <button type="submit" class="btn btn-fullwidth">PLACE BID</button>
                                         </div>
                                     </div>
                                     <div class="tt-wrapper-bottom">
@@ -596,8 +492,9 @@
                         <div>
                             <div class="tt-product-02">
                                 <div class="tt-image-box">
-                                    <a href="{{ url('car/'.$othercar->slug) }}" class="tt-img">
-                                        <img src="{{asset('storage/cars/'. $othercar->car_image) }}" alt="">
+                                    <a href="{{ url('car/' . $othercar->slug) }}" class="tt-img">
+                                        <img src="{{ asset('storage/cars/' . $othercar->car_image) }}"
+                                            alt="">
                                         <span class="tt-label-location">
                                             <span class="tt-label-promo">
                                                 Great Deal!
@@ -609,15 +506,18 @@
                                         <li><a href="#" data-toggle="modal" data-target="#modalAddTestDrive"
                                                 title="TEST-DRIVE" class="tooltip"><i class="icon-testdrive"></i></a>
                                         </li>
-                                        <li><a href="{{asset('storage/cars/'. $othercar->car_image) }}" title="GALLERY"
-                                                class="tooltip tt-btn-zomm"><i class="icon-photo-camera"></i></a></li>
+                                        <li><a href="{{ asset('storage/cars/' . $othercar->car_image) }}"
+                                                title="GALLERY" class="tooltip tt-btn-zomm"><i
+                                                    class="icon-photo-camera"></i></a></li>
                                         <li><a href="#" title="COMPARE" class="tooltip compare-toggle"><i
                                                     class="icon-compare"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="tt-wrapper-description">
                                     <div class="tt-box-title">
-                                        <h2 class="tt-title"><a href="{{ url('car/'.$othercar->slug) }}">{{ $othercar->car_year }} </a>
+                                        <h2 class="tt-title"><a
+                                                href="{{ url('car/' . $othercar->slug) }}">{{ $othercar->car_year }}
+                                            </a>
                                         </h2>
                                         <div class="tt-description">
                                             {{ $car->car_name }}
@@ -631,13 +531,15 @@
                                         <li><a href="#" data-toggle="modal" data-target="#modalAddTestDrive"
                                                 title="TEST-DRIVE" class="tooltip"><i class="icon-testdrive"></i></a>
                                         </li>
-                                        <li><a href="{{ asset('storage/cars/'.$othercar->car_image) }}" title="GALLERY"
-                                                class="tooltip tt-btn-zomm"><i class="icon-photo-camera"></i></a></li>
+                                        <li><a href="{{ asset('storage/cars/' . $othercar->car_image) }}"
+                                                title="GALLERY" class="tooltip tt-btn-zomm"><i
+                                                    class="icon-photo-camera"></i></a></li>
                                         <li><a href="#" title="COMPARE" class="tooltip compare-toggle"><i
                                                     class="icon-compare"></i></a></li>
                                     </ul>
                                     <div class="tt-btn">
-                                        <a href="{{ url('car/'.$othercar->slug) }}" class="tt-btn-moreinfo">more info</a>
+                                        <a href="{{ url('car/' . $othercar->slug) }}" class="tt-btn-moreinfo">more
+                                            info</a>
                                     </div>
                                 </div>
                             </div>
@@ -667,6 +569,8 @@
     <script src="{{ asset('external/form/jquery.form.js') }}"></script>
     <script src="{{ asset('external/form/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('external/form/jquery.form-init.js') }}"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
 </body>
 
 </html>

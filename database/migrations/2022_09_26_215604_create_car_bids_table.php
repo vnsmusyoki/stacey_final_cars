@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('bidding_price');
             $table->string('slug');
             $table->string('bid_status');
+            $table->foreign('bid_user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

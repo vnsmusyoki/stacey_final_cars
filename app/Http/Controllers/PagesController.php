@@ -17,6 +17,9 @@ class PagesController extends Controller
         $cars = Car::where('status', 'published')->get();
         return view('pages.homepage', compact('cars'));
     }
+    public function contactus(){
+        return view('pages.contact-us');
+    }
     public function cardetails($slug)
     {
         // Toastr::success('Working on the details', 'Title', ["positionClass" => "toast-top-center"]);
@@ -67,6 +70,7 @@ class PagesController extends Controller
             'bid_amount' => 'required|numeric',
             'user_email' => 'required|email',
         ]);
+
         $timenows = time();
         $checknums = "1234567898746351937463790";
         $checkstrings = "QWERTYUIOPLKJHGFDSAZXCVBNMmanskqpwolesurte191827273jkskalqKNJAHSGETWIOWKSNXJNEUDNEKDKSMKIDNUENDNXKSKEJNEJHCBRFGEWVJHBKWJEBFRNKWJENFECKWLERKJFNRKEHBJWEiwjWSIWMSWISWQOQOAWSAMJENEJEEDEWSSRFRFTHUJOKMNZBXVCX";
@@ -81,21 +85,30 @@ class PagesController extends Controller
         if ($car) {
             $customer = User::where('email', $request->user_email)->first();
             if ($customer) {
-                $new = new  CarBid;
-                $new->car_id  = $car->id;
-                $new->bid_user_id = $customer->id;
-                $new->car_min_price = $car->min_price;
-                $car->bidding_price = $request->bid_amount;
-                $new->slug = $totalstrings;
-                $new->bid_status = "placed";
-                $new->save();
+                $checkbid = CarBid::where(['bid_user_id' => $customer->id, 'car_id' => $car->id])->first();
+                if ($checkbid) {
+                    return redirect()->back()->with('error', 'You have already placed a bid for this car. please login to change your price');
+                } else {
+                    $new = new  CarBid;
+                    $new->car_id  = $car->id;
+                    $new->bid_user_id = $customer->id;
+                    $new->car_min_price = $car->min_price;
+                    $new->bidding_price = $request->bid_amount;
+                    $new->slug = $totalstrings;
+                    $new->bid_status = "placed";
+                    $new->save();
+
+                    return redirect()->route('login')->with('success', 'You have successfully placed your bid');
+                }
             } else {
-                Toastr::success('Email address provided does not exist', 'Welcome', ["positionClass" => "toast-top-right"]);
-                return redirect()->route('login');
+                return redirect()->route('register')->with('success', 'Email Address does not exist. Please create an account first');
             }
         } else {
-            Toastr::success('No car details found', 'Welcome', ["positionClass" => "toast-top-right"]);
-            return redirect()->route('login');
+            return redirect()->back()->with('error', 'Car details not found');
         }
+    }
+    public function allcars(){
+        $cars = Car::where('status', 'published')->paginate(5);
+        return view('pages.all-cars', compact('cars'));
     }
 }

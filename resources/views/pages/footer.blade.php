@@ -8,7 +8,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col col-auto">
-                    <a class="tt-logo" href="index.html">
+                    <a class="tt-logo" href="{{ url('/') }}">
                         <img class="tt-logo-dark svg-img" src="images/logo.svg" alt="">
                     </a>
                 </div>
@@ -18,18 +18,18 @@
                     <ul class="tt-list-info">
                         <li>
                             <i class="icon-149984"></i>
-                            3261 Anmoore Road, Brooklyn, NY 11230
+                            3261 Anmoore Road, Brooklyn, Nairobi
                         </li>
                         <li>
                             <a href="#">
                                 <i class="icon-15874"></i>
-                                +01 123 456 78
+                                +254 794  107 848
                             </a>
                         </li>
                         <li>
                             <a href="mailto:info@youremal.com">
                                 <i class="icon-mail"></i>
-                                info@youremal.com
+                         smartmartcars@email.com
                             </a>
                         </li>
                     </ul>
@@ -85,7 +85,7 @@
     </div>
     <div class="tt-footer-copyright">
         <div class="container">
-            <span>&copy; Copyright 2022 Car Leader</span> <a href="#">PRIVACY POLICY</a>
+            <span>&copy; Copyright 2022 Smartmartcars</span> <a href="#">PRIVACY POLICY</a>
         </div>
     </div>
 </footer>
