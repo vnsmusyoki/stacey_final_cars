@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'My Cars Under Review')
+@section('title', 'My Cars')
 
 @section('content')
     <div class="row">
@@ -39,6 +39,7 @@
                                 <th>Car Year</th>
                                 <th>Price</th>
                                 <th>Color</th>
+                                <th>Bids</th>
                                 <th>Status</th>
                                 <th>Date Uploaded</th>
                                 <th>Actions</th>
@@ -54,7 +55,11 @@
                                         <td>{{ $car->car_year }}</td>
                                         <td>KES {{ $car->min_price }}</td>
                                         <td>{{ $car->car_color }}</td>
-
+                                        <td>
+                                            @php
+                                                $bids = App\Models\CarBid::where('car_id', $car->id)->count();
+                                            @endphp
+                                            {{ $bids }}</td>
                                         <td>
                                             @if ($car->status=="pending")
                                             <div class="userDatatable-content d-inline-block">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\CarBid;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 
@@ -14,7 +15,12 @@ class UserDashboardController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        return view('user.dashboard');
+        $uploaded = Car::where('status', 'published')->get();
+        $bids = CarBid::where('bid_user_id', auth()->user()->id)->get();
+        $maxamount = CarBid::where('bid_user_id', auth()->user()->id)->max('bidding_price');
+        $minamount = CarBid::where('bid_user_id', auth()->user()->id)->min('bidding_price');
+
+        return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount'));
     }
     public function uploadcar(){
         return view('user.upload-car');
@@ -45,6 +51,10 @@ class UserDashboardController extends Controller
             $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'admin')->get();
             return view('user.cars-under-review', compact('cars'));
 
+    }
+    public function mycars(){
+        $cars = Car::where('car_owner_id', auth()->user()->id)->get();
+        return view('user.my-cars', compact('cars'));
     }
     public function declinedcars(){
         $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'declined')->get();

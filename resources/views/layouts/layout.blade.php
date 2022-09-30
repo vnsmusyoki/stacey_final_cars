@@ -21,6 +21,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('dashboard/img/favicon.png')}}">
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     @livewireStyles
 </head>
 
@@ -38,7 +41,7 @@
             <div class="navbar-left">
                 <a href="" class="sidebar-toggle">
                     <img class="svg" src="{{asset('dashboard/img/svg/bars.svg')}}" alt="img"></a>
-                <a class="navbar-brand" href="#"><img class="dark" src="{{asset('dashboard/img/logo_dark.png')}}" alt="svg"><img class="light" src="{{asset('dashboard/img/logo_white.png')}}" alt="img"></a>
+                <a class="navbar-brand" href="#">SmartMartCars</a>
                 <form action="/" class="search-form">
                     <span data-feather="search"></span>
                     <input class="form-control mr-sm-2 box-shadow-none" type="text" placeholder="Search...">
@@ -755,17 +758,18 @@
                             <span class="toggle-icon"></span>
                         </a>
                         @endrole
-                        @role('user')
-
-                        <a href="{{route('user')}}" class="active">
-                            <span data-feather="home" class="nav-icon"></span>
-                            <span class="menu-text">Dashboard</span>
-                            <span class="toggle-icon"></span>
-                        </a>
-                        @endrole
 
 
                     </li>
+                    @role('user')
+
+                    <li>
+                        <a href="{{ route('user') }}"  class="">
+                            <span data-feather="home" class="nav-icon"></span>
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    @endrole
 
                     @role('administrator')
                     <li class="has-child">
@@ -886,7 +890,7 @@
                                 <a class="" href="{{ route('user.uploadcar') }}">Upload Car</a>
                             </li>
                             <li>
-                                <a class="" href="">All cars</a>
+                                <a href="{{ route('user.mycars') }}">All cars</a>
                             </li>
                             <li>
                                 <a class="" href="{{ route('user.underreview') }}">Under Review</a>
@@ -978,7 +982,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer-copyright">
-                            <p>2022 @<a href="#">Online Cars Auctioning System</a>
+                            <p>2022 @<a href="#">SmartMartcars Auctioning System</a>
                             </p>
                         </div>
                     </div>
@@ -1004,13 +1008,31 @@
     </main>
 
 
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
     <!-- inject:js-->
     <script src="{{  asset('dashboard/js/plugins.min.js') }}"></script>
     <script src="{{  asset('dashboard/js/script.min.js') }}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
     <!-- endinject-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf',
+                ]
+            });
+        });
+    </script>
     @livewireScripts
 
 </body>

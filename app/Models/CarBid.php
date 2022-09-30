@@ -9,4 +9,7 @@ class CarBid extends Model
 {
     protected $fillable=['car_id', 'bid_user_id', 'car_min_price', 'bidding_price', 'slug', 'bid_status'];
     use HasFactory;
+    public function cardetails(){
+        return $this->belongsTo(Car::class, 'car_id');
+    }
 }
