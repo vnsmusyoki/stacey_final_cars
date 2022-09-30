@@ -71,7 +71,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <form method="POST" action="{{ route('login') }}"
-                                                    class="edit-profile__body">
+                                                    class="edit-profile__body" autocomplete="off">
                                                     @csrf
                                                     @if (\Session::has('success'))
                                                         <div class="alert alert-success">

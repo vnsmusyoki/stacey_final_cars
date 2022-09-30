@@ -62,11 +62,8 @@
                 <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
                     <div class="form-group mb-25">
                         <label>Color</label>
-                        <select wire:model="car_color" id="" class="form-control">
-                            <option value="">click to select</option>
-                            <option value="Red">Red</option>
-                            <option value="Black">Black</option>
-                        </select>
+                        <input class="form-control form-control-lg" type="text" wire:model="car_color"
+                            placeholder="black" value="{{ old('car_color') }}" >
                         @error('car_color')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

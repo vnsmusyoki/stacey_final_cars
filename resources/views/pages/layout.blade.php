@@ -289,7 +289,7 @@
                             <div class="container" data-animation="fadeInUpSm" data-animation-delay="0s">
                                 <a href="inventory.html" class="tt-caption-custom">
                                     <div class="tt-title"> -->
-                                        <div class="text-small">We Don't Sell Cars</div> -->
+                                        <div class="text-small">We Don't Sell Cars</div> 
                                         <div class="text-large">We Sell<br>a DREAM</div>
                                     </div>
                                     <span><i class="icon-handsshake"></i>Get Approved</span>
