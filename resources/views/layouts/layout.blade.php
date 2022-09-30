@@ -917,7 +917,7 @@
                                     <a href="{{ route('user.placebid') }}" class="">Place New Bid</a>
                                 </li>
                                 <li>
-                                    <a href="" class="">All My Bids</a>
+                                    <a href="{{ route('user.allbids')}}" class="">All My Bids</a>
                                 </li>
                                 <li>
                                     <a href="" class="">Winning Bids</a>
