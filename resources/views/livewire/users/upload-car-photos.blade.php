@@ -35,7 +35,7 @@
                     </div>
                 @endif
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="example">
                         <thead>
                             <tr>
                                 <th></th>
@@ -62,7 +62,7 @@
 
                             @empty
                                 <tr>
-                                    <td colspan="5" class="text-center">No Attachments Found</td>
+                                    <td colspan="6" class="text-center">No Attachments Found</td>
                                 </tr>
                             @endforelse
 

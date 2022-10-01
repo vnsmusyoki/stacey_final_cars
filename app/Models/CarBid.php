@@ -12,4 +12,7 @@ class CarBid extends Model
     public function cardetails(){
         return $this->belongsTo(Car::class, 'car_id');
     }
+    public function carbidcustomer(){
+        return $this->belongsTo(User::class, 'bid_user_id');
+    }
 }

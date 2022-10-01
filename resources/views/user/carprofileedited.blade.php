@@ -13,7 +13,7 @@
   <a href="{{ route('user.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
                             <i class="la la-plus"></i> PUBLISH CAR</a>
                         @endif
-                      
+
                     </div>
 
                     <div class="action-btn">
@@ -42,6 +42,10 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>Car Name</td>
+                                    <td>{{ $car->car_name }}</td>
+                                </tr>
+                                <tr>
                                     <td>Car Category</td>
                                     <td>{{ $car->carrmakefetch->car_make_name }}</td>
                                 </tr>
@@ -50,7 +54,7 @@
                                     <td>{{ $car->carrmakemodelfetch->car_make_model_name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Registration Number</td>
+                                    <td>Reg. Number</td>
                                     <td>{{ $car->reg_number }}</td>
                                 </tr>
                                 <tr>
@@ -58,11 +62,32 @@
                                     <td>{{ $car->car_year }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Car Engine </td>
-                                    <td>{{ $car->engine_cc }}</td>
+                                    <td>Transmission</td>
+                                    <td>{{ $car->transmission }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Car Category</td>
+                                    <td>Fuel Type</td>
+                                    <td>{{ $car->fuel_type }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Loading capacity</td>
+                                    <td>{{ $car->loading_capacity }} KGs</td>
+                                </tr>
+                                <tr>
+                                    <td>Car Color</td>
+                                    <td>{{ $car->car_color }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Car Engine </td>
+                                    <td>{{ $car->engine_cc }}
+                                    cc</td>
+                                </tr>
+                                <tr>
+                                    <td>Features</td>
+                                    <td>{{ $car->features }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
                                     <td>{{ $car->car_description }}</td>
                                 </tr>
                             </tbody>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\CarBid;
+use App\Models\CarPhoto;
 use Illuminate\Http\Request;
 
 use Brian2694\Toastr\Facades\Toastr;
@@ -45,7 +47,9 @@ class AdminDashboardController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            return view('admin.carprofileedited', compact('car', 'slug'));
+            $highest = CarBid::where('car_id', $car->id)->max('bidding_price');
+            $attachments = CarPhoto::where('car_id', $car->id)->get();
+            return view('admin.carprofileedited', compact('car', 'slug', 'attachments', 'highest'));
         } else {
             return back();
         }
