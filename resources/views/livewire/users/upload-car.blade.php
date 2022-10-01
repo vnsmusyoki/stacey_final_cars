@@ -142,6 +142,86 @@
                         @enderror
                     </div>
                 </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>NO. of Passengers</label>
+                        <input class="form-control form-control-lg" type="number" min="1" wire:model="no_passengers" placeholder=""
+                            value="{{ old('no_passengers') }}">
+                        @error('no_passengers')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Loading Capacity</label>
+                        <input class="form-control form-control-lg" type="number" min="1" wire:model="loading_capacity" placeholder=""
+                            value="{{ old('loading_capacity') }}">
+                        @error('loading_capacity')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Engine Number</label>
+                        <input class="form-control form-control-lg" type="text" wire:model="engine_number" placeholder=""
+                            value="{{ old('engine_number') }}">
+                        @error('engine_number')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Date of Registration</label>
+                        <input class="form-control form-control-lg" type="date" wire:model="date_of_registration" placeholder=""
+                            value="{{ old('date_of_registration') }}">
+                        @error('date_of_registration')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>No of Previous Owners</label>
+                        <input class="form-control form-control-lg" type="number" min="0" wire:model="no_of_previous_owners" placeholder=""
+                            value="{{ old('no_of_previous_owners') }}">
+                        @error('no_of_previous_owners')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Logbook ID</label>
+                        <input class="form-control form-control-lg" type="number" wire:model="logbook_id" placeholder=""
+                            value="{{ old('logbook_id') }}">
+                        @error('logbook_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Scanned LogBook</label>
+                        <input class="form-control form-control-lg" type="file" wire:model="logbook" placeholder=""
+                            value="{{ old('logbook') }}">
+                        @error('logbook')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                    <div class="form-group mb-25">
+                        <label>Bidding Time Expiry</label>
+                        <input class="form-control form-control-lg" type="datetime-local" wire:model="bidding_time_expiry" placeholder=""
+                            value="{{ old('bidding_time_expiry') }}">
+                        @error('bidding_time_expiry')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
                     <div class="form-group mb-25">
                         <label>Car Features</label>

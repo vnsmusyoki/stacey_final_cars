@@ -26,7 +26,7 @@
     @livewireStyles
 </head>
 
-<body class="layout-light side-menu overlayScroll">
+<body class="layout-light side-menu">
     <div class="mobile-search">
         <form class="search-form">
             <span data-feather="search"></span>
@@ -975,7 +975,7 @@
 
         <div class="contents">
 
-            <div class="container-fluid" style="min-height: 200vh;overflow-y:scroll;">
+            <div class="container-fluid" >
                 @yield('content')
             </div>
 

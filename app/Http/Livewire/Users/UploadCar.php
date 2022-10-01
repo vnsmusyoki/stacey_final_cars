@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Users;
 
 use App\Models\Car;
 use App\Models\CarMake;
+use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -19,11 +20,19 @@ class UploadCar extends Component
     public $min_price;
     public $registration_number;
     public $car_model;
-public $car_name;
-public $car_milleage;
-public $car_color;
-public $car_features;
-public $fuel_type;
+    public $car_name;
+    public $car_milleage;
+    public $car_color;
+    public $car_features;
+    public $fuel_type;
+    public $no_passengers;
+    public $loading_capacity;
+    public $engine_number;
+    public $date_of_registration;
+    public $no_of_previous_owners;
+    public $logbook_id;
+    public $logbook;
+    public $bidding_time_expiry;
     public function render()
     {
         $makes = CarMake::all();
@@ -45,7 +54,15 @@ public $fuel_type;
             'car_color' => 'required',
             'car_milleage' => 'required',
             'car_name' => 'required',
-            'fuel_type' => 'required'
+            'fuel_type' => 'required',
+            'no_passengers' => 'required|numeric|min:3',
+            'loading_capacity' => 'required|numeric|min:50',
+            'engine_number'=> 'required|digits_between:11,17|unique:cars',
+            'date_of_registration' => 'required|before_or_equal:'.Carbon::today()->subDays(7),
+            'no_of_previous_owners' => 'required',
+            'logbook_id' => 'required|digits_between:11, 16|unique:cars',
+            'logbook'=>'required|mimes:pdf|max:2048',
+            'bidding_time_expiry' => 'required|after_or_equal:'.Carbon::now()->addDays(7),
 
         ]);
         $timenows = time();
@@ -73,6 +90,14 @@ public $fuel_type;
         $new->fuel_type = $this->fuel_type;
         $new->features = $this->car_features;
         $new->car_name = $this->car_name;
+        $new->status = "pending";
+        $new->no_passengers = $this->no_passengers;
+        $new->loading_capacity = $this->loading_capacity;
+        $new->engine_number = $this->engine_number;
+        $new->date_of_registration = $this->date_of_registration;
+        $new->no_of_previous_owners = $this->no_of_previous_owners;
+        $new->logbook_id = $this->logbook_id;
+        $new->bidding_time_expiry = $this->bidding_time_expiry;
         $new->reg_number = $this->registration_number;
         $new->car_description = $this->car_description;
         $fileNameWithExt = $this->car_photo->getClientOriginalName();
@@ -81,11 +106,15 @@ public $fuel_type;
         $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
         $path = $this->car_photo->storeAs('cars', $filenameToStore, 'public');
         $new->car_image = $filenameToStore;
+        $fileNameWithExt = $this->logbook->getClientOriginalName();
+        $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+        $Extension = $this->logbook->getClientOriginalExtension();
+        $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+        $path = $this->logbook->storeAs('logbooks', $filenameToStore, 'public');
+        $new->logbook = $filenameToStore;
         $new->slug = $totalstrings;
         $new->save();
 
         return redirect()->route('user.verifycarprofile', $totalstrings);
     }
-
-
 }
