@@ -286,6 +286,130 @@
         <div class="container-indent-05">
             <div class="container">
                 <div class="row">
+                    {{-- replaceable part --}}
+                    <div class="col-12 col-md-8">
+                        <a href="{{ url('all-cars') }}" class="tt-link-back">RETURN TO ALL CARS</a>
+                        <div class="tt-title-single">
+                            <h1 class="tt-title">2015 Mersedes-Bens C-Class</h1>
+                            <div class="tt-description">C 300 4MATIC 4dr Sedan AWD (2.0L 4cyl Turbo 7A)</div>
+                        </div>
+                        <div class="tt-aside-btn visible-xs">
+                            <a href="#" class="btn btn-color02" data-toggle="modal" data-target="#modalAddTestDrive"><i class="icon-testdrive"></i>TEST DRIVE</a>
+                            <a href="#" class="btn btn-color02 compare-toggle"><i class="icon-compare"></i>COMPARE</a>
+                        </div>
+                        <!-- mobile product slider  -->
+                        <div class="tt-mobile-product-layout visible-xs">
+                            <div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
+                                <div><img src="images/product_02/product_03.jpg" alt=""></div>
+                                <div><img src="images/product_02/product_03_02.jpg" alt=""></div>
+                                <div><img src="images/product_02/product_03_03.jpg" alt=""></div>
+                                <div><img src="images/product_02/product_03_04.jpg" alt=""></div>
+                                <div>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/bQz2Er3K8t8" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="tt-video-block">
+                                        <a href="#" class="link-video"></a>
+                                        <video class="movie" src="video/video.mp4" poster="video/video_img.jpg"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tt-label-location">
+                                <span class="tt-label-promo">Great Deal!</span>
+                            </div>
+                        </div>
+                        <div class="tt-layout-preview hidden-xs">
+                            <div class="tt-product-single-img">
+                                <div class="tt-label-location">
+                                    <span class="tt-label-promo">Great Deal!</span>
+                                </div>
+                                <div>
+                                    <img class="zoom-product" src='images/product_02/product_03.jpg' data-zoom-image="images/product_02/product_03.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="product-images-carousel">
+                                <ul id="smallGallery" class="tt-arrow-center-small slick-animated-show-js">
+                                    <li><a class="zoomGalleryActive" href="#" data-image="images/product_02/product_03.jpg" data-zoom-image="images/product_02/product_03.jpg"><img src="images/product_02/product_03.jpg" alt="" /></a></li>
+                                    <li><a href="#" data-image="images/product_02/product_03_02.jpg" data-zoom-image="images/product_02/product_03_02.jpg"><img src="images/product_02/product_03_02.jpg" alt="" /></a></li>
+                                    <li><a href="#" data-image="images/product_02/product_03_03.jpg" data-zoom-image="images/product_02/product_03_03.jpg"><img src="images/product_02/product_03_03.jpg" alt="" /></a></li>
+                                    <li><a href="#" data-image="images/product_02/product_03_04.jpg" data-zoom-image="images/product_02/product_03_04.jpg"><img src="images/product_02/product_03_04.jpg" alt="" /></a></li>
+                                    <li>
+                                        <div class="video-link-product" data-toggle="modal" data-type="youtube" data-target="#modalVideoProduct" data-value="http://www.youtube.com/embed/bQz2Er3K8t8">
+                                            <img src="images/product_02/product_03_05.jpg" alt="">
+                                            <div>
+                                                <i class="icon-play"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="video-link-product" data-toggle="modal" data-type="video" data-target="#modalVideoProduct" data-value="video/video.mp4" data-poster="video/video_img.jpg">
+                                            <img src="images/product_02/product_03_05.jpg" alt="">
+                                            <div>
+                                                <i class="icon-play"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tt-box-indent">
+                            <h6 class="tt-title-single-sub">Features</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="tt-list03">
+                                        <li><a href="#">Fuel Consumption: City: 24 mpg</a></li>
+                                        <li><a href="#">Fuel Consumption: Highway: 31 mpg</a></li>
+                                        <li><a href="#">Memorized Settings including door mirror(s)</a></li>
+                                        <li><a href="#">Memorized Settings including steering wheel</a></li>
+                                        <li><a href="#">Memorized Settings for 3 drivers</a></li>
+                                        <li><a href="#">Driver seat memory</a></li>
+                                        <li><a href="#">Remote power door locks</a></li>
+                                        <li><a href="#">Power windows</a></li>
+                                        <li><a href="#">Cruise control</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="tt-list03">
+                                        <li><a href="#">4-wheel ABS Brakes</a></li>
+                                        <li><a href="#">Front Ventilated disc brakes</a></li>
+                                        <li><a href="#">1st and 2nd row curtain head airbags</a></li>
+                                        <li><a href="#">Passenger Airbag</a></li>
+                                        <li><a href="#">Side airbag</a></li>
+                                        <li><a href="#">Bluetooth wireless phone connectivity</a></li>
+                                        <li><a href="#">Audio system security</a></li>
+                                        <li><a href="#">Digital Audio Input</a></li>
+                                        <li><a href="#">In-Dash single CD player</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tt-box-indent">
+                            <h6 class="tt-title-single-sub">Vehicle Overview</h6>
+                                The Mercedes-Benz C-Class is a line of compact executive cars produced by Daimler AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the A-Class arrived in 1997. The C-Class is built at Mercedes-Benz factories in Sindelfingen and Bremen, Germany as well as numerous satellite factories in other countries. The first C-Class (W202) sedan was produced on 1 June 1993, and the first of the second generation (W203) rolled off the assembly line on 18 July 2000.
+                        </div>
+                        <div class="tt-box-indent">
+                            <h6 class="tt-title-single-sub">
+                                Contact Us About this Car
+                            </h6>
+                            <form class="tt-form-default02 tt-form-review">
+                                <div class="tt-form-aside">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" placeholder="Your name*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="name" class="form-control" placeholder="E-mail*">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" placeholder="Message"  id="textareaMessage"></textarea>
+                                    </div>
+                                    <a href="#" class="btn">ASK A QUESTION</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {{-- end repleable part --}}
                     <div class="col-12 col-md-8">
                         <a href="{{  url('all-cars') }}" class="tt-link-back">RETURN TO CARS</a>
                         <div class="tt-title-single">
@@ -299,15 +423,15 @@
                         <!-- mobile product slider  -->
                         <div class="tt-mobile-product-layout visible-xs">
                             <div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
-                                @foreach ($photos as $photo)
-                                    <div><img src="{{ asset('storage/cars/' . $photo->image_name) }}" alt="">
+                                @foreach ($photos as $photoo)
+                                    <div><img src="{{ asset('storage/cars/' . $photoo->image_name) }}" alt="">
                                     </div>
                                 @endforeach
 
                                 <div>
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <iframe class="embed-responsive-item"
-                                            src="http://www.youtube.com/embed/bQz2Er3K8t8" allowfullscreen></iframe>
+                                            src="#" allowfullscreen></iframe>
                                     </div>
                                 </div>
                                 <div>
@@ -346,7 +470,7 @@
 
                                     <div class="video-link-product" data-toggle="modal" data-type="youtube"
                                         data-target="#modalVideoProduct"
-                                        data-value="http://www.youtube.com/embed/bQz2Er3K8t8">
+                                        data-value="#">
                                         <img src="{{ asset('storage/cars/' . $car->car_image) }}" alt="">
                                         <div>
                                             <i class="icon-play"></i>

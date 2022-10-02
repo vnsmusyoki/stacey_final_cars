@@ -13,17 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car_bids', function (Blueprint $table) {
+        Schema::create('car_payments', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('car_id')->nullable()->unsigned();
             $table->bigInteger('bid_user_id')->nullable()->unsigned();
-            $table->string('car_min_price');
-            $table->string('bidding_price');
+            $table->bigInteger('car_owner_id')->nullable()->unsigned();
+            $table->bigInteger('bid_id')->nullable()->unsigned();
+            $table->string('total_price');
+            $table->string('admin_amount');
+            $table->string('owner_amount');
+            $table->string('transaction_code')->nullable();
+            $table->string('payment_status');
             $table->string('slug');
-            $table->string('bid_status');
-            $table->string('award_status')->nullable();
             $table->foreign('bid_user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('bid_id')->references('id')->on('car_bids')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('car_owner_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_bids');
+        Schema::dropIfExists('car_payments');
     }
 };

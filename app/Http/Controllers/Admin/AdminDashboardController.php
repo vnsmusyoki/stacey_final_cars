@@ -9,6 +9,7 @@ use App\Models\CarPhoto;
 use Illuminate\Http\Request;
 
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 
 class AdminDashboardController extends Controller
 {
@@ -18,6 +19,8 @@ class AdminDashboardController extends Controller
     }
     public function index()
     {
+
+      
         return view('admin.dashboard');
     }
     public function uploadedcars()

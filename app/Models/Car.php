@@ -16,5 +16,6 @@ class Car extends Model
     public function carowner(){
         return $this->belongsTo(User::class, 'car_owner_id');
     }
+    protected $dates=['bidding_time_expiry'];
     use HasFactory;
 }

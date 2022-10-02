@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('car_make_id')->nullable()->unsigned();
             $table->bigInteger('car_make_model_id')->nullable()->unsigned();
             $table->bigInteger('car_owner_id')->nullable()->unsigned();
+            $table->bigInteger('user_awarded_id')->nullable()->unsigned();
             $table->string('car_year');
             $table->string('car_name');
             $table->string('engine_cc');
@@ -39,11 +40,11 @@ return new class extends Migration
             $table->string('car_color');
             $table->string('fuel_type');
             $table->longText('features');
-
             $table->timestamp('bidding_time_expiry');
             $table->foreign('car_make_id')->references('id')->on('car_makes')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('car_make_model_id')->references('id')->on('car_make_modeles')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('car_owner_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_awarded_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

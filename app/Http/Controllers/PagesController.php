@@ -85,6 +85,9 @@ class PagesController extends Controller
         if ($car) {
             $customer = User::where('email', $request->user_email)->first();
             if ($customer) {
+                if($customer->id == $car->car_owner_id){
+                    return redirect()->back()->with('error', 'You can not bid your own car');
+                }else{
                 $checkbid = CarBid::where(['bid_user_id' => $customer->id, 'car_id' => $car->id])->first();
                 if ($checkbid) {
                     return redirect()->back()->with('error', 'You have already placed a bid for this car. please login to change your price');
@@ -100,6 +103,7 @@ class PagesController extends Controller
 
                     return redirect()->route('login')->with('success', 'You have successfully placed your bid');
                 }
+            }
             } else {
                 return redirect()->route('register')->with('success', 'Email Address does not exist. Please create an account first');
             }
