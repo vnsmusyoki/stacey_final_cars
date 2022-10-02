@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\PaymentNotifyAdmin;
+use App\Mail\PaymentNotifyCarOwnern;
+use App\Mail\PaymentNotifyCustomer;
 use App\Models\Car;
 use App\Models\CarBid;
 use App\Models\CarPayment;
@@ -11,6 +14,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class UserDashboardController extends Controller
 {
@@ -35,7 +39,8 @@ class UserDashboardController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            $highest = CarBid::where('car_id', $car->id)->max('bidding_price');
+            $highest = CarBid::where('car_id', $car->id)->orderBy('bidding_price', 'DESC')->first();
+
             return view('user.carprofileedited', compact('car', 'slug', 'highest'));
         } else {
             return back();
@@ -83,7 +88,8 @@ class UserDashboardController extends Controller
         $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'declined')->get();
         return view('user.cars-declined', compact('cars'));
     }
-    public function soldcars(){
+    public function soldcars()
+    {
         $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'sold')->get();
         return view('user.cars-sold', compact('cars'));
     }
@@ -95,7 +101,7 @@ class UserDashboardController extends Controller
     }
     public function placebid()
     {
-        $cars = Car::where('car_owner_id','!=',auth()->user()->id)->where('status', 'published')->get();
+        $cars = Car::where('car_owner_id', '!=', auth()->user()->id)->where('status', 'published')->get();
         return view('user.select-bid-car', compact('cars'));
     }
     public function submitbids(Request $request)
@@ -144,14 +150,52 @@ class UserDashboardController extends Controller
             return redirect()->back();
         }
     }
+    public function editbid($car, $bid)
+    {
+        $car = Car::where('slug', $car)->first();
+        $bid = CarBid::where('slug', $bid)->first();
+
+        if ($car && $bid) {
+            $images = CarPhoto::where('car_id', $car->id)->get();
+            return view('user.edit-placed-bid', compact('car', 'bid', 'images'));
+        } else {
+            Toastr::success('car detailsNot found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return redirect()->back();
+        }
+    }
+    public function updatebid(Request $request, $bid)
+    {
+
+        $this->validate($request, ['bid_id' => 'required', 'bid_amount' => 'required']);
+        $payment = CarBid::where('id', $request->bid_id)->first();
+        if ($payment) {
+            if ($payment->award_status == 1) {
+                Toastr::error('This bid can not be edited because you have already been allocated and you will be required to pay the current price and submit the payment details for approval', 'Alert', ["positionClass" => "toast-top-center"]);
+                return redirect('user/all-bids');
+            } else {
+                $payment->bidding_price = $request->bid_amount;
+                $payment->save();
+                Toastr::success('You have edited your bid', 'Success', ["positionClass" => "toast-top-center"]);
+                return redirect('user/all-bids');
+            }
+        } else {
+            Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return redirect()->back();
+        }
+    }
     public function allbids()
     {
         $bids = CarBid::where('bid_user_id', auth()->user()->id)->get();
         return view('user.all-bids-placed', compact('bids'));
     }
+    public function winningbids()
+    {
+        $bids = CarBid::where('bid_user_id', auth()->user()->id)->where('award_status', 1)->get();
+        return view('user.all-winning-bids', compact('bids'));
+    }
     public function approvepayment(Request $request)
     {
-        $this->validate($request,['payment_approve'=>'required']);
+        $this->validate($request, ['payment_approve' => 'required']);
         $payment = CarPayment::where('slug', $request->payment_approve)->first();
         if ($payment) {
             $payment->payment_status = "approved";
@@ -177,11 +221,11 @@ class UserDashboardController extends Controller
             $car = Car::where('id', $payment->car_id)->first();
             $car->status = "published";
             $car->bidding_time_expiry = Carbon::now()->addHours(72);
-            $car->user_awarded_id=null;
+            $car->user_awarded_id = null;
             $car->save();
 
             $bid = CarBid::where('id', $payment->bid_id)->first();
-            $bid->award_status=null;
+            $bid->award_status = null;
             $bid->save();
 
             Toastr::success('payment details rejected and car has been published back for bidding for  next 72 hours', 'Success', ["positionClass" => "toast-top-center"]);
@@ -192,6 +236,74 @@ class UserDashboardController extends Controller
             return back();
         }
     }
+    public function removebid($bid)
+    {
+        $bid = CarBid::where('bid_user_id', auth()->user()->id)->where('slug', $bid)->first();
+        if ($bid) {
+            $check  = CarPayment::where('bid_id', $bid->id)->first();
+            if ($check) {
+                $carcheck = Car::findorFail($check->car_id);
+                $carcheck->status = "published";
+                $carcheck->user_awarded_id = null;
+                $carcheck->bidding_time_expiry = Carbon::now()->addHours(72);
+                $carcheck->save();
+                $bid->delete();
+                Toastr::success('Seems like you had already been allocated this car. it will be visible back to the main page for more bids', 'Title', ["positionClass" => "toast-top-center"]);
+                return back();
+            } else {
+                Toastr::success('You have deleted your bid', 'Title', ["positionClass" => "toast-top-center"]);
+                return back();
+            }
+        } else {
+            Toastr::success('Bid details not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function submitpayment($slug)
+    {
+        $payment = CarPayment::where('bid_user_id', auth()->user()->id)->where('slug', $slug)->first();
+        if ($payment) {
+            $car  = Car::where('id', $payment->car_id)->first();
+            $highest = CarBid::where('car_id', $car->id)->orderBy('bidding_price', 'DESC')->first();
 
+            $images = CarPhoto::where('car_id', $car->id)->get();
 
+            return view('user.submit-payment', compact('payment', 'car', 'images', 'highest'));
+        } else {
+            Toastr::success('Unable to fetch the details', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function uploadpayment(Request $request)
+    {
+        $this->validate($request, ['transaction_code' => 'required|string|min:10|max:10|unique:car_payments', 'payment_id' => 'required']);
+        $payment = CarPayment::where('id', $request->payment_id)->first();
+        if ($payment) {
+            $payment->transaction_code = $request->transaction_code;
+            $payment->save();
+            $maxbid = CarBid::where('id', $payment->bid_id)->first();
+            $car = Car::where('id', $payment->car_id)->first();
+            $messageone = "Congratulations, Your payment for the car " . $car->car_name . " registration_number" . $car->reg_number . " has been received KES:" . $maxbid->bidding_price . " We will verify as soon as possible and we will email you more details about where to pick your car.";
+            $receiverone = $maxbid->carbidcustomer->email;
+            $senderone = "smartmarcars@gmail.com";
+
+            $messagetwo = "This is to notify you that we have received payment details for the car  " . $car->car_name . " registration_number" . $car->reg_number . "   KES:" . $maxbid->bidding_price . "Log In to your dashboard for approval/rejection";
+            $receivertwo = $car->carowner->email;
+            $sendertwo = "smartmarcars@gmail.com";
+
+            $messagethree = "Please note that " . $car->car_name . " registration_number" . $car->reg_number . " has been paid by " . $maxbid->carbidcustomer->name . " Phone Number " . $maxbid->carbidcustomer->phone_number . " at KES:" . $maxbid->bidding_price . " Log In for approval.";
+            $receiverthree = "endlesscript@gmail.com";
+            $senderthree = "smartmarcars@gmail.com";
+
+            Mail::to($receiverone)->send(new PaymentNotifyCustomer($messageone, $receiverone, $senderone));
+            Mail::to($receivertwo)->send(new PaymentNotifyCarOwnern($messagetwo, $receivertwo, $sendertwo));
+            Mail::to($receiverthree)->send(new PaymentNotifyAdmin($messagethree, $receiverthree, $senderthree));
+
+            Toastr::success('Payment has been received. Wait for approval', 'Title', ["positionClass" => "toast-top-center"]);
+            return redirect()->route('user');
+        } else {
+            Toastr::success('Unable to fetch the details', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
 }

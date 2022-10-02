@@ -40,8 +40,14 @@ Route::get('/user/publish-car/{slug}', [UserDashboardController::class, 'publish
 Route::get('/user/upload-car', [UserDashboardController::class, 'uploadcar'])->name('user.uploadcar');
 Route::get('/user/my-cars', [UserDashboardController::class, 'mycars'])->name('user.mycars');
 Route::post('/user/submit-bid', [UserDashboardController::class, 'submitbids']);
+Route::get('/user/edit-bid/{car}/{bid}', [UserDashboardController::class, 'editbid']);
+Route::get('/user/remove-bid/{bid}', [UserDashboardController::class, 'removebid']);
+Route::patch('user/update-submited-bid/{bid}', [UserDashboardController::class, 'updatebid']);
 Route::get('/user/place-bid', [UserDashboardController::class, 'placebid'])->name('user.placebid');
 Route::get('/user/all-bids', [UserDashboardController::class, 'allbids'])->name('user.allbids');
+Route::get('/user/winning-bids', [UserDashboardController::class, 'winningbids'])->name('user.winningbids');
+Route::get('/user/submit-payment/{slug}', [UserDashboardController::class, 'submitpayment']);
+Route::post('/user/upload-payment', [UserDashboardController::class, 'uploadpayment']);
 
 Route::get('/user/place-bid/{slug}', [UserDashboardController::class, 'placebiddetails'])->name('user.selectedbidcar');
 Route::get('/user/car-profile/{slug}', [UserDashboardController::class, 'uploadedcarprofile'])->name('user.verifycarprofile');

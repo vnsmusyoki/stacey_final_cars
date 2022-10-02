@@ -1,22 +1,18 @@
 @extends('layouts.layout')
-@section('title', 'My Cars')
+@section('title', 'Winning Bids')
 
 @section('content')
     <div class="row">
         <div class="col-lg-12">
 
             <div class="breadcrumb-main">
-                <h4 class="text-capitalize breadcrumb-title">Car Details</h4>
+                <h4 class="text-capitalize breadcrumb-title">Approved Bids Details</h4>
                 <div class="breadcrumb-action justify-content-center flex-wrap">
                     <div class="action-btn">
 
                     </div>
 
-                    <div class="action-btn">
-                        <a href="{{ route('user.mycars') }}" class="btn btn-sm btn-primary btn-add">
-                            <i class="la la-plus"></i> My Cars</a>
 
-                    </div>
                 </div>
             </div>
 
@@ -24,7 +20,7 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>You submited the following Bids</h6>
+                    <h6>The following Bids WON</h6>
                 </div>
                 <div class="card-body">
 
@@ -40,6 +36,8 @@
                                 <th>Color</th>
                                 <th>Bid</th>
                                 <th>Bidding Deadline</th>
+                                <th>Transaction Code</th>
+                                <th>Payment Status</th>
                                 <th>Actions</th>
                             </thead>
                             <tbody>
@@ -60,12 +58,34 @@
                                                 $car = App\Models\Car::where('id', $bid->car_id)->first();
                                             @endphp
                                             {{ $car->bidding_time_expiry->format('d-m-Y') }}
-                                        </td>
 
+                                        </td>
                                         <td>
-                                            <a href="{{ route('user.verifycarprofile', $bid->cardetails->slug) }}">View</a>
-                                            <a href="{{ url('user/remove-bid/'.$bid->slug) }}" class="text-danger">Remove</a>
-                                            <a href="{{  url('user/edit-bid/'.$car->slug.'/'.$bid->slug) }}">Edit</a>
+                                            @php
+                                                $payment = App\Models\Carpayment::where('bid_id', $bid->id)->first();
+                                            @endphp
+                                            {{ $payment->transaction_code }}</td>
+                                        <td>
+                                            @if ($payment->payment_status == 'approved')
+                                                Approved
+                                            @elseif($payment->payment_status == 'declined')
+                                                Rejected
+                                            @else
+                                                Not Paid
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($car->transaction_code == null)
+                                                <a href="{{ url('user/submit-payment/' . $payment->slug) }}"
+                                                    class=" btn-primary btn">Pay
+                                                    Now</a>
+                                            @else
+                                                <a href="{{ route('user/submit-payment', $payment->slug) }}"
+                                                    class="btn btn-primary">View</a>
+                                            @endif
+
+
+
                                         </td>
                                     </tr>
                                 @endforeach

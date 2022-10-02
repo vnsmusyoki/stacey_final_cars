@@ -923,7 +923,7 @@
                                     <a href="{{ route('user.allbids')}}" class="">All My Bids</a>
                                 </li>
                                 <li>
-                                    <a href="" class="">Winning Bids</a>
+                                    <a href="{{  route('user.winningbids') }}" class="">Winning Bids</a>
                                 </li>
                             </ul>
                         </li>
