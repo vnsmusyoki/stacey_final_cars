@@ -787,7 +787,7 @@
                                     <a class="" href="{{ route('admin.approvedcars') }}">All Approved</a>
                                 </li>
                                 <li>
-                                    <a class="" href="{{  route('admin.todaycars') }}">Uploaded Today</a>
+                                    <a class="" href="{{ route('admin.todaycars') }}">Uploaded Today</a>
                                 </li>
                                 <li>
                                     <a class="" href="{{ route('admin.declinedcars') }}}">Declined Cars</a>
@@ -815,47 +815,39 @@
                             </li>
                         @endrole
                         @role('administrator')
-                        <li class="has-child">
-                            <a href="#" class="">
-                                <span data-feather="folder" class="nav-icon"></span>
-                                <span class="menu-text">Users</span>
-                                <span class="toggle-icon"></span>
-                            </a>
-                            <ul>
+                            <li class="has-child">
+                                <a href="#" class="">
+                                    <span data-feather="folder" class="nav-icon"></span>
+                                    <span class="menu-text">Users</span>
+                                    <span class="toggle-icon"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('admin.allusers') }}" class="">Users List</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="has-child">
+                                <a href="#" class="">
+                                    <span data-feather="user-check" class="nav-icon"></span>
+                                    <span class="menu-text">About cars</span>
+                                    <span class="toggle-icon"></span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a class="" href="{{  route('admin.carmake') }}">Car make</a>
+                                    </li>
+                                    <li>
+                                        <a class="" href="{{  route('admin.carmodels') }}">Car Models</a>
+                                    </li>
 
-
-                                <li>
-                                    <a href="{{ route('admin.allusers') }}" class="">Users List</a>
-                                </li>
-
-
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
                         @endrole
-                        <li class="has-child">
-                            <a href="#" class="">
-                                <span data-feather="user-check" class="nav-icon"></span>
-                                <span class="menu-text">Contact</span>
-                                <span class="toggle-icon"></span>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a class="" href="">Car Sellers</a>
-                                </li>
-                                <li>
-                                    <a class="" href="">Winning Bidders</a>
-                                </li>
 
-                            </ul>
-                        </li>
+                      
                         <li>
-                            <a href="" class="">
-                                <span data-feather="clock" class="nav-icon"></span>
-                                <span class="menu-text">My Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="">
+                            <a href="{{ url('admin/account-settings')}}" class="">
                                 <span data-feather="user" class="nav-icon"></span>
                                 <span class="menu-text">Secure Account</span>
                             </a>
@@ -916,16 +908,16 @@
                                     <a href="{{ route('user.placebid') }}" class="">Place New Bid</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('user.allbids')}}" class="">All My Bids</a>
+                                    <a href="{{ route('user.allbids') }}" class="">All My Bids</a>
                                 </li>
                                 <li>
-                                    <a href="{{  route('user.winningbids') }}" class="">Winning Bids</a>
+                                    <a href="{{ route('user.winningbids') }}" class="">Winning Bids</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="{{  url('user/account-settings') }}" class="">
+                            <a href="{{ url('user/account-settings') }}" class="">
                                 <span data-feather="clock" class="nav-icon"></span>
                                 <span class="menu-text">Account Security</span>
                             </a>
@@ -952,7 +944,7 @@
 
         <div class="contents">
 
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 @yield('content')
             </div>
 
@@ -1013,7 +1005,7 @@
             });
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function() {
             $('#exampletwo').DataTable({
                 dom: 'Bfrtip',

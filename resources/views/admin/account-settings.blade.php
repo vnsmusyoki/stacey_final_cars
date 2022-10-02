@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'User Secure Account')
+@section('title', 'Admin Secure Account')
 
 @section('content')
     <div class="row">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                        <form action="{{ url('user/update-password') }}" method="POST">
+                        <form action="{{ url('admin/update-password') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="">Current Password</label>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                        <form action="{{ url('user/update-email') }}" method="POST">
+                        <form action="{{ url('admin/update-email') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="">Current Email</label>

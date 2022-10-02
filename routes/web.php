@@ -65,4 +65,16 @@ Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapp
 Route::get('admin/cars-uploaded-today', [AdminDashboardController::class, 'carsuploadedtoday'])->name('admin.todaycars');
 Route::get('admin/all-rejected-cars', [AdminDashboardController::class, 'declinedcars'])->name('admin.declinedcars');
 Route::get('admin/all-users', [AdminDashboardController::class, 'allusers'])->name('admin.allusers');
-
+Route::get('admin/all-car-makes', [AdminDashboardController::class, 'carmakes'])->name('admin.carmake');
+Route::post('admin/upload-carmake', [AdminDashboardController::class, 'uploadcarmake']);
+Route::get('admin/edit-car-make/{slug}', [AdminDashboardController::class, 'editcarmake']);
+Route::patch('admin/update-carmake/{slug}', [AdminDashboardController::class, 'updatecarmake']);
+Route::get('admin/delete-car-make/{slug}', [AdminDashboardController::class, 'deletecarmake']);
+Route::get('admin/all-car-make-models', [AdminDashboardController::class, 'carmakemodels'])->name('admin.carmodels');
+Route::post('admin/upload-carmake-model', [AdminDashboardController::class, 'uploadcarmakemodel']);
+Route::get('admin/edit-car-make_model/{slug}', [AdminDashboardController::class, 'editcarmakemodel']);
+Route::patch('admin/update-carmake-model/{slug}', [AdminDashboardController::class, 'updatecarmakemodel']);
+Route::get('admin/delete-car-make-model/{slug}', [AdminDashboardController::class, 'deletecarmakemodel']);
+Route::get('/admin/account-settings', [AdminDashboardController::class, 'accountsettings']);
+Route::post('/admin/update-password', [AdminDashboardController::class, 'saveaccountpassword']);
+Route::post('/admin/update-email', [AdminDashboardController::class, 'saveaccountemail']);
