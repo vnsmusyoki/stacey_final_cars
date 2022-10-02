@@ -9,9 +9,9 @@
                 <h4 class="text-capitalize breadcrumb-title">Car Details</h4>
                 <div class="breadcrumb-action justify-content-center flex-wrap">
                     <div class="action-btn">
-                        @if ($car->status=="pending")
-  <a href="{{ route('user.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
-                            <i class="la la-plus"></i> PUBLISH CAR</a>
+                        @if ($car->status == 'pending')
+                            <a href="{{ route('user.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
+                                <i class="la la-plus"></i> PUBLISH CAR</a>
                         @endif
 
                     </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                        <img src="{{ asset('storage/cars/'.$car->car_image) }}" class="img-fluid" alt="">
+                        <img src="{{ asset('storage/cars/' . $car->car_image) }}" class="img-fluid" alt="">
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-stripped">
@@ -80,16 +80,26 @@
                                 <tr>
                                     <td>Car Engine </td>
                                     <td>{{ $car->engine_cc }}
-                                    cc</td>
+                                        cc</td>
                                 </tr>
-                                <tr>
-                                    <td>Features</td>
-                                    <td>{{ $car->features }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Description</td>
-                                    <td>{{ $car->car_description }}</td>
-                                </tr>
+                                @if ($car->car_owner_id == Auth::user()->id)
+                                    @if ($car->status == 'published' || $car->status == 'sold')
+                                        <tr class="text-success">
+                                            <td><strong>Highest Bid </strong></td>
+                                            <td><strong>KES {{ $highest->bidding_price }}</strong></td>
+                                        </tr>
+                                        <tr class="text-success font-bold">
+                                            <td><strong>Highest Bidder</strong></td>
+                                            <td><strong>{{ $highest->carbidcustomer->name }} -
+                                                    {{ $highest->carbidcustomer->phone_number }}</strong></td>
+                                        </tr>
+                                        <tr class="text-success">
+                                            <td><strong>Date Placed</strong></td>
+                                            <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
+                                        </tr>
+                                    @endif
+                                @endif
+
                             </tbody>
                         </table>
                     </div>
@@ -102,12 +112,17 @@
         <div class="col-lg-7">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>Upload More Photos?</h6>
+                    <h6>More Photos?</h6>
                 </div>
                 <div class="card-body">
                     <div class="basic-form-wrappers">
-                                @livewire('users.upload-car-photos', ['carslug' => $slug])
+                        @livewire('users.upload-car-photos', ['carslug' => $slug])
                     </div>
+                    <p><strong>Features: </strong></p>
+                    <p>{{ $car->features }}</p>
+                    <br>
+                    <p><strong>Description: </strong></p>
+                    <p>{{ $car->car_description }}</p>
                 </div>
             </div>
             <!-- ends: .card -->

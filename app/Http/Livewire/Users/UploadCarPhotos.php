@@ -19,7 +19,7 @@ class UploadCarPhotos extends Component
     public function render()
     {
         $car = Car::where('slug', $this->carprofileslug)->first();
-        $attachments = CarPhoto::where('car_owner_id', auth()->user()->id)->where('car_id', $car->id)->get();
+        $attachments = CarPhoto::where('car_id', $car->id)->get();
         return view('livewire.users.upload-car-photos', compact('attachments', 'car'));
     }
     public function mount($carslug)

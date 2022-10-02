@@ -5,10 +5,12 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\CarBid;
+use App\Models\CarPayment;
 use App\Models\CarPhoto;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 
 class UserDashboardController extends Controller
 {
@@ -18,12 +20,12 @@ class UserDashboardController extends Controller
     }
     public function index()
     {
-        $uploaded = Car::where('status', 'published')->get();
+        $uploaded = Car::where(['car_owner_id' => auth()->user()->id])->get();
         $bids = CarBid::where('bid_user_id', auth()->user()->id)->get();
         $maxamount = CarBid::where('bid_user_id', auth()->user()->id)->max('bidding_price');
         $minamount = CarBid::where('bid_user_id', auth()->user()->id)->min('bidding_price');
-
-        return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount'));
+        $awardedcars = Car::where(['status' => 'awarded', 'car_owner_id' => auth()->user()->id])->get();
+        return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount', 'awardedcars'));
     }
     public function uploadcar()
     {
@@ -33,7 +35,8 @@ class UserDashboardController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            return view('user.carprofileedited', compact('car', 'slug'));
+            $highest = CarBid::where('car_id', $car->id)->max('bidding_price');
+            return view('user.carprofileedited', compact('car', 'slug', 'highest'));
         } else {
             return back();
         }
@@ -80,6 +83,11 @@ class UserDashboardController extends Controller
         $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'declined')->get();
         return view('user.cars-declined', compact('cars'));
     }
+    public function soldcars(){
+        $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'sold')->get();
+        return view('user.cars-sold', compact('cars'));
+    }
+
     public function publishedcars()
     {
         $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'published')->get();
@@ -87,10 +95,11 @@ class UserDashboardController extends Controller
     }
     public function placebid()
     {
-        $cars = Car::where('car_owner_id', auth()->user()->id)->where('status', 'published')->get();
+        $cars = Car::where('car_owner_id','!=',auth()->user()->id)->where('status', 'published')->get();
         return view('user.select-bid-car', compact('cars'));
     }
-    public function submitbids(Request $request){
+    public function submitbids(Request $request)
+    {
         $this->validate($request, [
             'car_id' => 'required',
             'bid_amount' => 'required|numeric',
@@ -123,7 +132,7 @@ class UserDashboardController extends Controller
                     $new->slug = $totalstrings;
                     $new->bid_status = "placed";
                     $new->save();
-                    Toastr::success('You have already placed a bid for this car.', 'Title', ["positionClass" => "toast-top-center"]);
+                    Toastr::success('Congratulations, your bid has been placed.', 'Title', ["positionClass" => "toast-top-center"]);
                     return redirect()->route('user.allbids');
                 }
             } else {
@@ -135,8 +144,54 @@ class UserDashboardController extends Controller
             return redirect()->back();
         }
     }
-    public function allbids(){
+    public function allbids()
+    {
         $bids = CarBid::where('bid_user_id', auth()->user()->id)->get();
         return view('user.all-bids-placed', compact('bids'));
     }
+    public function approvepayment(Request $request)
+    {
+        $this->validate($request,['payment_approve'=>'required']);
+        $payment = CarPayment::where('slug', $request->payment_approve)->first();
+        if ($payment) {
+            $payment->payment_status = "approved";
+            $payment->save();
+            $car = Car::where('id', $payment->car_id)->first();
+            $car->status = "sold";
+            $car->save();
+            Toastr::success('payment details approved and car marked as sold.', 'Success', ["positionClass" => "toast-top-center"]);
+            return back();
+            return view('user.place-bid', compact('car', 'slug', 'images', 'bids', 'checkbid'));
+        } else {
+            Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function rejectpayment($slug)
+    {
+        $payment = CarPayment::where('slug', $slug)->first();
+        if ($payment) {
+            $payment->payment_status = "rejected";
+            $payment->save();
+
+            $car = Car::where('id', $payment->car_id)->first();
+            $car->status = "published";
+            $car->bidding_time_expiry = Carbon::now()->addHours(72);
+            $car->user_awarded_id=null;
+            $car->save();
+
+            $bid = CarBid::where('id', $payment->bid_id)->first();
+            $bid->award_status=null;
+            $bid->save();
+
+            Toastr::success('payment details rejected and car has been published back for bidding for  next 72 hours', 'Success', ["positionClass" => "toast-top-center"]);
+            return back();
+            return view('user.place-bid', compact('car', 'slug', 'images', 'bids', 'checkbid'));
+        } else {
+            Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+
+
 }

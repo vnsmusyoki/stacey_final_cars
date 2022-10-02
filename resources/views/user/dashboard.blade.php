@@ -224,15 +224,18 @@
                                             <td>
                                                 <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/'.$item->slug) }}" class="view">
+                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                            class="view">
                                                             <span data-feather="eye"></span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/'.$item->slug) }}" class="edit">
+                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                            class="edit">
                                                             <span data-feather="edit"></span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/'.$item->slug) }}" class="remove">
+                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                            class="remove">
                                                             <span data-feather="trash-2"></span></a>
                                                     </li>
                                                 </ul>
@@ -253,4 +256,89 @@
 
     </div>
     <!-- ends: .row -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card card-default  mb-4">
+                <div class="card-header">
+                    <h6>You provided the following details</h6>
+                </div>
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-stripped" id="example">
+                            <thead>
+                                <th>Image</th>
+                                <th>Car</th>
+                                <th>Reg No.</th>
+                                <th>Min Price</th>
+                                <th>Customer</th>
+                                <th>Phone Number</th>
+                                <th>Bid Price</th>
+                                <th>My Amount</th>
+                                <th>Trans Code</th>
+                                <th>Date Uploaded</th>
+                                <th>Payment</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($awardedcars as $car)
+                                    <tr>
+                                        <td><img src="{{ asset('storage/cars/' . $car->car_image) }}"
+                                                style="height:60px;width:80px;border-radius:9px;" alt=""></td>
+                                        <td>{{ $car->carrmakefetch->car_make_name }}</td>
+                                        <td>{{ $car->reg_number }}</td>
+                                        <td>KES {{ $car->min_price }}</td>
+                                        <td>{{ $car->caruserawarded->name }}</td>
+                                        <td>{{ $car->caruserawarded->phone_number }}</td>
+                                        <td>
+                                            @php
+                                                $bid = App\Models\CarBid::where(['car_id' => $car->id, 'award_status' => 1])->first();
+                                            @endphp
+                                            KES {{ $bid->bidding_price }}</td>
+
+                                        <td>
+                                            @php
+                                                $price = App\Models\CarPayment::where(['car_id' => $car->id, 'bid_id' => $bid->id])->first();
+                                            @endphp
+                                            KES {{ $price->owner_amount }}</td>
+
+                                        <td>{{ $price->transaction_code }}</td>
+                                        <td>{{ $price->payment_status }}</td>
+                                        <td>
+                                            @if ($price->payment_status == 'pending')
+                                                @if ($price->transaction_code == '')
+                                                    <button class="btn btn-success">Waiting Payment</button>
+                                                @else
+                                                    <form action="{{ url('user/dashboard/approve-payment') }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="payment_approve"
+                                                            value="{{ $price->slug }}">
+                                                        <button class="btn btn-danger btn-xs" type="submit"
+                                                            onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
+                                                        <a href="{{ url('user/dashboard/reject-payment/' . $price->slug) }}"
+                                                            class="badge badge-warning">Reject</a>
+                                                    </form>
+                                                @endif
+                                            @else
+                                                <button class="btn btn-success">Accepted</button>
+                                            @endif
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ends: .card -->
+
+        </div>
+
+        <!-- ends: .col-lg-6 -->
+    </div>
 @endsection

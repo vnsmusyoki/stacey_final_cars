@@ -903,6 +903,9 @@
                                 <li>
                                     <a class="" href="{{ route('user.declinedcars') }}">Declined Cars</a>
                                 </li>
+                                <li>
+                                    <a class="" href="{{ route('user.soldcars') }}">Sold Cars</a>
+                                </li>
                             </ul>
                         </li>
 

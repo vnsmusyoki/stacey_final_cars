@@ -24,7 +24,7 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>You provided the following details</h6>
+                    <h6>You submited the following Bids</h6>
                 </div>
                 <div class="card-body">
 
@@ -39,13 +39,14 @@
                                 <th>Price</th>
                                 <th>Color</th>
                                 <th>Bid</th>
-                                <th>Date Submited</th>
+                                <th>Bidding Deadline</th>
                                 <th>Actions</th>
                             </thead>
                             <tbody>
                                 @foreach ($bids as $bid)
                                     <tr>
-                                        <td><img src="{{ asset('storage/cars/'.$bid->cardetails->car_image) }}" style="height:60px;width:80px;border-radius:9px;" alt=""></td>
+                                        <td><img src="{{ asset('storage/cars/' . $bid->cardetails->car_image) }}"
+                                                style="height:60px;width:80px;border-radius:9px;" alt=""></td>
                                         <td>{{ $bid->cardetails->car_name }}</td>
                                         <td class="text-uppercase">{{ $bid->cardetails->reg_number }}</td>
                                         <td>{{ $bid->cardetails->engine_cc }} cc</td>
@@ -54,16 +55,22 @@
                                         <td>{{ $bid->cardetails->car_color }}</td>
                                         <td>
 
-                                           KES  {{ $bid->bidding_price }}</td>
+                                            KES {{ $bid->bidding_price }}</td>
 
-                                        <td>{{ $bid->created_at->format('d-m-Y') }}</td>
+                                        <td>
+
+                                            @php
+                                                $car = App\Models\Car::where('id', $bid->car_id)->first();
+                                            @endphp
+                                            {{ $car->bidding_time_expiry->format('d-m-Y') }}
+                                        </td>
                                         <td>
                                             <a href="{{ route('user.verifycarprofile', $bid->cardetails->slug) }}">View</a>
+                                            <a href="" class="text-danger">Remove</a>
+                                            <a href="">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach
-
-
                             </tbody>
                         </table>
                     </div>

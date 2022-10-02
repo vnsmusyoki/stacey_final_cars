@@ -32,7 +32,8 @@ Route::get('all-cars', [PagesController::class, 'allcars']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('administrator');
 Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user');
-
+Route::post('user/dashboard/approve-payment', [UserDashboardController::class, 'approvepayment']);
+Route::get('user/dashboard/reject-payment/{slug}', [UserDashboardController::class, 'rejectpayment']);
 Auth::routes();
 
 Route::get('/user/publish-car/{slug}', [UserDashboardController::class, 'publishcar'])->name('user.publishcars');
@@ -41,10 +42,12 @@ Route::get('/user/my-cars', [UserDashboardController::class, 'mycars'])->name('u
 Route::post('/user/submit-bid', [UserDashboardController::class, 'submitbids']);
 Route::get('/user/place-bid', [UserDashboardController::class, 'placebid'])->name('user.placebid');
 Route::get('/user/all-bids', [UserDashboardController::class, 'allbids'])->name('user.allbids');
+
 Route::get('/user/place-bid/{slug}', [UserDashboardController::class, 'placebiddetails'])->name('user.selectedbidcar');
 Route::get('/user/car-profile/{slug}', [UserDashboardController::class, 'uploadedcarprofile'])->name('user.verifycarprofile');
 Route::get('user/all-under-review', [UserDashboardController::class, 'carsunderreview'])->name('user.underreview');
 Route::get('user/all-declined-cars', [UserDashboardController::class, 'declinedcars'])->name('user.declinedcars');
+Route::get('user/all-sold-cars', [UserDashboardController::class, 'soldcars'])->name('user.soldcars');
 Route::get('user/all-published-cars', [UserDashboardController::class, 'publishedcars'])->name('user.publishedcars');
 Route::get('admin/all-uploaded-cars', [AdminDashboardController::class, 'uploadedcars'])->name('admin.uploadedcars');
 Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approvedcars'])->name('admin.approvedcars');

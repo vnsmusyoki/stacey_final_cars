@@ -14,7 +14,10 @@ class Car extends Model
         return $this->belongsTo(CarMakeModele::class, 'car_make_model_id');
     }
     public function carowner(){
-        return $this->belongsTo(User::class, 'car_owner_id');
+        return $this->belongsTo(User::class, 'car_owner_id', 'id');
+    }
+    public function caruserawarded(){
+        return $this->belongsTo(User::class, 'user_awarded_id', 'id');
     }
     protected $dates=['bidding_time_expiry'];
     use HasFactory;
