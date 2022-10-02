@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Approved Cars')
+@section('title', 'Cars Uploaded Today')
 
 @section('content')
     <div class="row">
@@ -24,7 +24,7 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>User provided the following details</h6>
+                    <h6>cars uploaded today and published for approval will be listed here</h6>
                 </div>
                 <div class="card-body">
 

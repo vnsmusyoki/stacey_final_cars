@@ -202,7 +202,7 @@
                 <div class="card-body pt-0">
                     <div class="tab-content">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-stripped">
+                            <table class="table table-bordered table-stripped" id="exampletwo">
                                 <thead>
                                     <tr>
                                         <th>Car</th>
@@ -219,24 +219,24 @@
                                             <td>{{ $item->cardetails->car_name }}</td>
                                             <td>{{ $item->cardetails->engine_cc }}</td>
                                             <td>{{ $item->cardetails->car_year }}</td>
-                                            <td>{{ $item->bidding_price }}</td>
+                                            <td>KES {{ $item->bidding_price }}</td>
                                             <td>{{ $item->created_at->format('d M Y') }}</td>
                                             <td>
                                                 <ul class="orderDatatable_actions mb-0 d-flex flex-wrap">
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                        <a href="{{ url('user/car-profile/' . $item->cardetails->slug) }}"
                                                             class="view">
                                                             <span data-feather="eye"></span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                        <a href="{{ url('user/remove-bid/' . $item->slug) }}"
                                                             class="edit">
-                                                            <span data-feather="edit"></span></a>
+                                                            <span data-feather="trash-2"></span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ url('user/remove-bid-details/' . $item->slug) }}"
+                                                        <a href="{{ url('user/edit-bid/' . $item->cardetails->slug . '/' . $item->slug) }}"
                                                             class="remove">
-                                                            <span data-feather="trash-2"></span></a>
+                                                            <span data-feather="edit"></span></a>
                                                     </li>
                                                 </ul>
                                             </td>

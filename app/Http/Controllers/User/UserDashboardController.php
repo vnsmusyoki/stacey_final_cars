@@ -14,6 +14,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class UserDashboardController extends Controller
@@ -304,6 +305,50 @@ class UserDashboardController extends Controller
         } else {
             Toastr::success('Unable to fetch the details', 'Title', ["positionClass" => "toast-top-center"]);
             return back();
+        }
+    }
+    public function accountsettings(){
+        return view('user.account-settings');
+    }
+
+
+    public function saveaccountpassword(Request $request)
+    {
+        $this->validate($request, [
+            'current_password' => 'required',
+            'password' => 'required|confirmed|string|min:6|max:20',
+            'password_confirmation' => 'required',
+        ]);
+        $currentpassword = auth()->user()->password;
+        if (Hash::check($request->current_password, $currentpassword)) {
+            $user = User::find(auth()->user()->id);
+            $user->password = Hash::make($request->password);
+            $user->save();
+            Toastr::success('Password changed successfully', 'Success', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
+        } else {
+            Toastr::error('Current password is incorrect', 'Error', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
+        }
+    }
+
+    public function saveaccountemail(Request $request)
+    {
+        $this->validate($request, [
+            'current_email' => 'required',
+            'email' => 'required|email|unique:users',
+            'confirm_email' => 'required|same:email',
+        ]);
+        $currentemail = auth()->user()->email;
+        if ($request->current_email == $currentemail) {
+            $user = User::find(auth()->user()->id);
+            $user->email = $request->email;
+            $user->save();
+            Toastr::success('Email changed successfully', 'Success', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
+        } else {
+            Toastr::error('Current email is incorrect', 'Error', ["positionClass" => "toast-top-right"]);
+            return redirect()->back();
         }
     }
 }

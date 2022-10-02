@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\CarBid;
 use App\Models\CarPhoto;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Brian2694\Toastr\Facades\Toastr;
@@ -20,7 +21,7 @@ class AdminDashboardController extends Controller
     public function index()
     {
 
-      
+
         return view('admin.dashboard');
     }
     public function uploadedcars()
@@ -46,6 +47,11 @@ class AdminDashboardController extends Controller
         $cars = Car::where('status', 'published')->get();
         return view('admin.cars-published', compact('cars'));
     }
+    public function declinedcars()
+    {
+        $cars = Car::where('status', 'declined')->get();
+        return view('admin.cars-declined', compact('cars'));
+    }
     public function carprofiledetails($slug)
     {
         $car = Car::where('slug', $slug)->first();
@@ -56,5 +62,13 @@ class AdminDashboardController extends Controller
         } else {
             return back();
         }
+    }
+    public function carsuploadedtoday(){
+        $cars = Car::wheredate('created_at', Carbon::today())->where('status', 'admin')->get();
+        return view('admin.cars-uploaded-today', compact('cars'));
+    }
+    public function allusers(){
+        $users = User::whereRoleIs('user')->get();
+        return view('admin.all-users', compact('users'));
     }
 }

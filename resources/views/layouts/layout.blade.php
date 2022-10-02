@@ -787,10 +787,10 @@
                                     <a class="" href="{{ route('admin.approvedcars') }}">All Approved</a>
                                 </li>
                                 <li>
-                                    <a class="" href="">Uploaded Today</a>
+                                    <a class="" href="{{  route('admin.todaycars') }}">Uploaded Today</a>
                                 </li>
                                 <li>
-                                    <a class="" href="">Declined Cars</a>
+                                    <a class="" href="{{ route('admin.declinedcars') }}}">Declined Cars</a>
                                 </li>
                             </ul>
                         </li>
@@ -814,6 +814,7 @@
                                 </ul>
                             </li>
                         @endrole
+                        @role('administrator')
                         <li class="has-child">
                             <a href="#" class="">
                                 <span data-feather="folder" class="nav-icon"></span>
@@ -821,21 +822,16 @@
                                 <span class="toggle-icon"></span>
                             </a>
                             <ul>
+
+
                                 <li>
-                                    <a href="" class="">Add User</a>
+                                    <a href="{{ route('admin.allusers') }}" class="">Users List</a>
                                 </li>
-                                <li>
-                                    <a href="" class="">Users Grid</a>
-                                </li>
-                                <li>
-                                    <a href="" class="">Users List</a>
-                                </li>
-                                <li>
-                                    <a href="" class="">Blocked Users</a>
-                                </li>
+
 
                             </ul>
                         </li>
+                        @endrole
                         <li class="has-child">
                             <a href="#" class="">
                                 <span data-feather="user-check" class="nav-icon"></span>
@@ -928,35 +924,13 @@
                             </ul>
                         </li>
 
-
-                        <li class="has-child">
-                            <a href="#" class="">
-                                <span data-feather="user-check" class="nav-icon"></span>
-                                <span class="menu-text">Contact</span>
-                                <span class="toggle-icon"></span>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a class="" href="">Car Sellers</a>
-                                </li>
-                                <li>
-                                    <a class="" href="">Winning Bid Car Sellers</a>
-                                </li>
-
-                            </ul>
-                        </li>
                         <li>
-                            <a href="" class="">
+                            <a href="{{  url('user/account-settings') }}" class="">
                                 <span data-feather="clock" class="nav-icon"></span>
-                                <span class="menu-text">My Profile</span>
+                                <span class="menu-text">Account Security</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="" class="">
-                                <span data-feather="user" class="nav-icon"></span>
-                                <span class="menu-text">Secure Account</span>
-                            </a>
-                        </li>
+
                         <li>
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
@@ -1032,6 +1006,16 @@
     <script>
         $(document).ready(function() {
             $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf',
+                ]
+            });
+        });
+    </script>
+     <script>
+        $(document).ready(function() {
+            $('#exampletwo').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf',

@@ -48,6 +48,9 @@ Route::get('/user/all-bids', [UserDashboardController::class, 'allbids'])->name(
 Route::get('/user/winning-bids', [UserDashboardController::class, 'winningbids'])->name('user.winningbids');
 Route::get('/user/submit-payment/{slug}', [UserDashboardController::class, 'submitpayment']);
 Route::post('/user/upload-payment', [UserDashboardController::class, 'uploadpayment']);
+Route::get('/user/account-settings', [UserDashboardController::class, 'accountsettings']);
+Route::post('/user/update-password', [UserDashboardController::class, 'saveaccountpassword']);
+Route::post('/user/update-email', [UserDashboardController::class, 'saveaccountemail']);
 
 Route::get('/user/place-bid/{slug}', [UserDashboardController::class, 'placebiddetails'])->name('user.selectedbidcar');
 Route::get('/user/car-profile/{slug}', [UserDashboardController::class, 'uploadedcarprofile'])->name('user.verifycarprofile');
@@ -59,3 +62,7 @@ Route::get('admin/all-uploaded-cars', [AdminDashboardController::class, 'uploade
 Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approvedcars'])->name('admin.approvedcars');
 Route::get('admin/car-profile/{slug}', [AdminDashboardController::class, 'carprofiledetails'])->name('admin.verifycarprofile');
 Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapproved'])->name('admin.publishcars');
+Route::get('admin/cars-uploaded-today', [AdminDashboardController::class, 'carsuploadedtoday'])->name('admin.todaycars');
+Route::get('admin/all-rejected-cars', [AdminDashboardController::class, 'declinedcars'])->name('admin.declinedcars');
+Route::get('admin/all-users', [AdminDashboardController::class, 'allusers'])->name('admin.allusers');
+

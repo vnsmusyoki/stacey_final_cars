@@ -1,12 +1,12 @@
 @extends('layouts.layout')
-@section('title', 'Approved Cars')
+@section('title', 'Cars Rejected ')
 
 @section('content')
     <div class="row">
         <div class="col-lg-12">
 
             <div class="breadcrumb-main">
-                <h4 class="text-capitalize breadcrumb-title">Car Details</h4>
+                <h4 class="text-capitalize breadcrumb-title">Rejected Cars </h4>
                 <div class="breadcrumb-action justify-content-center flex-wrap">
                     <div class="action-btn">
 
@@ -24,7 +24,7 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>User provided the following details</h6>
+                    <h6>cars declined after verification  will be listed here</h6>
                 </div>
                 <div class="card-body">
 
