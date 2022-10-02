@@ -77,7 +77,7 @@
                                                 <span class="bg-opacity-success  color-success rounded-pill userDatatable-content-status active">Sold</span>
                                             </div> @else
                                             <div class="userDatatable-content d-inline-block">
-                                                <span class="bg-opacity-danger  color-danger rounded-pill userDatatable-content-status active">Declined</span>
+                                                <span class="bg-opacity-danger  color-danger rounded-pill userDatatable-content-status active">{{ $car->status }}</span>
                                             </div>
                                             @endif
                                         </td>

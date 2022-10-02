@@ -261,10 +261,10 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>You provided the following details</h6>
+                    <h6>My Payments</h6>
                 </div>
                 <div class="card-body">
-
+                  
                     <div class="table-responsive">
                         <table class="table table-bordered table-stripped" id="example">
                             <thead>

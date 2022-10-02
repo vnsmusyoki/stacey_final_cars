@@ -24,12 +24,12 @@
         <div class="col-lg-12">
             <div class="card card-default  mb-4">
                 <div class="card-header">
-                    <h6>User provided the following details</h6>
+                    <h6>All uploaded cars for verification will be listed here</h6>
                 </div>
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-stripped">
+                        <table class="table table-bordered table-stripped" id="example">
                             <thead>
                                 <th>User</th>
                                 <th>Image</th>

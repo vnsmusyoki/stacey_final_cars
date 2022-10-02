@@ -26,7 +26,7 @@ class AdminDashboardController extends Controller
     {
 
         $cars = Car::where('status', 'admin')->get();
-        $payments = CarPayment::all();
+        $payments = CarPayment::where('payment_status', 'approved')->get();
         $totalpayments = CarPayment::where('payment_status', 'approved')->sum('admin_amount');
         $users = User::whereRoleIs('user')->get();
         $bids = CarBid::all();

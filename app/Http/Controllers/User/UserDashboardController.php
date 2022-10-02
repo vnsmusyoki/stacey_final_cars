@@ -29,7 +29,10 @@ class UserDashboardController extends Controller
         $bids = CarBid::where('bid_user_id', auth()->user()->id)->get();
         $maxamount = CarBid::where('bid_user_id', auth()->user()->id)->max('bidding_price');
         $minamount = CarBid::where('bid_user_id', auth()->user()->id)->min('bidding_price');
-        $awardedcars = Car::where(['status' => 'awarded', 'car_owner_id' => auth()->user()->id])->get();
+        $awardedcars = Car::query()
+        ->where(['user_awarded_id' => auth()->user()->id])
+        // ->orWhere(['status' => 'sold', 'user_awarded_id' => auth()->user()->id])
+        ->get();
         return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount', 'awardedcars'));
     }
     public function uploadcar()
@@ -206,7 +209,7 @@ class UserDashboardController extends Controller
             $car->save();
             Toastr::success('payment details approved and car marked as sold.', 'Success', ["positionClass" => "toast-top-center"]);
             return back();
-            return view('user.place-bid', compact('car', 'slug', 'images', 'bids', 'checkbid'));
+            // return view('user.place-bid', compact('car', 'slug', 'images', 'bids', 'checkbid'));
         } else {
             Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
             return back();

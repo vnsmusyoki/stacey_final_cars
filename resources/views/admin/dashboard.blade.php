@@ -79,7 +79,7 @@
                 <div class="overview-content">
                     <h1>{{ $cars->count() }}</h1>
                     <p>Uploaded Cars</p>
-                  
+
                 </div>
 
             </div>
@@ -102,7 +102,7 @@
                 <div class="overview-content">
                     <h1>{{$bids->count()}}</h1>
                     <p>Bids Submited</p>
-                  
+
                 </div>
 
             </div>
@@ -134,7 +134,7 @@
                 <div class="overview-content">
                     <h1>{{ $users->count() }}</h1>
                     <p>All Users</p>
-                 
+
                 </div>
 
             </div>
@@ -164,7 +164,7 @@
                 <div class="overview-content">
                     <h1>KES {{ $totalpayments}}</h1>
                     <p>Total Payment</p>
-                 
+
                 </div>
 
             </div>
@@ -189,13 +189,13 @@
         <div class="card broder-0">
             <div class="card-header">
                 <h6>ALL USERS</h6>
-             
+
             </div>
             <!-- ends: .card-header -->
             <div class="card-body pt-0">
                 <div class="col-lg-12">
                     <div class="card card-default  mb-4">
-                        
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-stripped" id="example">
@@ -216,19 +216,19 @@
                                                 <td>{{ $user->username }}</td>
                                                 <td>{{ $user->created_at->format('D, d/M/Y, h:i:s A') }}</td>
                                                 <td>{{ $user->updated_at->format('D, d/M/Y, h:i:s A') }}</td>
-        
+
                                             </tr>
                                         @endforeach
-        
-        
+
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-        
+
                     </div>
                     <!-- ends: .card -->
-        
+
                 </div>
             </div>
             <!-- ends: .card-body -->
@@ -240,7 +240,7 @@
         <div class="card border-0">
             <div class="card-header">
                 <h6>All payments</h6>
-               
+
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -251,10 +251,10 @@
                             <th>Reg No.</th>
                             <th>Owner Price</th>
                             <th>Customer</th>
-                            <th>Phone Number</th> 
+                            <th>Phone Number</th>
                             <th>My Amount</th>
                             <th>Trans Code</th>
-                            <th>Date Uploaded</th> 
+                            <th>Date Uploaded</th>
                         </thead>
                         <tbody>
                             @foreach ($payments as $payment)
@@ -262,16 +262,16 @@
                                     <td><img src="{{ asset('storage/cars/' . $payment->paymentcar->car_image) }}"
                                             style="height:60px;width:80px;border-radius:9px;" alt=""></td>
                                     <td>{{ $payment->paymentcar->car_name }}</td>
-                                    <td>{{ $payement->paymentcar->reg_number }}</td>
+                                    <td>{{ $payment->paymentcar->reg_number }}</td>
                                     <td>KES {{ $payment->owner_amount }}</td>
                                     <td>{{ $payment->paymentuser->name }}</td>
                                     <td>{{ $payment->paymentuser->phone_number }}</td>
                                     <td>
                                         KES {{ $payment->admin_amount }}</td>
 
-                                    <td>{{ $price->transaction_code }}</td>
-                                    <td>{{ $price->updated_at->format('d, M Y, h:i:s A') }}</td>
-                                    
+                                    <td>{{ $payment->transaction_code }}</td>
+                                    <td>{{ $payment->updated_at->format('d, M Y, h:i:s A') }}</td>
+
                                 </tr>
                             @endforeach
 

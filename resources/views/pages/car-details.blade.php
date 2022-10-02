@@ -255,7 +255,7 @@
         <div id="tt-stuck">
             <div class="container">
                 <div class="tt-stuck-row">
-                 
+
                 </div>
             </div>
         </div>
@@ -273,7 +273,7 @@
         <div class="container-indent-05">
             <div class="container">
                 <div class="row">
-                
+
                     <div class="col-12 col-md-8">
                         <a href="{{  url('all-cars') }}" class="tt-link-back">RETURN TO CARS</a>
                         <div class="tt-title-single">
@@ -434,14 +434,14 @@
 
                             <div class="tt-aside-calculator" id="placenow">
                                 @if (Session::has('error'))
-                                <div class="alert alert-error">
+                                <div class="bg-danger py-1 px-1 text-light">
                                     <ul>
                                         <li>{{ Session::get('error') }}</li>
                                     </ul>
                                 </div>
                             @endif
                             @if (Session::has('success'))
-                                <div class="alert alert-success">
+                                <div class="bg-success py-1 px-1 text-light">
                                     <ul>
                                         <li>{{ Session::get('success') }}</li>
                                     </ul>
@@ -473,7 +473,7 @@
                                         </div>
                                     </div>
                                     <div class="tt-wrapper-bottom">
-                                         
+
                                     </div>
                                 </form>
                             </div>

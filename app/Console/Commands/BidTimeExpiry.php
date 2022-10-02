@@ -70,7 +70,7 @@ class BidTimeExpiry extends Command
                     $car->user_awarded_id =$maxbid->bid_user_id;
                     $car->save();
 
-                    $messageone = "Congratulations, Your bid has been selected for the car ". $car->car_name. " registration_number" .$car->reg_number." You are required to pay KES:" .$maxbid->bidding_price. " and submit the details for your payment via the dashboard. Log In for more details";
+                    $messageone = "Congratulations, Your bid has been selected for the car ". $car->car_name. " registration_number " .$car->reg_number." You are required to pay KES: " .$maxbid->bidding_price. " and submit the details for your payment via the dashboard. Log In for more details";
                     $receiverone = $maxbid->carbidcustomer->email;
                     $senderone="smartmarcars@gmail.com";
 
