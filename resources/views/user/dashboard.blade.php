@@ -264,7 +264,7 @@
                     <h6>My Payments</h6>
                 </div>
                 <div class="card-body">
-                  
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-stripped" id="example">
                             <thead>
@@ -309,16 +309,20 @@
                                                 @if ($price->transaction_code == '')
                                                     <button class="btn btn-success">Waiting Payment</button>
                                                 @else
-                                                    <form action="{{ url('user/dashboard/approve-payment') }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="payment_approve"
-                                                            value="{{ $price->slug }}">
-                                                        <button class="btn btn-danger btn-xs" type="submit"
-                                                            onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
-                                                        <a href="{{ url('user/dashboard/reject-payment/' . $price->slug) }}"
-                                                            class="badge badge-warning">Reject</a>
-                                                    </form>
+                                                    @if ($price->car_owner_id == Auth::user()->id)
+                                                        <form action="{{ url('user/dashboard/approve-payment') }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="payment_approve"
+                                                                value="{{ $price->slug }}">
+                                                            <button class="btn btn-danger btn-xs" type="submit"
+                                                                onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
+                                                            <a href="{{ url('user/dashboard/reject-payment/' . $price->slug) }}"
+                                                                class="badge badge-warning">Reject</a>
+                                                        </form>
+                                                    @else
+                                                    <button class="btn btn-success">Pending</button>
+                                                    @endif
                                                 @endif
                                             @else
                                                 <button class="btn btn-success">Accepted</button>
