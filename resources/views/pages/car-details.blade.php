@@ -15,58 +15,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/main-style.css') }}">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
+    <script src="{{ asset('js/lightbox-plus-jquery.min.js') }}"></script>
 </head>
 
 <body>
-    <div class="tt-colorswatch">
-        <div class="tt-colorswatch-options">
-            <a href="#" class="colorswatch1 active js-swatch-color"></a>
-            <a href="#" class="colorswatch2 js-swatch-color" data-color="1"></a>
-            <a href="#" class="colorswatch3 js-swatch-color" data-color="2"></a>
-            <a href="#" class="colorswatch4 js-swatch-color" data-color="3"></a>
-            <a href="#" class="colorswatch5 js-swatch-color" data-color="4"></a>
-            <a href="#" class="colorswatch6 js-swatch-color" data-color="5"></a>
-        </div>
-        <div class="tt-colorswatch-btn js-colorswatch">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="347.523px"
-                height="347.523px" viewBox="0 0 347.523 347.523" style="enable-background:new 0 0 347.523 347.523;"
-                xml:space="preserve">
-                <g>
-                    <g>
-                        <path
-                            d="M108.674,196.125c-2.857-0.402-5.777-0.592-8.746-0.534c-14.267,0.278-36.342,6.092-60.493,32.207
-						c-19.171,20.729-19.954,42.635-20.644,61.961c-0.66,18.474-1.181,33.065-16.507,43.727c-1.506,1.049-2.318,2.837-2.113,4.661
-						c0.128,1.147,0.645,2.191,1.434,2.98c0.466,0.466,1.026,0.843,1.658,1.099c28.523,11.553,77.316,5.895,117.044-33.833
-						c18.043-18.044,28.812-37.145,31.14-55.233c0.607-4.719,0.618-9.323,0.091-13.763L108.674,196.125z M100.915,229.382
-						c-1.553,2.174-3.859,3.612-6.494,4.052c-19.209,3.202-25.884,15.953-26.159,16.494c-1.627,3.387-5.167,5.611-8.989,5.611
-						c-0.337,0-0.676-0.017-1.015-0.052c-1.149-0.117-2.264-0.432-3.313-0.936c-4.97-2.391-7.069-8.376-4.681-13.347
-						c0.442-0.918,11.153-22.546,40.869-27.5c0.546-0.09,1.1-0.136,1.647-0.136c4.908,0,9.055,3.516,9.861,8.357
-						C103.08,224.559,102.467,227.207,100.915,229.382z" />
-                        <path
-                            d="M340.587,6.796c-8.615-8.614-22.425-9.1-31.624-1.112c-5.782,5.021-141.818,123.166-160.166,141.513
-						c-9.175,9.175-20.946,24.898-31.124,39.428l42.864,43.271c14.546-10.18,30.345-22.003,39.65-31.308
-						C218.749,180.024,336.69,44.193,341.703,38.42C349.688,29.22,349.201,15.41,340.587,6.796z" />
-                    </g>
-                </g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-                <g></g>
-            </svg>
-        </div>
-    </div>
+
     <!-- tt-mobile menu -->
     <nav class="panel-menu" id="mobile-menu">
         <ul>
@@ -81,134 +35,11 @@
         <!-- quickLinks -->
         <div class="tt-quickLinks-popup">
         </div>
-        <div class="tt-mobile-quickLinks">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col">
-                        <a class="btn-toggle" href="#"><i class="icon-149984"></i></a>
-                        <div class="quickLinks-layout">
-                            <div class="quickLinks-map">
-                                <address>
-                                    <i class="icon-149984"></i>3261 Anmoore Road, Brooklyn, NY 11230
-                                </address>
-                                <div id="googleMapHeader" class="google-map"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <a class="btn-toggle" href="#"><i class="icon-15874"></i></a>
-                        <div class="quickLinks-layout">
-                            <div class="quickLinks-address">
-                                <h6 class="tt-title">Call Us:</h6>
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="icon-15874"></i> +01 123 456 78</a>
-                                    </li>
-                                    <li>
-                                        <i class="icon-icon"></i> 9:00 AM – 8:00 PM
-                                    </li>
-                                    <li>
-                                        <a href="mailto:info@youremal.com"><i class="icon-mail"></i>
-                                            info@youremal.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <a data-toggle="modal" data-target="#modalAddYourItem" class="btn-toggle no-popup"
-                            href="#"><i class="icon-addcar"></i></a>
-                    </div>
-                    <div class="col tt-account">
-                        <a class="btn-toggle is-popup tt-account" href="#">
-                            <i class="icon-user"></i>
-                        </a>
-                        <div class="tt-dropdown-menu">
-                            <div class="tt-row-close">
-                                <a href="#" class="tt-btn-close icon-close"></a>
-                            </div>
-                            <ul>
-                                <li><a href="#">Account</a></li>
-                                <li><a href="#">Check Out</a></li>
-                                <li><a href="#">Sign In</a></li>
-                                <li><a href="#">Sign Out</a></li>
-                                <li><a href="#">Register</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col tt-searcher">
-                        <a class="btn-toggle is-popup tt-searcher" href="#">
-                            <i class="icon-musica-searcher"></i>
-                        </a>
-                        <div class="tt-dropdown-menu">
-                            <div class="container">
-                                <form>
-                                    <div class="tt-row-search">
-                                        <input type="text" class="tt-search-input"
-                                            placeholder="Type your search request...">
-                                        <button class="tt-btn-search" type="submit"></button>
-                                        <button class="tt-btn-close icon-g-80"></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col tt-cart">
-                        <a class="btn-toggle is-popup" href="#">
-                            <i class="icon-cart tt-cart"></i>
-                        </a>
-                        <div class="tt-dropdown-menu">
-                            <h6 class="tt-dropdown-title">
-                                <a href="#" class="tt-btn-close icon-close"></a>
-                                Products in Cart
-                            </h6>
-                            <div class="tt-search-results">
-                                <ul>
-                                    <li>
-                                        <a href="inventory-item.html">
-                                            <div class="thumbnail"><img src="images/product/product_img_05.jpg"
-                                                    alt=""></div>
-                                            <div class="tt-description">
-                                                <div class="tt-title">Bosch 3330 Premium FILTECH Oil </div>
-                                                <div class="tt-price">
-                                                    $5.23
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <span class="tt-close-item icon-close"></span>
-                                    </li>
-                                    <li>
-                                        <a href="inventory-item.html">
-                                            <div class="thumbnail"><img src="images/product/product_img_08.jpg"
-                                                    alt=""></div>
-                                            <div class="tt-description">
-                                                <div class="tt-title">Autolite XP5325 Iridium XP Spark Plug, Pack of 4
-                                                </div>
-                                                <div class="tt-price">
-                                                    $24.61
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <span class="tt-close-item icon-close"></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tt-search-bottom">
-                                <div class="price-total">
-                                    <label>Total:</label>
-                                    <div class="tt-price">$29.84</div>
-                                </div>
-                                <a href="#" class="btn">CHECKOUT</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- panel-info -->
 
         <!-- header-holder -->
-        <div class="header-holder bg-dark"  >
+        <div class="header-holder bg-dark">
             <div class="container">
                 <div class="row">
                     <!--logo-->
@@ -233,7 +64,7 @@
                                     </li>
 
 
-                                    <li><a href="{{  url('contact-us') }}">CONTACTS</a></li>
+                                    <li><a href="{{ url('contact-us') }}">CONTACTS</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -275,14 +106,13 @@
                 <div class="row">
 
                     <div class="col-12 col-md-8">
-                        <a href="{{  url('all-cars') }}" class="tt-link-back">RETURN TO CARS</a>
+                        <a href="{{ url('all-cars') }}" class="tt-link-back">RETURN TO CARS</a>
                         <div class="tt-title-single">
                             <h1 class="tt-title">{{ $car->car_name }} - {{ $car->engine_cc }} cc</h1>
                             {{-- <div class="tt-description"></div> --}}
                         </div>
                         <div class="tt-aside-btn visible-xs">
-                            {{-- <a href="#" class="btn btn-color02" data-toggle="modal" data-target="#modalAddTestDrive"><i class="icon-testdrive"></i>TEST DRIVE</a> --}}
-                            {{-- <a href="#" class="btn btn-color02 compare-toggle"><i class="icon-compare"></i>COMPARE</a> --}}
+
                         </div>
                         <!-- mobile product slider  -->
                         <div class="tt-mobile-product-layout visible-xs">
@@ -292,19 +122,7 @@
                                     </div>
                                 @endforeach
 
-                                <div>
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item"
-                                            src="#" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="tt-video-block">
-                                        <a href="#" class="link-video"></a>
-                                        <video class="movie" src="video/video.mp4"
-                                            poster="video/video_img.jpg"></video>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="tt-label-location">
                                 <span class="tt-label-promo">Great Deal!</span>
@@ -323,23 +141,28 @@
                             </div>
                             <div class="product-images-carousel">
                                 <ul id="smallGallery" class="tt-arrow-center-small slick-animated-show-js">
+                                    <li><a class="zoomGalleryActive" href="#"><img
+                                                src="{{ asset('storage/cars/' . $car->car_image) }}"
+                                                alt="" /></a></li>
                                     @foreach ($photos as $photo)
-                                        <li><a class="zoomGalleryActive" href="#"
-                                                data-image="{{ asset('storage/cars/' . $photo->car_image) }}"
-                                                data-zoom-image="{{ asset('storage/cars/' . $photo->car_image) }}"><img
-                                                    src="{{ asset('storage/cars/' . $photo->car_image) }}"
-                                                    alt="" /></a></li>
+
+                                        <a class="gallery"
+                                            href="{{ asset('storage/cars/' . $photo->image_name) }}"
+                                            data-lightbox="mygallery"
+                                            data-title="Click anywhere outside the image or the X to the right to close."><img
+                                                class="example-image"
+                                                src="{{ asset('storage/cars/' . $photo->image_name) }}"
+                                                alt="" /></a>
                                     @endforeach
-
-
-                                    <div class="video-link-product" data-toggle="modal" data-type="youtube"
-                                        data-target="#modalVideoProduct"
-                                        data-value="#">
-                                        <img src="{{ asset('storage/cars/' . $car->car_image) }}" alt="">
-                                        <div>
-                                            <i class="icon-play"></i>
+                                    <li>
+                                        <div class="video-link-product" data-toggle="modal" data-type="youtube"
+                                            data-target="#modalVideoProduct"
+                                            data-value="http://www.youtube.com/embed/bQz2Er3K8t8derfde">
+                                            <img src="{{ asset('storage/cars/' . $car->car_image) }}" alt="">
+                                            <div>
+                                                <i class="icon-play"></i>
+                                            </div>
                                         </div>
-                                    </div>
                                     </li>
                                     <li>
                                         <div class="video-link-product" data-toggle="modal" data-type="video"
@@ -434,19 +257,19 @@
 
                             <div class="tt-aside-calculator" id="placenow">
                                 @if (Session::has('error'))
-                                <div class="bg-danger py-1 px-1 text-light">
-                                    <ul>
-                                        <li>{{ Session::get('error') }}</li>
-                                    </ul>
-                                </div>
-                            @endif
-                            @if (Session::has('success'))
-                                <div class="bg-success py-1 px-1 text-light">
-                                    <ul>
-                                        <li>{{ Session::get('success') }}</li>
-                                    </ul>
-                                </div>
-                            @endif
+                                    <div class="bg-danger py-1 px-1 text-light">
+                                        <ul>
+                                            <li>{{ Session::get('error') }}</li>
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if (Session::has('success'))
+                                    <div class="bg-success py-1 px-1 text-light">
+                                        <ul>
+                                            <li>{{ Session::get('success') }}</li>
+                                        </ul>
+                                    </div>
+                                @endif
                                 <form class="tt-form-default" method="POST" action="{{ url('place-car-bid/') }}">
                                     @csrf
                                     <div class="tt-wrapper-top">
