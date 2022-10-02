@@ -255,20 +255,7 @@
         <div id="tt-stuck">
             <div class="container">
                 <div class="tt-stuck-row">
-                    @if (Session::has('error'))
-                        <div class="alert alert-error">
-                            <ul>
-                                <li>{{ Session::get('error') }}</li>
-                            </ul>
-                        </div>
-                    @endif
-                    @if (Session::has('success'))
-                        <div class="alert alert-success">
-                            <ul>
-                                <li>{{ Session::get('success') }}</li>
-                            </ul>
-                        </div>
-                    @endif
+                 
                 </div>
             </div>
         </div>
@@ -446,6 +433,20 @@
                             </div>
 
                             <div class="tt-aside-calculator" id="placenow">
+                                @if (Session::has('error'))
+                                <div class="alert alert-error">
+                                    <ul>
+                                        <li>{{ Session::get('error') }}</li>
+                                    </ul>
+                                </div>
+                            @endif
+                            @if (Session::has('success'))
+                                <div class="alert alert-success">
+                                    <ul>
+                                        <li>{{ Session::get('success') }}</li>
+                                    </ul>
+                                </div>
+                            @endif
                                 <form class="tt-form-default" method="POST" action="{{ url('place-car-bid/') }}">
                                     @csrf
                                     <div class="tt-wrapper-top">
