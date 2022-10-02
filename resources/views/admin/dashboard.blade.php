@@ -266,10 +266,7 @@
                                     <td>KES {{ $payment->owner_amount }}</td>
                                     <td>{{ $payment->paymentuser->name }}</td>
                                     <td>{{ $payment->paymentuser->phone_number }}</td>
-                                 
-
                                     <td>
-                                      
                                         KES {{ $payment->admin_amount }}</td>
 
                                     <td>{{ $price->transaction_code }}</td>
