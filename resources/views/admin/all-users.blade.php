@@ -2,8 +2,7 @@
 @section('title', 'All Users ')
 
 @section('content')
-    <div cl
-ass="row">
+    <div class="row">
         <div class="col-lg-12">
 
             <div class="breadcrumb-main">

@@ -752,17 +752,7 @@
                     <li class="menu-title">
                         <span>Main menu</span>
                     </li>
-                    <li class="has-child open">
-                        @role('administrator')
-                            <a href="{{ route('administrator') }}" class="active">
-                                <span data-feather="home" class="nav-icon"></span>
-                                <span class="menu-text">Dashboard</span>
-                                <span class="toggle-icon"></span>
-                            </a>
-                        @endrole
-
-
-                    </li>
+          
                     @role('user')
                         <li>
                             <a href="{{ route('user') }}" class="">
@@ -771,6 +761,14 @@
                             </a>
                         </li>
                     @endrole
+                    @role('administrator')
+                    <li>
+                        <a href="{{ route('administrator') }}" class="">
+                            <span data-feather="home" class="nav-icon"></span>
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                @endrole
 
                     @role('administrator')
                         <li class="has-child">

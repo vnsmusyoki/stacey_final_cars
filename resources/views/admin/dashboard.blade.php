@@ -77,13 +77,9 @@
 
 
                 <div class="overview-content">
-                    <h1>74</h1>
+                    <h1>{{ $cars->count() }}</h1>
                     <p>Uploaded Cars</p>
-                    <div class="ap-po-details-time">
-                        <span class="color-success"><i class="las la-arrow-up"></i>
-                            <strong>25%</strong></span>
-                        <small>In the last 1 month</small>
-                    </div>
+                  
                 </div>
 
             </div>
@@ -104,13 +100,9 @@
         <div class="ap-po-details p-25 radius-xl bg-white d-flex justify-content-between">
             <div>
                 <div class="overview-content">
-                    <h1>723</h1>
+                    <h1>{{$bids->count()}}</h1>
                     <p>Bids Submited</p>
-                    <div class="ap-po-details-time">
-                        <span class="color-success"><i class="las la-arrow-up"></i>
-                            <strong>45%</strong></span>
-                        <small>In the last 1 month</small>
-                    </div>
+                  
                 </div>
 
             </div>
@@ -140,13 +132,9 @@
 
 
                 <div class="overview-content">
-                    <h1>Ksh: 230,000</h1>
-                    <p>Average Bid Price</p>
-                    <div class="ap-po-details-time">
-                        <span class="color-danger"><i class="las la-arrow-down"></i>
-                            <strong>25%</strong></span>
-                        <small>Since last week</small>
-                    </div>
+                    <h1>{{ $users->count() }}</h1>
+                    <p>All Users</p>
+                 
                 </div>
 
             </div>
@@ -174,13 +162,9 @@
 
 
                 <div class="overview-content">
-                    <h1>2938</h1>
-                    <p>Total Users</p>
-                    <div class="ap-po-details-time">
-                        <span class="color-success"><i class="las la-arrow-up"></i>
-                            <strong>35%</strong></span>
-                        <small>Since last week</small>
-                    </div>
+                    <h1>KES {{ $totalpayments}}</h1>
+                    <p>Total Payment</p>
+                 
                 </div>
 
             </div>
@@ -200,441 +184,103 @@
         </div>
         <!-- Card 1 End -->
     </div>
-    <div class="col-xxl-6 mb-30">
+    <div class="col-xxl-12 mb-30">
 
         <div class="card broder-0">
             <div class="card-header">
-                <h6>Cars Upload Timeline</h6>
-                <div class="card-extra">
-                    <ul class="card-tab-links mr-3 nav-tabs nav" role="tablist">
-                        <li>
-                            <a href="#tl_revenue-week" data-toggle="tab" id="tl_revenue-week-tab" role="tab" aria-selected="false">Week</a>
-                        </li>
-                        <li>
-                            <a href="#tl_revenue-month" data-toggle="tab" id="tl_revenue-month-tab" role="tab" aria-selected="false">Month</a>
-                        </li>
-                        <li>
-                            <a class="active" href="#tl_revenue-year" data-toggle="tab" id="tl_revenue-year-tab" role="tab" aria-selected="true">Year</a>
-                        </li>
-                    </ul>
-                    <div class="dropdown dropleft">
-                        <a href="#" role="button" id="revenue1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span data-feather="more-horizontal"></span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="revenue1">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
+                <h6>ALL USERS</h6>
+             
             </div>
             <!-- ends: .card-header -->
             <div class="card-body pt-0">
-                <div class="tab-content">
-                    <div class="tab-pane fade" id="tl_revenue-week" role="tabpanel" aria-labelledby="tl_revenue-week-tab">
-                        <div class="revenue-labels">
-                            <div>
-                                <strong class="text-primary">KES 7, 284, 800</strong>
-                                <span>Highest Bid</span>
-                            </div>
-                            <div>
-                                <strong>KES 520,458</strong>
-                                <span>Lowest Bid</span>
+                <div class="col-lg-12">
+                    <div class="card card-default  mb-4">
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-stripped" id="example">
+                                    <thead>
+                                        <th>Full Name</th>
+                                        <th>Email Address</th>
+                                        <th>Phone Number</th>
+                                        <th>Username</th>
+                                        <th>Date Joined.</th>
+                                        <th>Last Account Update</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td>{{ $user->name }} </td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->phone_number }}</td>
+                                                <td>{{ $user->username }}</td>
+                                                <td>{{ $user->created_at->format('D, d/M/Y, h:i:s A') }}</td>
+                                                <td>{{ $user->updated_at->format('D, d/M/Y, h:i:s A') }}</td>
+        
+                                            </tr>
+                                        @endforeach
+        
+        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <!-- ends: .performance-stats -->
-
-                        <div class="wp-chart">
-                            <div class="parentContainer">
-
-
-                                <div>
-                                    <canvas id="myChart6W"></canvas>
-                                </div>
-
-
-                            </div>
-                        </div>
+        
                     </div>
-                    <div class="tab-pane fade" id="tl_revenue-month" role="tabpanel" aria-labelledby="tl_revenue-month-tab">
-                        <div class="revenue-labels">
-                            <div>
-                                <strong class="text-primary">KES 7, 284, 800</strong>
-                                <span>Highest Bid</span>
-                            </div>
-                            <div>
-                                <strong>KES 520,458</strong>
-                                <span>Lowest Bid</span>
-                            </div>
-                        </div>
-                        <!-- ends: .performance-stats -->
-
-                        <div class="wp-chart">
-                            <div class="parentContainer">
-
-
-                                <div>
-                                    <canvas id="myChart6M"></canvas>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade active show" id="tl_revenue-year" role="tabpanel" aria-labelledby="tl_revenue-year-tab">
-                        <div class="revenue-labels">
-                            <div>
-                                <strong class="text-primary">KES 7, 284, 800</strong>
-                                <span>Highest Bid</span>
-                            </div>
-                            <div>
-                                <strong>KES 520,458</strong>
-                                <span>Lowest Bid</span>
-                            </div>
-                        </div>
-                        <!-- ends: .performance-stats -->
-
-                        <div class="wp-chart">
-                            <div class="parentContainer">
-
-
-                                <div>
-                                    <canvas id="myChart6"></canvas>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ends: .card -->
+        
                 </div>
             </div>
             <!-- ends: .card-body -->
         </div>
 
     </div>
-    <div class="col-xxl-6 mb-30">
+    <div class="col-xxl-12 mb-30">
 
         <div class="card border-0">
             <div class="card-header">
-                <h6>Latest 5  Cars Bids Submited</h6>
-                <div class="card-extra">
-                    <ul class="card-tab-links mr-3 nav-tabs nav">
-                        <li>
-                            <a href="#s_revenue-today" class="active" data-toggle="tab" id="s_revenue-today-tab" role="tab" area-controls="s_revenue-table" aria-selected="true">Today</a>
-                        </li>
-                        <li>
-                            <a href="#s_revenue-week" data-toggle="tab" id="s_revenue-week-tab" role="tab" area-controls="s_revenue-table" aria-selected="false">Week</a>
-                        </li>
-                        <li>
-                            <a href="#s_revenue-month" data-toggle="tab" id="s_revenue-month-tab" role="tab" area-controls="s_revenue-table" aria-selected="false">Month</a>
-                        </li>
-                        <li>
-                            <a href="#s_revenue-year" data-toggle="tab" id="s_revenue-year-tab" role="tab" area-controls="s_revenue-table" aria-selected="false">Year</a>
-                        </li>
-                    </ul>
-                    <div class="dropdown dropleft">
-                        <a href="#" role="button" id="action" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span data-feather="more-horizontal"></span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="action">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
+                <h6>All payments</h6>
+               
             </div>
             <div class="card-body p-0">
-                <div class="tab-content">
-                    <div class="tab-pane fade active show" id="s_revenue-today" role="tabpanel" aria-labelledby="s_revenue-today-tab">
-                        <div class="table-responsive table-revenue">
-                            <table class="table table--default">
-                                <thead>
-                                    <tr>
-                                        <th>Car Name</th>
-                                        <th>Bids Placed</th>
-                                        <th>Highest Bid</th>
-                                        <th>Lowest Price</th>
-                                        <th>Trend</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hatchback</td>
-                                        <td>30</td>
-                                        <td>ksh:120,156</td>
-                                        <td>Ksh. 92,225</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm1"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sedan</td>
-                                        <td>458</td>
-                                        <td>KES 210,584</td>
-                                        <td>KES 190,753</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm2"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>SUV</td>
-                                        <td>10</td>
-                                        <td>KES 600, 000</td>
-                                        <td>KES 300, 000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm3"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Convertible</td>
-                                        <td>2,856</td>
-                                        <td>KES 800,256</td>
-                                        <td>KES 750,456</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm4"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Crossover</td>
-                                        <td>9,456</td>
-                                        <td>KES 1, 036,478</td>
-                                        <td>KES 930,852</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm5"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="s_revenue-week" role="tabpanel" aria-labelledby="s_revenue-week-tab">
-                        <div class="table-responsive table-revenue">
-                            <table class="table table--default">
-                                <thead>
-                                    <tr>
-                                        <th>Car Name</th>
-                                        <th>Bids Placed</th>
-                                        <th>Highest Bid</th>
-                                        <th>Lowest Price</th>
-                                        <th>Trend</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hatchback</td>
-                                        <td>30</td>
-                                        <td>ksh:120,156</td>
-                                        <td>Ksh. 92,225</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm1"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sedan</td>
-                                        <td>458</td>
-                                        <td>KES 210,584</td>
-                                        <td>KES 190,753</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm2"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>SUV</td>
-                                        <td>10</td>
-                                        <td>KES 600, 000</td>
-                                        <td>KES 300, 000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm3"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Convertible</td>
-                                        <td>2,856</td>
-                                        <td>KES 800,256</td>
-                                        <td>KES 750,456</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm4"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Crossover</td>
-                                        <td>9,456</td>
-                                        <td>KES 1, 036,478</td>
-                                        <td>KES 930,852</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm5"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="s_revenue-month" role="tabpanel" aria-labelledby="s_revenue-month-tab">
-                        <div class="table-responsive table-revenue">
-                            <table class="table table--default">
-                                <thead>
-                                    <tr>
-                                        <th>Car Name</th>
-                                        <th>Bids Placed</th>
-                                        <th>Highest Bid</th>
-                                        <th>Lowest Price</th>
-                                        <th>Trend</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hatchback</td>
-                                        <td>30</td>
-                                        <td>ksh:120,156</td>
-                                        <td>Ksh. 92,225</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm1"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sedan</td>
-                                        <td>458</td>
-                                        <td>KES 210,584</td>
-                                        <td>KES 190,753</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm2"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>SUV</td>
-                                        <td>10</td>
-                                        <td>KES 600, 000</td>
-                                        <td>KES 300, 000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm3"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Convertible</td>
-                                        <td>2,856</td>
-                                        <td>KES 800,256</td>
-                                        <td>KES 750,456</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm4"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Crossover</td>
-                                        <td>9,456</td>
-                                        <td>KES 1, 036,478</td>
-                                        <td>KES 930,852</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm5"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="s_revenue-year" role="tabpanel" aria-labelledby="s_revenue-year-tab">
-                        <div class="table-responsive table-revenue">
-                            <table class="table table--default">
-                                <thead>
-                                    <tr>
-                                        <th>Car Name</th>
-                                        <th>Bids Placed</th>
-                                        <th>Highest Bid</th>
-                                        <th>Lowest Price</th>
-                                        <th>Trend</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Hatchback</td>
-                                        <td>30</td>
-                                        <td>ksh:120,156</td>
-                                        <td>Ksh. 92,225</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm1"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sedan</td>
-                                        <td>458</td>
-                                        <td>KES 210,584</td>
-                                        <td>KES 190,753</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm2"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>SUV</td>
-                                        <td>10</td>
-                                        <td>KES 600, 000</td>
-                                        <td>KES 300, 000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm3"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Convertible</td>
-                                        <td>2,856</td>
-                                        <td>KES 800,256</td>
-                                        <td>KES 750,456</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm4"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Crossover</td>
-                                        <td>9,456</td>
-                                        <td>KES 1, 036,478</td>
-                                        <td>KES 930,852</td>
-                                        <td>
-                                            <div class="d-flex justify-content-end">
-                                                <canvas id="lineChartSm5"></canvas>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-stripped" id="exampletwo">
+                        <thead>
+                            <th>Image</th>
+                            <th>Car</th>
+                            <th>Reg No.</th>
+                            <th>Owner Price</th>
+                            <th>Customer</th>
+                            <th>Phone Number</th> 
+                            <th>My Amount</th>
+                            <th>Trans Code</th>
+                            <th>Date Uploaded</th> 
+                        </thead>
+                        <tbody>
+                            @foreach ($payments as $payment)
+                                <tr>
+                                    <td><img src="{{ asset('storage/cars/' . $payment->paymentcar->car_image) }}"
+                                            style="height:60px;width:80px;border-radius:9px;" alt=""></td>
+                                    <td>{{ $payment->paymentcar->car_name }}</td>
+                                    <td>{{ $payement->paymentcar->reg_number }}</td>
+                                    <td>KES {{ $payment->owner_amount }}</td>
+                                    <td>{{ $payment->paymentuser->name }}</td>
+                                    <td>{{ $payment->paymentuser->phone_number }}</td>
+                                 
+
+                                    <td>
+                                      
+                                        KES {{ $payment->admin_amount }}</td>
+
+                                    <td>{{ $price->transaction_code }}</td>
+                                    <td>{{ $price->updated_at->format('d, M Y, h:i:s A') }}</td>
+                                    
+                                </tr>
+                            @endforeach
+
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ use App\Models\Car;
 use App\Models\CarBid;
 use App\Models\CarMake;
 use App\Models\CarMakeModele;
+use App\Models\CarPayment;
 use App\Models\CarPhoto;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,8 +25,12 @@ class AdminDashboardController extends Controller
     public function index()
     {
 
-
-        return view('admin.dashboard');
+        $cars = Car::where('status', 'admin')->get();
+        $payments = CarPayment::all();
+        $totalpayments = CarPayment::where('payment_status', 'approved')->sum('admin_amount');
+        $users = User::whereRoleIs('user')->get();
+        $bids = CarBid::all();
+        return view('admin.dashboard', compact('cars', 'payments', 'users', 'bids', 'totalpayments'));
     }
     public function uploadedcars()
     {
