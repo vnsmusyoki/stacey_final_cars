@@ -82,7 +82,7 @@
                                     <td>{{ $car->engine_cc }}
                                         cc</td>
                                 </tr>
-                                @if ($car->car_owner_id == Auth::user()->id)
+                                <!-- @if ($car->car_owner_id == Auth::user()->id)
                                     @if ($car->status == 'published' || $car->status == 'sold')
                                         <tr class="text-success">
                                             <td><strong>Highest Bid </strong></td>
@@ -98,7 +98,7 @@
                                             <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
                                         </tr>
                                     @endif
-                                @endif
+                                @endif -->
 
                             </tbody>
                         </table>

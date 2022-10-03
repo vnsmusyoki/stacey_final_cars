@@ -49,7 +49,6 @@ class UserDashboardController extends Controller
         $car = Car::where('slug', $slug)->first();
         if ($car) {
             $highest = CarBid::where('car_id', $car->id)->orderBy('bidding_price', 'DESC')->first();
-
             return view('user.carprofileedited', compact('car', 'slug', 'highest'));
         } else {
             return back();
