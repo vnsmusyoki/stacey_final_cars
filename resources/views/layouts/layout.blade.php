@@ -752,7 +752,7 @@
                     <li class="menu-title">
                         <span>Main menu</span>
                     </li>
-          
+
                     @role('user')
                         <li>
                             <a href="{{ route('user') }}" class="">
@@ -843,7 +843,7 @@
                             </li>
                         @endrole
 
-                      
+
                         <li>
                             <a href="{{ url('admin/account-settings')}}" class="">
                                 <span data-feather="user" class="nav-icon"></span>
@@ -1013,6 +1013,17 @@
             });
         });
     </script>
+        <script>
+            $(document).ready(function() {
+                $('#examplethree').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf',
+                    ]
+                });
+            });
+        </script>
+
     @livewireScripts
 
 </body>

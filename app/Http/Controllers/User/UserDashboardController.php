@@ -33,7 +33,12 @@ class UserDashboardController extends Controller
         ->where(['user_awarded_id' => auth()->user()->id])
         // ->orWhere(['status' => 'sold', 'user_awarded_id' => auth()->user()->id])
         ->get();
-        return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount', 'awardedcars'));
+        $checkpayments = Car::query()
+        ->where(['car_owner_id' => auth()->user()->id])
+        ->whereNotNull('user_awarded_id')
+        ->get();
+
+        return view('user.dashboard', compact('uploaded', 'bids', 'maxamount', 'minamount', 'awardedcars', 'checkpayments'));
     }
     public function uploadcar()
     {

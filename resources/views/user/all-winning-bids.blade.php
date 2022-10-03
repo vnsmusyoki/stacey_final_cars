@@ -75,17 +75,14 @@
                                             @endif
                                         </td>
                                         <td>
-                                            @if ($car->transaction_code == null)
+                                            @if ($payment->transaction_code == null)
                                                 <a href="{{ url('user/submit-payment/' . $payment->slug) }}"
                                                     class=" btn-primary btn">Pay
                                                     Now</a>
                                             @else
-                                                <a href="{{ route('user/submit-payment', $payment->slug) }}"
+                                                <a href="#"
                                                     class="btn btn-primary">View</a>
                                             @endif
-
-
-
                                         </td>
                                     </tr>
                                 @endforeach
