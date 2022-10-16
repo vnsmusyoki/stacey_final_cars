@@ -63,6 +63,8 @@ class UploadCar extends Component
             'logbook_id' => 'required|digits_between:11, 16|unique:cars',
             'logbook'=>'required|mimes:pdf|max:2048',
             'bidding_time_expiry' => 'required|after_or_equal:'.Carbon::now()->addDays(7),
+            // this is where to change the bidding time expiry, so you can choose to write something like  Carbon:::now()->addMinutes(), this will add the specified number of minutes 
+            // hivo si umeelewa 
 
         ]);
         $timenows = time();

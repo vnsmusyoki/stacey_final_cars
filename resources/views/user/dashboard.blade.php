@@ -275,7 +275,7 @@
                                 <th>Customer</th>
                                 <th>Phone Number</th>
                                 <th>Bid Price</th>
-                                <th>My Amount</th>
+                                <th>owner's Amount</th>
                                 <th>Trans Code</th>
                                 <th>Date Uploaded</th>
                                 <th>Payment</th>

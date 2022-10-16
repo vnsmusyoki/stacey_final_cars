@@ -170,7 +170,7 @@
                                         Address:
                                     </div>
                                     <div class="tt-col">
-                                        3261 Anmoore Road, Brooklyn, Nairobi
+                                        3261 Anmoore Road, Nairobi
                                     </div>
                                 </div>
                                 <div class="tt-item">
@@ -197,11 +197,8 @@
                                         Working time:
                                     </div>
                                     <div class="tt-col">
-                                        <strong>Sales Department</strong>
-                                        <p>
-                                            Mon-Sat: 8:00am - 5:00pm<br>Sunday is closed
-                                        </p>
-                                        <strong>Service Department</strong>
+                                    
+                                        <strong>Customer Desk</strong>
                                         <p>
                                             Mon-Sat: 8:00am - 5:00pm<br>Sunday is closed
                                         </p>
@@ -209,18 +206,14 @@
                                 </div>
                             </div>
                             <h3 class="tt-title">Stay Connected</h3>
-                            <ul class="tt-social-icon">
-                                <li><a href="#" class="icon-226234"></a></li>
-                                <li><a href="#" class="icon-8800"></a></li>
-                                <li><a href="#" class="icon-733613"></a></li>
-                            </ul>
+
                         </div>
                     </div>
                     <div class="divider divider--lg visible-xs"></div>
                     <div class="col-12 col-md-6">
                         <h6 class="tt-title-default">Get in touch</h6>
                         <p>
-                            Smart Mart has a strong and committed sales staff with many years of experience satisfying our customers’ needs. Feel free to browse our massive inventory online, set up a test drive with a sales associate, or inquire about financing!
+                            Smart Mart has a strong and committed staff  and determined staff to satisfy our customers’ needs. 
                         </p>
                         <form id="contactform" method="post" novalidate="novalidate" action="#" class="tt-form-default02 tt-form-review">
                             <div class="tt-form-aside">

@@ -210,9 +210,7 @@
                                     </p>
                                     <a href="#placenow" class="btn btn-xl">Place Bid</a>
                                 </div>
-                                <div class="tt-info">
-                                    Estimated Loan Payment: <span>$1151/mo</span>
-                                </div>
+
                             </div>
                             <div class="tt-aside03-box">
                                 <h6 class="tt-aside03-title">Options</h6>
