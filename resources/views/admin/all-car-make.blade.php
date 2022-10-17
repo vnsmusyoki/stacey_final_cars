@@ -49,8 +49,8 @@
                         <table class="table table-bordered table-stripped" id="example">
                             <thead>
                                 <th>Car Make Category</th>
-                                <th>Date Joined.</th>
-                                <th>Last Account Update</th>
+                                <th>Date Created</th>
+                                <th>Last  Update</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </thead>

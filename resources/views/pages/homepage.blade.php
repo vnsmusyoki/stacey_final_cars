@@ -9,11 +9,9 @@
             <div class="tt-description">The Easiest Way to Find Your Next Car</div>
         </div>
         <div class="tt-text-center ws-short-structure">
-            For 25 years, SmartMart Motors has been raising the standard of used car retailing with one of the
+            SmartMart Motors raises the standard of used car retailing as one of the
             most
-            innovative and reliable used vehicle programmes ever created. A comprehensive range of benefits as
-            standard has evolved over time and, today, drivers can
-            leave the forecourt with total reassurance and peace of mind.
+            innovative and reliable used vehicle programmes ever created. 
             <span class="tt-hide-block">
                 We call this estimate the SmartMart Motors
                 Instant Market Value.
@@ -100,7 +98,7 @@
                         <div class="tt-line-dotted tt-left"></div>
                         <i class="icon-payment"></i>
                     </div>
-                    <h6 class="tt-title">Pick the highest bidder and close the bid</h6>
+                    <h6 class="tt-title">Highest bidder is selected and the bid is closed</h6>
                 </a>
             </div>
         </div>
