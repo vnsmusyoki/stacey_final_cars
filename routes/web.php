@@ -78,3 +78,6 @@ Route::get('admin/delete-car-make-model/{slug}', [AdminDashboardController::clas
 Route::get('/admin/account-settings', [AdminDashboardController::class, 'accountsettings']);
 Route::post('/admin/update-password', [AdminDashboardController::class, 'saveaccountpassword']);
 Route::post('/admin/update-email', [AdminDashboardController::class, 'saveaccountemail']);
+Route::patch('user/extend-time-deadline/{car}', [UserDashboardController::class, 'extendtimedeadline']);
+Route::get('/user/car-profile-edit/{slug}', [UserDashboardController::class, 'editcar'])->name('user.editcarprofile');
+Route::patch('/user/car-profile-update/{slug}', [UserDashboardController::class, 'updatecar'])->name('user.updatecar');

@@ -82,23 +82,49 @@
                                     <td>{{ $car->engine_cc }}
                                         cc</td>
                                 </tr>
+                                <tr>
+                                    <td>Extend Time </td>
+                                    <td>
+                                        <form action="{{ url('user/extend-time-deadline/' . $car->slug) }}" method="POST"
+                                            autocomplete="off">
+                                            @csrf
+                                            @method('PATCH')
+                                            <div class="form-group">
+                                                <input type="datetime-local" name="new_timeline"
+                                                    value="{{ $car->bidding_time_expiry }}">
+                                                @error('new_timeline')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Change Deadline</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Edit Car </td>
+                                    <td>
+                                        <a href="{{ route('user.editcarprofile', $car->slug) }}"
+                                            class="btn btn-sm btn-danger btn-add">
+                                            <i class="la la-plus"></i> Edit Details</a>
+                                    </td>
+                                </tr>
                                 <!-- @if ($car->car_owner_id == Auth::user()->id)
-                                    @if ($car->status == 'published' || $car->status == 'sold')
-                                        <tr class="text-success">
-                                            <td><strong>Highest Bid </strong></td>
-                                            <td><strong>KES {{ $highest->bidding_price }}</strong></td>
-                                        </tr>
-                                        <tr class="text-success font-bold">
-                                            <td><strong>Highest Bidder</strong></td>
-                                            <td><strong>{{ $highest->carbidcustomer->name }} -
-                                                    {{ $highest->carbidcustomer->phone_number }}</strong></td>
-                                        </tr>
-                                        <tr class="text-success">
-                                            <td><strong>Date Placed</strong></td>
-                                            <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
-                                        </tr>
-                                    @endif
-                                @endif -->
+                                        @if ($car->status == 'published' || $car->status == 'sold')
+    <tr class="text-success">
+                                                <td><strong>Highest Bid </strong></td>
+                                                <td><strong>KES {{ $highest->bidding_price }}</strong></td>
+                                            </tr>
+                                            <tr class="text-success font-bold">
+                                                <td><strong>Highest Bidder</strong></td>
+                                                <td><strong>{{ $highest->carbidcustomer->name }} -
+                                                        {{ $highest->carbidcustomer->phone_number }}</strong></td>
+                                            </tr>
+                                            <tr class="text-success">
+                                                <td><strong>Date Placed</strong></td>
+                                                <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
+                                            </tr>
+    @endif
+                                    @endif -->
 
                             </tbody>
                         </table>
@@ -123,6 +149,9 @@
                     <br>
                     <p><strong>Description: </strong></p>
                     <p>{{ $car->car_description }}</p>
+
+
+
                 </div>
             </div>
             <!-- ends: .card -->

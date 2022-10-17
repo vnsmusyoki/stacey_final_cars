@@ -8,6 +8,7 @@ use App\Mail\PaymentNotifyCarOwnern;
 use App\Mail\PaymentNotifyCustomer;
 use App\Models\Car;
 use App\Models\CarBid;
+use App\Models\CarMake;
 use App\Models\CarPayment;
 use App\Models\CarPhoto;
 use App\Models\User;
@@ -16,6 +17,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class UserDashboardController extends Controller
 {
@@ -51,6 +53,107 @@ class UserDashboardController extends Controller
             $highest = CarBid::where('car_id', $car->id)->orderBy('bidding_price', 'DESC')->first();
             return view('user.carprofileedited', compact('car', 'slug', 'highest'));
         } else {
+            return back();
+        }
+    }
+    public function editcar($slug){
+        $car = Car::where('slug', $slug)->first();
+        if ($car) {
+            $makes = CarMake::all();
+            return view('user.edit-car', compact('car', 'slug', 'makes'));
+        } else {
+            return back();
+        }
+    }
+    public function updatecar(Request $request, $slug){
+        $car = Car::where('slug', $slug)->first();
+        if ($car) {
+            $this->validate($request, [
+                'car_make' => 'required',
+                'car_model' => 'required',
+                'transmission' => 'required',
+                'car_year' => 'required|numeric|min:2010|max:2022',
+                'car_engine' => 'required',
+                'min_price' => 'required|numeric',
+                'registration_number' => 'required',
+                'car_description' => 'required|string|max:10000000',
+                'car_photo' => 'nullable|image|mimes:img, jpeg,jpg,png|max:2048',
+                'car_features' => 'required|string',
+                'car_color' => 'required',
+                'car_milleage' => 'required',
+                'car_name' => 'required',
+                'fuel_type' => 'required',
+                'no_passengers' => 'required|numeric|min:3',
+                'loading_capacity' => 'required|numeric|min:50',
+                'engine_number' => 'required|digits_between:11,17|exists:cars',
+                'date_of_registration' => 'required|before_or_equal:' . Carbon::today()->subDays(7),
+                'no_of_previous_owners' => 'required',
+                'logbook_id' => 'required|digits_between:11, 16|exists:cars',
+                'logbook' => 'nullable|mimes:pdf|max:2048',
+                'bidding_time_expiry' => 'required|after_or_equal:' . Carbon::now()->addDays(7),
+
+            ]);
+            $new =   Car::where('slug', $slug)->first();
+            $new->car_make_id = $request->car_make;
+            $new->car_make_model_id = $request->car_model;
+            $new->car_owner_id = auth()->user()->id;
+            $new->car_year = $request->car_year;
+            $new->min_price = $request->min_price;
+            $new->engine_cc = $request->car_engine;
+            $new->milleage = $request->car_milleage;
+            $new->car_color = $request->car_color;
+            $new->transmission = $request->transmission;
+            $new->fuel_type = $request->fuel_type;
+            $new->features = $request->car_features;
+            $new->car_name = $request->car_name;
+            $new->no_passengers = $request->no_passengers;
+            $new->loading_capacity = $request->loading_capacity;
+            $new->engine_number = $request->engine_number;
+            $new->date_of_registration = $request->date_of_registration;
+            $new->no_of_previous_owners = $request->no_of_previous_owners;
+            $new->logbook_id = $request->logbook_id;
+            $new->bidding_time_expiry = $request->bidding_time_expiry;
+            $new->reg_number = $request->registration_number;
+            $new->car_description = $request->car_description;
+            if ($request->hasFile('car_photo')) {
+                Storage::delete('public/cars/' . $new->car_image);
+                $fileNameWithExt = $request->car_photo->getClientOriginalName();
+                $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                $Extension = $request->car_photo->getClientOriginalExtension();
+                $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+                $path = $request->car_photo->storeAs('cars', $filenameToStore, 'public');
+                $new->car_image = $filenameToStore;
+            }
+            if ($request->hasFile('logbook')) {
+                Storage::delete('public/logbooks/' . $new->logbook);
+                $fileNameWithExt = $request->logbook->getClientOriginalName();
+                $fileName =  pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                $Extension = $request->logbook->getClientOriginalExtension();
+                $filenameToStore = $fileName . '-' . time() . '.' . $Extension;
+                $path = $request->logbook->storeAs('logbooks', $filenameToStore, 'public');
+                $new->logbook = $filenameToStore;
+            }
+            $new->save();
+
+            Toastr::success('Car details updated successfuly', 'Title', ["positionClass" => "toast-top-center"]);
+            return redirect()->route('user.verifycarprofile', $new->slug);
+        } else {
+            Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function extendtimedeadline(Request $request, $car){
+        $car = Car::where('slug', $car)->first();
+        if ($car) {
+            $this->validate($request, [
+                'new_timeline'=>'required|after_or_equal:date'.Carbon::now()
+            ]);
+            $car->bidding_time_expiry = $request->new_timeline;
+            $car->save();
+            Toastr::success('Car bidding time expiry has been updated', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        } else {
+            Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
             return back();
         }
     }

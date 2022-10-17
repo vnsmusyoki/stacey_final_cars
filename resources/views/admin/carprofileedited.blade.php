@@ -107,7 +107,7 @@
                                     <td>Bidding Ends At</td>
                                     <td>{{ $car->bidding_time_expiry }}</td>
                                 </tr>
-                                @if ($car->status == 'published' || $car->status == 'sold')
+                                <!-- @if ($car->status == 'published' || $car->status == 'sold')
                                     <tr class="text-success">
                                         <td><strong>Highest Bid </strong></td>
                                         <td><strong>KES {{ $highest->bidding_price }}</strong></td>
@@ -121,7 +121,7 @@
                                         <td><strong>Date Placed</strong></td>
                                         <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
                                     </tr>
-                                @endif
+                                @endif -->
 
                             </tbody>
                         </table>
