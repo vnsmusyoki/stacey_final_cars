@@ -82,6 +82,8 @@
                                     <td>{{ $car->engine_cc }}
                                         cc</td>
                                 </tr>
+
+                                @if ($car->status !=="sold")
                                 <tr>
                                     <td>Extend Time </td>
                                     <td>
@@ -100,31 +102,19 @@
                                         </form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Edit Car </td>
-                                    <td>
-                                        <a href="{{ route('user.editcarprofile', $car->slug) }}"
-                                            class="btn btn-sm btn-danger btn-add">
-                                            <i class="la la-plus"></i> Edit Details</a>
-                                    </td>
-                                </tr>
-                                <!-- @if ($car->car_owner_id == Auth::user()->id)
-                                        @if ($car->status == 'published' || $car->status == 'sold')
-    <tr class="text-success">
-                                                <td><strong>Highest Bid </strong></td>
-                                                <td><strong>KES {{ $highest->bidding_price }}</strong></td>
-                                            </tr>
-                                            <tr class="text-success font-bold">
-                                                <td><strong>Highest Bidder</strong></td>
-                                                <td><strong>{{ $highest->carbidcustomer->name }} -
-                                                        {{ $highest->carbidcustomer->phone_number }}</strong></td>
-                                            </tr>
-                                            <tr class="text-success">
-                                                <td><strong>Date Placed</strong></td>
-                                                <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
-                                            </tr>
-    @endif
-                                    @endif -->
+                                @endif
+                                @if ($car->status !== 'published' || $car->status !== 'sold')
+                                    <tr>
+                                        <td>Edit Car </td>
+                                        <td>
+                                            <a href="{{ route('user.editcarprofile', $car->slug) }}"
+                                                class="btn btn-sm btn-danger btn-add">
+                                                Edit Details</a>
+                                        </td>
+                                    </tr>
+                                @endif
+
+
 
                             </tbody>
                         </table>
