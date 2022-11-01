@@ -62,6 +62,7 @@ Route::get('admin/all-uploaded-cars', [AdminDashboardController::class, 'uploade
 Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approvedcars'])->name('admin.approvedcars');
 Route::get('admin/car-profile/{slug}', [AdminDashboardController::class, 'carprofiledetails'])->name('admin.verifycarprofile');
 Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapproved'])->name('admin.publishcars');
+Route::get('admin/reject-car', [AdminDashboardController::class, 'carrejected'])->name('admin.rejectcars');
 Route::get('admin/cars-uploaded-today', [AdminDashboardController::class, 'carsuploadedtoday'])->name('admin.todaycars');
 Route::get('admin/all-rejected-cars', [AdminDashboardController::class, 'declinedcars'])->name('admin.declinedcars');
 Route::get('admin/all-users', [AdminDashboardController::class, 'allusers'])->name('admin.allusers');

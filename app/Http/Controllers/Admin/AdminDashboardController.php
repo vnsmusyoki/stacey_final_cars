@@ -50,6 +50,19 @@ class AdminDashboardController extends Controller
             return back();
         }
     }
+    public function carrejected($slug)
+    {
+        $car = Car::where('slug', $slug)->first();
+        if ($car) {
+            $car->status = "rejected";
+            $car->save();
+            Toastr::success('Car has been declined and will not be visible at the main page', 'Title', ["positionClass" => "toast-top-center"]);
+            return redirect()->to('admin/all-rejected-cars');
+        } else {
+            Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
     public function approvedcars()
     {
         $cars = Car::where('status', 'published')->get();

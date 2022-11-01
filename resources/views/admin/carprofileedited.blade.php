@@ -12,6 +12,9 @@
                         @if ($car->status == 'admin')
                             <a href="{{ route('admin.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
                                 <i class="la la-plus"></i> APPROVE CAR</a>
+
+                                <a href="{{ route('admin.rejectcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
+                                    <i class="la la-plus"></i> REJECT  CAR</a>
                         @endif
 
                     </div>
