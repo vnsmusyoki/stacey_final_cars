@@ -54,7 +54,7 @@ class AdminDashboardController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            $car->status = "rejected";
+            $car->status = "declined";
             $car->save();
             Toastr::success('Car has been declined and will not be visible at the main page', 'Title', ["positionClass" => "toast-top-center"]);
             return redirect()->to('admin/all-rejected-cars');
@@ -80,6 +80,16 @@ class AdminDashboardController extends Controller
             $highest = CarBid::where('car_id', $car->id)->max('bidding_price');
             $attachments = CarPhoto::where('car_id', $car->id)->get();
             return view('admin.carprofileedited', compact('car', 'slug', 'attachments', 'highest'));
+        } else {
+            return back();
+        }
+    }
+    public function viewcardetails($slug){
+        $car = Car::where('slug', $slug)->first();
+        if ($car) {
+            $highest = CarBid::where('car_id', $car->id)->max('bidding_price');
+            $attachments = CarPhoto::where('car_id', $car->id)->get();
+            return view('admin.carprofile-details', compact('car', 'slug', 'attachments', 'highest'));
         } else {
             return back();
         }

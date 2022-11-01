@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/return-home-page', function () {
+    Auth::logout();
+    return redirect()->to('/');
+});
 
 Auth::routes();
 
@@ -62,7 +63,7 @@ Route::get('admin/all-uploaded-cars', [AdminDashboardController::class, 'uploade
 Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approvedcars'])->name('admin.approvedcars');
 Route::get('admin/car-profile/{slug}', [AdminDashboardController::class, 'carprofiledetails'])->name('admin.verifycarprofile');
 Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapproved'])->name('admin.publishcars');
-Route::get('admin/reject-car', [AdminDashboardController::class, 'carrejected'])->name('admin.rejectcars');
+Route::get('admin/reject-car/{slug}', [AdminDashboardController::class, 'carrejected'])->name('admin.rejectcars');
 Route::get('admin/cars-uploaded-today', [AdminDashboardController::class, 'carsuploadedtoday'])->name('admin.todaycars');
 Route::get('admin/all-rejected-cars', [AdminDashboardController::class, 'declinedcars'])->name('admin.declinedcars');
 Route::get('admin/all-users', [AdminDashboardController::class, 'allusers'])->name('admin.allusers');
@@ -82,3 +83,4 @@ Route::post('/admin/update-email', [AdminDashboardController::class, 'saveaccoun
 Route::patch('user/extend-time-deadline/{car}', [UserDashboardController::class, 'extendtimedeadline']);
 Route::get('/user/car-profile-edit/{slug}', [UserDashboardController::class, 'editcar'])->name('user.editcarprofile');
 Route::patch('/user/car-profile-update/{slug}', [UserDashboardController::class, 'updatecar'])->name('user.updatecar');
+Route::get('/admin/car-profile/{slug}', [AdminDashboardController::class, 'viewcardetails'])->name('admin.verifycarprofile');

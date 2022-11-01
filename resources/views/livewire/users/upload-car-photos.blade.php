@@ -21,7 +21,6 @@
             </div>
         </form>
     @endif
-
     <div class="row">
         <div class="col-12">
             @if ($message = Session::get('errormessage'))
@@ -44,7 +43,10 @@
                             <th class="text-nowrap">Date Uploaded</th>
                             <th>File Size</th>
                             @if ($car->car_owner_id == Auth::user()->id)
-                                <th>Action</th>
+                                @if ($car->status !== 'sold' || $car->status !== 'awarded' || $car->status !== 'published')
+                                    <th>Action</th>
+                                @endif
+
                             @endif
 
                         </tr>
@@ -58,12 +60,15 @@
                                 <td>{{ $item->image_name }}</td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                                 <td>{{ $item->file_size }} MB</td>
-                                @if ($car->car_owner_id == Auth::user()->id)
-                                    <td>
-                                        <button class="btn btn-danger"
-                                            wire:click="removepic({{ $item->id }})">Remove</button>
-                                    </td>
+                                @if ($car->status !== 'sold' || $car->status !== 'awarded' || $car->status !== 'published')
+                                    @if ($car->car_owner_id == Auth::user()->id)
+                                        <td>
+                                            <button class="btn btn-danger"
+                                                wire:click="removepic({{ $item->id }})">Remove</button>
+                                        </td>
+                                    @endif
                                 @endif
+
 
 
                             </tr>

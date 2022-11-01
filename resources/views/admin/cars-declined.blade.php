@@ -52,7 +52,7 @@
                                         <td>{{ $car->engine_cc }}</td>
                                         <td>{{ $car->car_year }}</td>
                                         <td>
-                                            <a href="{{ route('user.verifycarprofile', $car->slug) }}">View</a>
+                                            <a href="{{ route('admin.verifycarprofile', $car->slug) }}">View</a>
                                         </td>
                                     </tr>
                                 @endforeach

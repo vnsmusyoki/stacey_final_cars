@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Upload New Car')
+@section('title', 'Car Profile Details')
 
 @section('content')
     <div class="row">
@@ -12,17 +12,14 @@
                         @if ($car->status == 'admin')
                             <a href="{{ route('admin.publishcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
                                 <i class="la la-plus"></i> APPROVE CAR</a>
-
-
                         @endif
-
                     </div>
-
-                    <div class="action-btn">
-                        <a href="{{ route('admin.rejectcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
-                            <i class="la la-plus"></i>Reject Car</a>
-
-                    </div>
+                    @if ($car->status == 'admin')
+                        <div class="action-btn">
+                            <a href="{{ route('admin.rejectcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
+                                <i class="la la-plus"></i>Reject Car</a>
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -110,20 +107,20 @@
                                     <td>{{ $car->bidding_time_expiry }}</td>
                                 </tr>
                                 <!-- @if ($car->status == 'published' || $car->status == 'sold')
-                                    <tr class="text-success">
-                                        <td><strong>Highest Bid </strong></td>
-                                        <td><strong>KES {{ $highest->bidding_price }}</strong></td>
-                                    </tr>
-                                    <tr class="text-success font-bold">
-                                        <td><strong>Highest Bidder</strong></td>
-                                        <td><strong>{{ $highest->carbidcustomer->name }} -
-                                                {{ $highest->carbidcustomer->phone_number }}</strong></td>
-                                    </tr>
-                                    <tr class="text-success">
-                                        <td><strong>Date Placed</strong></td>
-                                        <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
-                                    </tr>
-                                @endif -->
+    <tr class="text-success">
+                                            <td><strong>Highest Bid </strong></td>
+                                            <td><strong>KES {{ $highest->bidding_price }}</strong></td>
+                                        </tr>
+                                        <tr class="text-success font-bold">
+                                            <td><strong>Highest Bidder</strong></td>
+                                            <td><strong>{{ $highest->carbidcustomer->name }} -
+                                                    {{ $highest->carbidcustomer->phone_number }}</strong></td>
+                                        </tr>
+                                        <tr class="text-success">
+                                            <td><strong>Date Placed</strong></td>
+                                            <td><strong>{{ $highest->created_at->format('d, M Y') }}</strong></td>
+                                        </tr>
+    @endif -->
 
                             </tbody>
                         </table>

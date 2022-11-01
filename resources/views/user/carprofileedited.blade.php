@@ -83,36 +83,39 @@
                                         cc</td>
                                 </tr>
 
-                                @if ($car->status !=="sold")
-                                <tr>
-                                    <td>Extend Time </td>
-                                    <td>
-                                        <form action="{{ url('user/extend-time-deadline/' . $car->slug) }}" method="POST"
-                                            autocomplete="off">
-                                            @csrf
-                                            @method('PATCH')
-                                            <div class="form-group">
-                                                <input type="datetime-local" name="new_timeline"
-                                                    value="{{ $car->bidding_time_expiry }}">
-                                                @error('new_timeline')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Change Deadline</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                @if (Auth::user()->id == $car->car_owner_id)
+                                    @if ($car->status !== 'sold')
+                                        <tr>
+                                            <td>Extend Time </td>
+                                            <td>
+                                                <form action="{{ url('user/extend-time-deadline/' . $car->slug) }}"
+                                                    method="POST" autocomplete="off">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <div class="form-group">
+                                                        <input type="datetime-local" name="new_timeline"
+                                                            value="{{ $car->bidding_time_expiry }}">
+                                                        @error('new_timeline')
+                                                            <small class="text-danger">{{ $message }}</small>
+                                                        @enderror
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Change Deadline</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @if ($car->status !== 'published' || $car->status !== 'sold')
+                                        <tr>
+                                            <td>Edit Car </td>
+                                            <td>
+                                                <a href="{{ route('user.editcarprofile', $car->slug) }}"
+                                                    class="btn btn-sm btn-danger btn-add">
+                                                    Edit Details</a>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endif
-                                @if ($car->status !== 'published' || $car->status !== 'sold')
-                                    <tr>
-                                        <td>Edit Car </td>
-                                        <td>
-                                            <a href="{{ route('user.editcarprofile', $car->slug) }}"
-                                                class="btn btn-sm btn-danger btn-add">
-                                                Edit Details</a>
-                                        </td>
-                                    </tr>
-                                @endif
+
 
 
 
