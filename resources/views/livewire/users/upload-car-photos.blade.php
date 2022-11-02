@@ -43,7 +43,7 @@
                             <th class="text-nowrap">Date Uploaded</th>
                             <th>File Size</th>
                             @if ($car->car_owner_id == Auth::user()->id)
-                                @if ($car->status !== 'sold' || $car->status !== 'awarded' || $car->status !== 'published')
+                                @if ($car->status == 'pending')
                                     <th>Action</th>
                                 @endif
 
@@ -60,7 +60,7 @@
                                 <td>{{ $item->image_name }}</td>
                                 <td>{{ $item->created_at->format('d M Y') }}</td>
                                 <td>{{ $item->file_size }} MB</td>
-                                @if ($car->status !== 'sold' || $car->status !== 'awarded' || $car->status !== 'published')
+                                @if ($car->status == 'sold')
                                     @if ($car->car_owner_id == Auth::user()->id)
                                         <td>
                                             <button class="btn btn-danger"

@@ -111,12 +111,12 @@
                                                             </label>
                                                         </div> -->
 
-                                                        <!-- @if (Route::has('password.request'))
+                                                       @if (Route::has('password.request'))
                                                             <a class="btn btn-link"
                                                                 href="{{ route('password.request') }}">
                                                                 {{ __('Forgot Your Password?') }}
                                                             </a>
-                                                        @endif -->
+                                                        @endif
                                                     </div>
                                                     <div
                                                         class="button-group d-flex pt-1 justify-content-md-start justify-content-center">

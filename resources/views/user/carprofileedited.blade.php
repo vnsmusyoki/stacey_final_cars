@@ -84,7 +84,7 @@
                                 </tr>
 
                                 @if (Auth::user()->id == $car->car_owner_id)
-                                    @if ($car->status !== 'sold')
+                                    @if ($car->status == 'pending' || $car->status=="published")
                                         <tr>
                                             <td>Extend Time </td>
                                             <td>
@@ -104,7 +104,7 @@
                                             </td>
                                         </tr>
                                     @endif
-                                    @if ($car->status !== 'published' || $car->status !== 'sold')
+                                    @if ($car->status == 'pending')
                                         <tr>
                                             <td>Edit Car </td>
                                             <td>
