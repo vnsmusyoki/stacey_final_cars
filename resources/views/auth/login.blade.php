@@ -104,19 +104,19 @@
                                                         @enderror
                                                     </div>
                                                     <div class="signUp-condition signIn-condition">
-                                                        <div class="checkbox-theme-default custom-checkbox ">
+                                                        <!-- <div class="checkbox-theme-default custom-checkbox ">
                                                             <input class="checkbox" type="checkbox" id="check-1">
                                                             <label for="check-1">
                                                                 <span class="checkbox-text">Keep me logged in</span>
                                                             </label>
-                                                        </div>
+                                                        </div> -->
 
-                                                        @if (Route::has('password.request'))
+                                                        <!-- @if (Route::has('password.request'))
                                                             <a class="btn btn-link"
                                                                 href="{{ route('password.request') }}">
                                                                 {{ __('Forgot Your Password?') }}
                                                             </a>
-                                                        @endif
+                                                        @endif -->
                                                     </div>
                                                     <div
                                                         class="button-group d-flex pt-1 justify-content-md-start justify-content-center">
