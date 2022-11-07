@@ -30,7 +30,8 @@ class AdminDashboardController extends Controller
         $totalpayments = CarPayment::where('payment_status', 'approved')->sum('admin_amount');
         $users = User::whereRoleIs('user')->get();
         $bids = CarBid::all();
-        return view('admin.dashboard', compact('cars', 'payments', 'users', 'bids', 'totalpayments'));
+        $newpayments = CarPayment::where('payment_status', 'pending')->get();
+        return view('admin.dashboard', compact('cars', 'payments', 'users', 'bids', 'totalpayments', 'newpayments'));
     }
     public function uploadedcars()
     {
@@ -41,11 +42,9 @@ class AdminDashboardController extends Controller
     {
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            $car->status = "published";
-            $car->save();
-            Toastr::success('Car has been approved and will be visible to the main site', 'Title', ["positionClass" => "toast-top-center"]);
-            return redirect()->route('admin.approvedcars');
-        } else {
+            return view('admin.car-approval-declined', compact('car'));
+          } else {
+
             Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
             return back();
         }
@@ -58,6 +57,25 @@ class AdminDashboardController extends Controller
             $car->save();
             Toastr::success('Car has been declined and will not be visible at the main page', 'Title', ["positionClass" => "toast-top-center"]);
             return redirect()->to('admin/all-rejected-cars');
+        } else {
+            Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function savejudgement(Request $request, $slug)
+    {
+        $this->validate($request, [
+            'car_judgement' => 'required',
+            'brief_description' => 'required|string',
+        ]);
+        $car = Car::where('slug', $slug)->first();
+        if ($car) {
+            $car->status = "declined";
+            $car->car_judgement = $request->car_judgement;
+            $car->judgement_description = $request->brief_description;
+            $car->save();
+            Toastr::success('Data has been saved successfully', 'Title', ["positionClass" => "toast-bottom-right"]);
+            return redirect()->to('admin/all-uploaded-cars');
         } else {
             Toastr::success('No car details found', 'Title', ["positionClass" => "toast-top-center"]);
             return back();
@@ -286,6 +304,49 @@ class AdminDashboardController extends Controller
         } else {
             Toastr::error('Current email is incorrect', 'Error', ["positionClass" => "toast-top-right"]);
             return redirect()->back();
+        }
+    }
+
+    public function approvepayment(Request $request)
+    {
+        $this->validate($request, ['payment_approve' => 'required']);
+        $payment = CarPayment::where('slug', $request->payment_approve)->first();
+        if ($payment) {
+            $payment->payment_status = "approved";
+            $payment->save();
+            $car = Car::where('id', $payment->car_id)->first();
+            $car->status = "sold";
+            $car->save();
+            Toastr::success('payment details approved and car marked as sold.', 'Success', ["positionClass" => "toast-top-center"]);
+            return back();
+            // return view('user.place-bid', compact('car', 'slug', 'images', 'bids', 'checkbid'));
+        } else {
+            Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
+        }
+    }
+    public function rejectpayment($slug)
+    {
+        $payment = CarPayment::where('slug', $slug)->first();
+        if ($payment) {
+            $payment->payment_status = "rejected";
+            $payment->save();
+
+            $car = Car::where('id', $payment->car_id)->first();
+            $car->status = "published";
+            $car->bidding_time_expiry = Carbon::now()->addHours(72);
+            $car->user_awarded_id = null;
+            $car->save();
+
+            $bid = CarBid::where('id', $payment->bid_id)->first();
+            $bid->award_status = null;
+            $bid->save();
+
+            Toastr::success('payment details rejected and car has been published back for bidding for  next 72 hours', 'Success', ["positionClass" => "toast-top-center"]);
+            return back();
+        } else {
+            Toastr::success('payment  details Not found.', 'Title', ["positionClass" => "toast-top-center"]);
+            return back();
         }
     }
 }

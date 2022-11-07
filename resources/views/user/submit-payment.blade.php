@@ -184,7 +184,17 @@
                     <p><strong>Description: </strong></p>
                     <p>{{ $car->car_description }}</p>
                     <hr>
-                    <form action="{{  url('user/upload-payment') }}" method="POST">
+                    <h4><strong>Payment Procedure</strong></h4>
+                    <ul>
+                        <li>Select Lipa na Mpesa</li>
+                        <li>Select Pay Bill</li>
+                        <li>Use 4031299 as your business number</li>
+                        <li> Enter the amount </li>
+                        <li>You will receive a confirmartion SMS from M-PESA</li>
+                        <li>SUbmit the code  received via the form below</li>
+
+                    </ul>
+                    <form action="{{ url('user/upload-payment') }}" method="POST">
                         @csrf
                         <input type="hidden" name="payment_id" value="{{ $payment->id }}">
                         <div class="row">
@@ -192,7 +202,8 @@
                                 <div class="form-group">
                                     <label for="">Transaction Code</label>
                                     <input type="text" name="transaction_code" class="form-control"
-                                        value="{{ old('transaction_code') }}" required style="text-transform: uppercase; letter-spacing:2px;font-weight:800;">
+                                        value="{{ old('transaction_code') }}" required
+                                        style="text-transform: uppercase; letter-spacing:2px;font-weight:800;">
                                     @error('transaction_code')
                                         <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>

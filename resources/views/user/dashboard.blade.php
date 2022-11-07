@@ -277,8 +277,7 @@
                                 <th>Bid Price</th>
                                 <th>owner's Amount</th>
                                 <th>Trans Code</th>
-                                <th>Date Uploaded</th>
-                                <th>Payment</th>
+                                <th>Date Status</th>
                             </thead>
                             <tbody>
                                 @foreach ($awardedcars as $car)
@@ -304,31 +303,7 @@
 
                                         <td>{{ $price->transaction_code }}</td>
                                         <td>{{ $price->payment_status }}</td>
-                                        <td>
-                                            @if ($price->payment_status == 'pending')
-                                                @if ($price->transaction_code == '')
-                                                    <button class="btn btn-success">Waiting Payment</button>
-                                                @else
-                                                    @if ($price->car_owner_id == Auth::user()->id)
-                                                        <form action="{{ url('user/dashboard/approve-payment') }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            <input type="hidden" name="payment_approve"
-                                                                value="{{ $price->slug }}">
-                                                            <button class="btn btn-danger btn-xs" type="submit"
-                                                                onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
-                                                            <a href="{{ url('user/dashboard/reject-payment/' . $price->slug) }}"
-                                                                class="badge badge-warning">Reject</a>
-                                                        </form>
-                                                    @else
-                                                    <button class="btn btn-success">Pending</button>
-                                                    @endif
-                                                @endif
-                                            @else
-                                                <button class="btn btn-success">Accepted</button>
-                                            @endif
 
-                                        </td>
                                     </tr>
                                 @endforeach
 
@@ -367,8 +342,7 @@
                                 <th>Bid Price</th>
                                 <th>My Amount</th>
                                 <th>Trans Code</th>
-                                <th>Date Uploaded</th>
-                                <th>Payment</th>
+                                <th>Payment Status</th> 
                             </thead>
                             <tbody>
                                 @foreach ($checkpayments as $car)
@@ -394,31 +368,7 @@
 
                                         <td>{{ $price->transaction_code }}</td>
                                         <td>{{ $price->payment_status }}</td>
-                                        <td>
-                                            @if ($price->payment_status == 'pending')
-                                                @if ($price->transaction_code == '')
-                                                    <button class="btn btn-success">Waiting Payment</button>
-                                                @else
-                                                    @if ($price->car_owner_id == Auth::user()->id)
-                                                        <form action="{{ url('user/dashboard/approve-payment') }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            <input type="hidden" name="payment_approve"
-                                                                value="{{ $price->slug }}">
-                                                            <button class="btn btn-danger btn-xs" type="submit"
-                                                                onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
-                                                            <a href="{{ url('user/dashboard/reject-payment/' . $price->slug) }}"
-                                                                class="badge badge-warning">Reject</a>
-                                                        </form>
-                                                    @else
-                                                    <button class="btn btn-success">Pending</button>
-                                                    @endif
-                                                @endif
-                                            @else
-                                                <button class="btn btn-success">Accepted</button>
-                                            @endif
 
-                                        </td>
                                     </tr>
                                 @endforeach
 

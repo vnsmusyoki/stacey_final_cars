@@ -285,5 +285,89 @@
     </div>
 
 </div>
+@if ($newpayments->count() > 0)
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card card-default  mb-4">
+                <div class="card-header">
+                    <h6>Payments Received</h6>
+                </div>
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-stripped" id="examplethree">
+                            <thead>
+                                <th>Image</th>
+                                <th>Car</th>
+                                <th>Reg No.</th>
+                                <th>Min Price</th>
+                                <th>Customer</th>
+                                <th>Phone Number</th>
+                                <th>Bid Price</th>
+                                <th>My Amount</th>
+                                <th>Trans Code</th>
+                                <th>Date Uploaded</th>
+                                <th>Payment</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($newpayments as $car)
+                                    <tr>
+                                        <td><img src="{{ asset('storage/cars/' . $car->paymentcar->car_image) }}"
+                                                style="height:60px;width:80px;border-radius:9px;" alt=""></td>
+                                        <td>{{ $car->paymentcar->car_name }}</td>
+                                        <td>{{ $car->paymentcar->reg_number }}</td>
+                                        <td>KES {{ $car->paymentcar->min_price }}</td>
+                                        <td>{{ $car->paymentuser->name }}</td>
+                                        <td>{{ $car->paymentuser->phone_number }}</td>
+                                        <td>
+
+                                            KES {{ $car->paymentbid->bidding_price }}</td>
+
+                                        <td>
+
+                                            KES {{ $car->owner_amount }}</td>
+
+                                        <td>{{ $car->transaction_code }}</td>
+                                        <td>{{ $car->payment_status }}</td>
+                                        <td>
+                                            @if ($car->payment_status == 'pending')
+                                                @if ($car->transaction_code == '')
+                                                    <button class="btn btn-success">Not Paid</button>
+                                                @else 
+                                                        <form action="{{ url('admin/dashboard/approve-payment') }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="payment_approve"
+                                                                value="{{ $car->slug }}">
+                                                            <button class="btn btn-danger btn-xs" type="submit"
+                                                                onsubmit="return confirm('Are you ready to accept this payment? ')">Approve</button>
+                                                            <a href="{{ url('admin/dashboard/reject-payment/' . $car->slug) }}"
+                                                                class="badge badge-warning">Reject</a>
+                                                        </form>
+
+                                                @endif
+                                            @else
+                                                <button class="btn btn-success">Accepted</button>
+                                            @endif
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ends: .card -->
+
+        </div>
+
+        <!-- ends: .col-lg-6 -->
+    </div>
+    @endif
 <!-- ends: .row -->
 @endsection

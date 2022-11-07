@@ -14,12 +14,7 @@
                                 <i class="la la-plus"></i> APPROVE CAR</a>
                         @endif
                     </div>
-                    @if ($car->status == 'admin')
-                        <div class="action-btn">
-                            <a href="{{ route('admin.rejectcars', $car->slug) }}" class="btn btn-sm btn-danger btn-add">
-                                <i class="la la-plus"></i>Reject Car</a>
-                        </div>
-                    @endif
+                    
                 </div>
             </div>
 

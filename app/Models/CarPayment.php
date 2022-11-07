@@ -14,4 +14,7 @@ class CarPayment extends Model
     public function paymentuser(){
         return $this->belongsTo(User::class, 'bid_user_id', 'id');
     }
+    public function paymentbid(){
+        return $this->belongsTo(CarBid::class, 'bid_id');
+    }
 }

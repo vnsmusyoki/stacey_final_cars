@@ -33,8 +33,8 @@ Route::get('all-cars', [PagesController::class, 'allcars']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('administrator');
 Route::get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user');
-Route::post('user/dashboard/approve-payment', [UserDashboardController::class, 'approvepayment']);
-Route::get('user/dashboard/reject-payment/{slug}', [UserDashboardController::class, 'rejectpayment']);
+Route::post('admin/dashboard/approve-payment', [AdminDashboardController::class, 'approvepayment']);
+Route::get('admin/dashboard/reject-payment/{slug}', [AdminDashboardController::class, 'rejectpayment']);
 Auth::routes();
 
 Route::get('/user/publish-car/{slug}', [UserDashboardController::class, 'publishcar'])->name('user.publishcars');
@@ -64,6 +64,7 @@ Route::get('admin/all-approved-cars', [AdminDashboardController::class, 'approve
 Route::get('admin/car-profile/{slug}', [AdminDashboardController::class, 'carprofiledetails'])->name('admin.verifycarprofile');
 Route::get('admin/car-approve/{slug}', [AdminDashboardController::class, 'carapproved'])->name('admin.publishcars');
 Route::get('admin/reject-car/{slug}', [AdminDashboardController::class, 'carrejected'])->name('admin.rejectcars');
+Route::patch('admin/judgment-status/{slug}', [AdminDashboardController::class, 'savejudgement'])->name('admin.savejudgement');
 Route::get('admin/cars-uploaded-today', [AdminDashboardController::class, 'carsuploadedtoday'])->name('admin.todaycars');
 Route::get('admin/all-rejected-cars', [AdminDashboardController::class, 'declinedcars'])->name('admin.declinedcars');
 Route::get('admin/all-users', [AdminDashboardController::class, 'allusers'])->name('admin.allusers');
