@@ -342,7 +342,8 @@
                                 <th>Bid Price</th>
                                 <th>My Amount</th>
                                 <th>Trans Code</th>
-                                <th>Payment Status</th> 
+                                <th>Payment Status</th>
+                                <th>Print</th>
                             </thead>
                             <tbody>
                                 @foreach ($checkpayments as $car)
@@ -368,6 +369,7 @@
 
                                         <td>{{ $price->transaction_code }}</td>
                                         <td>{{ $price->payment_status }}</td>
+                                        <td><a href="{{ route('printreceipt', $car->id) }}" class="btn btn-primary btn-sm">Print</a></td>
 
                                     </tr>
                                 @endforeach

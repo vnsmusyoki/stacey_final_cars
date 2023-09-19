@@ -62,7 +62,7 @@
                                         </td>
                                         <td>
                                             @php
-                                                $payment = App\Models\Carpayment::where('bid_id', $bid->id)->first();
+                                                $payment = App\Models\CarPayment::where('bid_id', $bid->id)->first();
                                             @endphp
                                             {{ $payment->transaction_code }}</td>
                                         <td>

@@ -70,7 +70,7 @@ class AdminDashboardController extends Controller
         ]);
         $car = Car::where('slug', $slug)->first();
         if ($car) {
-            $car->status = "declined";
+            $car->status = "published";
             $car->car_judgement = $request->car_judgement;
             $car->judgement_description = $request->brief_description;
             $car->save();

@@ -96,7 +96,7 @@
                                                     </div>
                                                     <div class="form-group mb-20">
                                                         <label for="username">Phone Number</label>
-                                                        <input type="text" class="form-control" id="username"
+                                                        <input type="number" class="form-control" id="username"
                                                             name="phone_number" placeholder="Username" value="{{ old('phone_number') }}">
                                                         @error('phone_number')
                                                             <small class="text-danger">{{ $message }}</small>

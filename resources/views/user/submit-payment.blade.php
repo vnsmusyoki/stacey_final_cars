@@ -205,7 +205,7 @@
                                         value="{{ old('transaction_code') }}" required
                                         style="text-transform: uppercase; letter-spacing:2px;font-weight:800;">
                                     @error('transaction_code')
-                                        <div class="invalid-feedback">
+                                        <div class="text-danger">
                                             <strong>{{ $message }}</strong>
                                         </div>
                                     @enderror

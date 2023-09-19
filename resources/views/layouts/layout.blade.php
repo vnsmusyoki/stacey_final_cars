@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     @livewireStyles
@@ -230,7 +231,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         @role('user')
                             <li class="has-child">
                                 <a href="#" class="">
@@ -418,13 +419,14 @@
 
 
     <!-- inject:js-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="{{ asset('dashboard/js/plugins.min.js') }}"></script>
     <script src="{{ asset('dashboard/js/script.min.js') }}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
     <!-- endinject-->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>

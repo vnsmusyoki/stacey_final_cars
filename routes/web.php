@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PrintReceiptController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -85,3 +86,6 @@ Route::patch('user/extend-time-deadline/{car}', [UserDashboardController::class,
 Route::get('/user/car-profile-edit/{slug}', [UserDashboardController::class, 'editcar'])->name('user.editcarprofile');
 Route::patch('/user/car-profile-update/{slug}', [UserDashboardController::class, 'updatecar'])->name('user.updatecar');
 Route::get('/admin/car-profile/{slug}', [AdminDashboardController::class, 'viewcardetails'])->name('admin.verifycarprofile');
+
+
+Route::get('/print/{slug}', [PrintReceiptController::class, 'printreceipt'])->name('printreceipt');;
